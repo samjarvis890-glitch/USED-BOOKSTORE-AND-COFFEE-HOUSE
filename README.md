@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pages & Perks: Used Bookstore & Coffee House
 
 A complete, premium, responsive website built for a cozy literary lounge.
@@ -60,3 +61,6 @@ used-bookstore-coffeehouse/
 3. **Live Search**: Filters books on `books.html` instantly as you type.
 4. **Digital Punch Card**: Mock-stamps a customer card; triggers congratulations when full.
 5. **Trade-In Calculator**: Computes approximate store credit based on book condition, categories, and volumes.
+=======
+# USED-BOOKSTORE-AND-COFFEE-HOUSE
+>>>>>>> 6e88e16cae2abf0419d8de3b4839e62cbec3c18c
