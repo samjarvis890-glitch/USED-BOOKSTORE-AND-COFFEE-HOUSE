@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="cafebg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B2012"/>
+      <stop offset="100%" style="stop-color:#6F4E37"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#cafebg)"/>
+  <!-- Counter -->
+  <rect x="0" y="350" width="800" height="150" fill="#5a3e2b"/>
+  <rect x="0" y="346" width="800" height="10" fill="#8B5E3C"/>
+  <!-- Espresso machine -->
+  <rect x="480" y="250" width="180" height="100" rx="12" fill="#2c2c2c"/>
+  <rect x="490" y="258" width="160" height="20" rx="5" fill="#444"/>
+  <rect x="500" y="285" width="60" height="55" rx="6" fill="#C4A484" opacity="0.3"/>
+  <rect x="570" y="285" width="60" height="55" rx="6" fill="#C4A484" opacity="0.3"/>
+  <circle cx="520" cy="310" r="18" fill="#6F4E37"/>
+  <circle cx="590" cy="310" r="18" fill="#6F4E37"/>
+  <rect x="510" y="330" width="20" height="18" rx="3" fill="#8B5E3C"/>
+  <rect x="580" y="330" width="20" height="18" rx="3" fill="#8B5E3C"/>
+  <!-- Steam from machine -->
+  <path d="M515 250 Q511 240 515 232 Q519 224 515 216" fill="none" stroke="#EADBC8" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <path d="M525 248 Q521 238 525 230 Q529 222 525 214" fill="none" stroke="#EADBC8" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <!-- Beagle barista dog body -->
+  <rect x="200" y="300" width="40" height="52" rx="5" fill="#8B5E3C" opacity="0.7"/>
+  <!-- Apron -->
+  <rect x="192" y="310" width="56" height="45" rx="5" fill="#EADBC8" opacity="0.9"/>
+  <rect x="215" y="308" width="10" height="50" fill="#C4A484"/>
+  <!-- Body -->
+  <ellipse cx="220" cy="310" rx="45" ry="38" fill="#D4956A"/>
+  <!-- Head -->
+  <circle cx="220" cy="255" r="50" fill="#FAF7F2"/>
+  <!-- Brown patches - beagle markings -->
+  <ellipse cx="220" cy="275" rx="38" ry="22" fill="#D4956A"/>
+  <ellipse cx="200" cy="248" rx="18" ry="22" fill="#8B4513"/>
+  <ellipse cx="240" cy="248" rx="18" ry="22" fill="#8B4513"/>
+  <!-- Floppy beagle ears -->
+  <ellipse cx="175" cy="265" rx="20" ry="40" fill="#3B2012" transform="rotate(-10 175 265)"/>
+  <ellipse cx="265" cy="265" rx="20" ry="40" fill="#3B2012" transform="rotate(10 265 265)"/>
+  <!-- Eyes -->
+  <circle cx="207" cy="248" r="9" fill="#2B1810"/>
+  <circle cx="233" cy="248" r="9" fill="#2B1810"/>
+  <circle cx="210" cy="245" r="3.5" fill="white"/>
+  <circle cx="236" cy="245" r="3.5" fill="white"/>
+  <circle cx="211" cy="246" r="1.8" fill="#000"/>
+  <circle cx="237" cy="246" r="1.8" fill="#000"/>
+  <!-- Nose -->
+  <ellipse cx="220" cy="265" rx="10" ry="7" fill="#2B1810"/>
+  <!-- Mouth happy -->
+  <path d="M210 275 Q220 285 230 275" fill="none" stroke="#9B5A2A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Chef hat / barista cap -->
+  <rect x="198" y="210" width="44" height="12" rx="4" fill="white"/>
+  <rect x="204" y="192" width="32" height="22" rx="4" fill="white"/>
+  <!-- Cup being poured -->
+  <rect x="280" y="330" width="45" height="36" rx="8" fill="#C4A484"/>
+  <path d="M325 340 Q340 340 340 352 Q340 364 325 364" fill="none" stroke="#8B6343" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="302" cy="330" rx="22" ry="6" fill="#8B6343"/>
+  <!-- Latte art -->
+  <ellipse cx="302" cy="330" rx="16" ry="4" fill="#FAF7F2" opacity="0.9"/>
+  <path d="M295 328 Q302 325 309 328 Q302 331 295 328 Z" fill="#D4956A" opacity="0.6"/>
+  <!-- Arm pouring -->
+  <path d="M268 305 Q278 320 280 335" fill="none" stroke="#D4956A" stroke-width="18" stroke-linecap="round"/>
+  <ellipse cx="264" cy="298" rx="20" ry="16" fill="#D4956A"/>
+  <!-- Small milk pitcher -->
+  <rect x="242" y="285" width="28" height="38" rx="5" fill="#EADBC8"/>
+  <path d="M255 282 Q258 276 265 280" fill="none" stroke="#C4A484" stroke-width="2" stroke-linecap="round"/>
+  <!-- Coffee beans decoration -->
+  <ellipse cx="130" cy="380" rx="12" ry="8" fill="#3B2012" transform="rotate(30 130 380)"/>
+  <ellipse cx="155" cy="370" rx="12" ry="8" fill="#3B2012" transform="rotate(-20 155 370)"/>
+  <ellipse cx="145" cy="390" rx="12" ry="8" fill="#3B2012" transform="rotate(10 145 390)"/>
+  <ellipse cx="670" cy="370" rx="12" ry="8" fill="#3B2012" transform="rotate(25 670 370)"/>
+  <ellipse cx="695" cy="385" rx="12" ry="8" fill="#3B2012" transform="rotate(-15 695 385)"/>
+  <!-- Warm overhead light -->
+  <ellipse cx="220" cy="150" rx="100" ry="50" fill="#FFEDCC" opacity="0.08"/>
+  <line x1="220" y1="0" x2="220" y2="40" stroke="#8B6343" stroke-width="4"/>
+  <rect x="190" y="40" width="60" height="20" rx="8" fill="#C4A484" opacity="0.8"/>
+  <!-- Small paw prints on counter -->
+  <circle cx="380" cy="360" r="5" fill="#8B5E3C" opacity="0.4"/>
+  <circle cx="370" cy="352" r="3" fill="#8B5E3C" opacity="0.4"/>
+  <circle cx="380" cy="349" r="3" fill="#8B5E3C" opacity="0.4"/>
+  <circle cx="390" cy="352" r="3" fill="#8B5E3C" opacity="0.4"/>
+</svg>

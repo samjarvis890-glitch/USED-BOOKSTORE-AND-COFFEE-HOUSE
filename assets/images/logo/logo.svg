@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <!-- Background transparent -->
+  <rect width="400" height="120" fill="transparent"/>
+  
+  <!-- Icon Group -->
+  <g transform="translate(10, 20)">
+    <!-- Book -->
+    <path d="M 10 70 L 40 80 L 70 70 L 70 20 L 40 30 L 10 20 Z" fill="#EADBC8" stroke="#6F4E37" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M 40 80 L 40 30" fill="none" stroke="#6F4E37" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 15 35 L 35 42" fill="none" stroke="#6F4E37" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 15 45 L 35 52" fill="none" stroke="#6F4E37" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 45 42 L 65 35" fill="none" stroke="#6F4E37" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 45 52 L 65 45" fill="none" stroke="#6F4E37" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Coffee Cup overlapping book -->
+    <path d="M 45 35 C 45 35 40 70 60 70 C 80 70 75 35 75 35 Z" fill="#6F4E37"/>
+    <!-- Cup handle -->
+    <path d="M 75 45 C 85 45 85 60 72 60" fill="none" stroke="#6F4E37" stroke-width="4" stroke-linecap="round"/>
+    <!-- Steam -->
+    <path d="M 55 25 C 50 20 60 15 55 10" fill="none" stroke="#C4A484" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 65 28 C 60 23 70 18 65 13" fill="none" stroke="#C4A484" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(110, 75)">
+    <text x="0" y="0" font-family="'Playfair Display', serif, Georgia" font-size="42" font-weight="700" fill="#6F4E37">
+      Folio<tspan fill="#C4A484"> &amp; </tspan>Froth
+    </text>
+    <text x="5" y="25" font-family="'Inter', sans-serif, Arial" font-size="12" font-weight="600" letter-spacing="3" fill="#8c6c54" text-transform="uppercase">
+      Books &amp; Coffee
+    </text>
+  </g>
+</svg>

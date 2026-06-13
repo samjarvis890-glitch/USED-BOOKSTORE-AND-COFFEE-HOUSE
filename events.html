@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Join our upcoming bookstore and coffee events. Book clubs, creative writing workshops, and guest author readings.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>Literary Events Calendar | Used Bookstore & Coffee House</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+      
+      <!-- Mobile Toggle Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
+      </button>
+      
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main style="margin-top: 80px;">
+    
+    <!-- 1. HERO SECTION: Creative Split Design -->
+    <section id="events-hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-[#FAF7F2]">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-[#EADBC8] rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -left-20 bottom-0 w-80 h-80 bg-[#D4C3A3] rounded-full blur-3xl opacity-40"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div class="lg:w-1/2 scroll-reveal text-center lg:text-left">
+            <span class="inline-block bg-[#6F4E37] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-sm">Lounge Gatherings</span>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-[#2c1e16] leading-tight mb-6">
+              Experiences & <br><span class="text-[#6F4E37] italic">Gatherings</span>
+            </h1>
+            <p class="text-lg text-gray-700 max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
+              Find inspiration in our upcoming events. Connect over coffee, literature, writing, and music in a cozy, creative atmosphere.
+            </p>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+              <a href="#events-calendar" class="bg-[#6F4E37] hover:bg-[#523524] text-white px-8 py-3 rounded-full font-bold transition-all shadow-md inline-block no-underline">View Schedule</a>
+              <a href="#events-cta" class="bg-transparent border-2 border-[#6F4E37] text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white px-8 py-3 rounded-full font-bold transition-all inline-block no-underline">Book a Seat</a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 scroll-reveal delay-200 relative w-full">
+            <div class="absolute -inset-4 bg-[#EADBC8] rounded-[2rem] transform rotate-3"></div>
+            <img src="images/events/events-hero.jpg" alt="Cozy cafe gathering" class="relative rounded-[2rem] shadow-2xl w-full h-[500px] object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. EVENT CALENDAR: Structured calendar grid (table focus) -->
+    <section id="events-calendar" class="py-16 bg-paper-texture">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Monthly Schedule</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-1">Calendar of Events</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="scroll-reveal">
+          <div class="table-responsive overflow-x-auto rounded-3xl shadow-md border border-[#EADBC8]">
+            <table class="table table-bordered mb-0 align-middle min-w-[700px] w-full">
+              <thead class="bg-[#6F4E37] text-white text-center">
+                <tr>
+                  <th scope="col" class="py-4 font-serif text-lg">Sunday</th>
+                  <th scope="col" class="py-4 font-serif text-lg">Monday</th>
+                  <th scope="col" class="py-4 font-serif text-lg">Wednesday</th>
+                  <th scope="col" class="py-4 font-serif text-lg">Friday</th>
+                  <th scope="col" class="py-4 font-serif text-lg">Saturday</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">07</span>
+                    <p class="text-xs text-[#6F4E37] font-semibold mt-2">Study Session Circle</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">08</span>
+                    <p class="text-xs text-gray-500 mt-2">—</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">10</span>
+                    <p class="text-xs text-[#6F4E37] font-semibold mt-2">Monthly Book Club</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">12</span>
+                    <p class="text-xs text-[#3D8B5C] font-bold mt-2">✨ Open Mic Night</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">13</span>
+                    <p class="text-xs text-[#6F4E37] font-semibold mt-2">Latte Art Workshop</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">14</span>
+                    <p class="text-xs text-gray-500 mt-2">—</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">15</span>
+                    <p class="text-xs text-[#6F4E37] font-semibold mt-2">Writers Circle Meeting</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">17</span>
+                    <p class="text-xs text-gray-500 mt-2">—</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">18</span>
+                    <p class="text-xs text-[#3D8B5C] font-bold mt-2">✨ Author Reading</p>
+                  </td>
+                  <td class="p-4 bg-white">
+                    <span class="block text-gray-400 font-bold text-left">19</span>
+                    <p class="text-xs text-[#6F4E37] font-semibold mt-2">Chemex Brewing Class</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. AUTHOR READINGS: Visiting Authors list -->
+    <section id="events-authors" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Featured Guests</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-1">Visiting Author readings</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="row g-5 align-items-stretch">
+          <!-- Author 1 -->
+          <div class="col-12 col-md-6 scroll-reveal d-flex">
+            <div class="bg-[#FAF7F2] p-6 rounded-3xl border border-[#EADBC8] flex flex-col sm:flex-row gap-6 w-full h-full">
+              <img src="images/events/author-reading-1.jpg" alt="Clara Reed Profile" class="w-full sm:w-44 h-48 rounded-2xl object-cover shadow-sm flex-shrink-0">
+              <div class="flex flex-col justify-between flex-grow">
+                <div>
+                  <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Fiction Guest</span>
+                  <h3 class="text-xl font-bold mt-1 text-[#6F4E37]">Clara Reed</h3>
+                  <p class="text-gray-600 text-xs mt-2">
+                    Bestselling author of 'The Crimson Horizon'. Clara will read selected chapters from her new book and answer questions.
+                  </p>
+                </div>
+                <span class="text-xs text-[#6F4E37] font-semibold mt-4">📅 Friday, June 18 at 6:30 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Author 2 -->
+          <div class="col-12 col-md-6 scroll-reveal delay-200 d-flex">
+            <div class="bg-[#FAF7F2] p-6 rounded-3xl border border-[#EADBC8] flex flex-col sm:flex-row gap-6 w-full h-full">
+              <img src="images/events/author-reading-2.jpg" alt="Julian Cross Profile" class="w-full sm:w-44 h-48 rounded-2xl object-cover shadow-sm flex-shrink-0">
+              <div class="flex flex-col justify-between flex-grow">
+                <div>
+                  <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Poetry Guest</span>
+                  <h3 class="text-xl font-bold mt-1 text-[#6F4E37]">Julian Cross</h3>
+                  <p class="text-gray-600 text-xs mt-2">
+                    Award-winning poet. Host of 'Coffee & Rhythm' podcast. Leading a cozy poetry feedback session.
+                  </p>
+                </div>
+                <span class="text-xs text-[#6F4E37] font-semibold mt-4">📅 Saturday, June 12 at 7:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. WORKSHOPS: Brew & Write Blocks -->
+    <section id="events-workshops" class="py-16 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Skill Sharing</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-1">Creative Workshops</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="lg:w-1/2 scroll-reveal flex">
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-6 w-full h-full">
+              <img src="images/events/workshop-1.jpg" alt="Writing workshop" class="w-full md:w-44 rounded-2xl h-44 object-cover flex-shrink-0">
+              <div class="space-y-3 flex flex-col justify-between flex-grow">
+                <div>
+                  <h3 class="text-xl font-bold text-[#6F4E37]">Writers Critique Circle</h3>
+                  <p class="text-gray-600 text-xs leading-relaxed mt-2">
+                    Bring your drafts. Give and receive constructive layout feedback from a cozy group of peers in our library room.
+                  </p>
+                </div>
+                <span class="inline-block text-xs font-bold text-[#3D8B5C] mt-auto">Every Monday • 6:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 scroll-reveal delay-200 flex">
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-6 w-full h-full">
+              <img src="images/events/workshop-2.jpg" alt="Coffee brewing workshop" class="w-full md:w-44 rounded-2xl h-44 object-cover flex-shrink-0">
+              <div class="space-y-3 flex flex-col justify-between flex-grow">
+                <div>
+                  <h3 class="text-xl font-bold text-[#6F4E37]">Latte Art & Extraction</h3>
+                  <p class="text-gray-600 text-xs leading-relaxed mt-2">
+                    Master milk steaming, frothing textures, and milk pouring. Our baristas walk you through basic hearts and rosettas.
+                  </p>
+                </div>
+                <span class="inline-block text-xs font-bold text-[#3D8B5C] mt-auto">Saturday, June 13 • 10:00 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. COMMUNITY EVENTS: Open Mic Night Panel -->
+    <section id="events-community" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="bg-[#EADBC8] p-8 md:p-12 rounded-[30px] flex flex-col lg:flex-row items-center gap-8 md:gap-12 scroll-reveal">
+          <div class="lg:w-1/2 space-y-4">
+            <span class="text-xs uppercase tracking-widest text-[#6F4E37] font-bold">Weekly highlight</span>
+            <h3 class="text-3xl font-serif text-[#6F4E37]">Friday Night Poetry Open Mic</h3>
+            <p class="text-gray-800 text-sm">
+              Our signature neighborhood experience. Read your own poems, stories, or acoustical songs, or just sit back and enjoy the talent. Complimentary herbal tea is served for all participants.
+            </p>
+            <span class="inline-block text-xs font-bold text-[#6F4E37]">Starts at 7:00 PM every Friday • Free Entry</span>
+          </div>
+          <div class="lg:w-1/2 h-full flex">
+            <img src="images/events/community-openmic.jpg" alt="Acoustic guitar open mic" class="rounded-2xl shadow-md w-full object-cover h-full min-h-[300px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.5 EXTRA CONTENT: Private Events -->
+    <section id="events-private" class="py-16 md:py-24 bg-[#2c1e16] text-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row gap-12 items-center scroll-reveal">
+          <div class="lg:w-1/2 flex flex-col sm:flex-row gap-4 w-full">
+            <img src="images/events/events-extra-1.jpg" alt="Book club meeting" class="w-full sm:w-1/2 rounded-3xl h-64 md:h-80 object-cover shadow-xl border-4 border-[#3c2a1e]">
+            <img src="images/events/events-extra-2.jpg" alt="Private event table" class="w-full sm:w-1/2 rounded-3xl h-64 md:h-80 object-cover shadow-xl border-4 border-[#3c2a1e]">
+          </div>
+          <div class="lg:w-1/2 space-y-6">
+            <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Host Your Own</span>
+            <h2 class="text-4xl font-serif text-white">Private Gatherings & Book Clubs</h2>
+            <p class="text-[#c4b3a0] text-sm md:text-base leading-relaxed">
+              Looking for a unique venue for your next meeting, book club, or creative workshop? Our secluded reading rooms and cafe corners are available for private reservations. Enjoy custom catering, artisanal coffee carafes, and a truly inspiring atmosphere.
+            </p>
+            <ul class="space-y-3 text-[#EADBC8] text-sm md:text-base mb-6">
+              <li class="flex items-center gap-3"><i class="fas fa-check text-[#C4A484]"></i> Seating for up to 20 guests</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-[#C4A484]"></i> Custom pastry and coffee menus</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-[#C4A484]"></i> Dedicated barista service</li>
+            </ul>
+            <a href="contact.html" class="inline-block bg-[#C4A484] text-[#2c1e16] px-8 py-3 rounded-full font-bold hover:bg-white transition-colors shadow-md no-underline">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- 5b. MEMBERSHIP CLUBS: Weekly Literary Groups -->
+    <section id="events-clubs" class="py-16 bg-[#FAF7F2] relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Join the Circle</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-2">Active Literary Clubs</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-3 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div class="uniform-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] bg-[#6F4E37]/10 text-[#6F4E37] px-2.5 py-1 rounded-full font-bold uppercase">Classical Fiction</span>
+              <h3 class="font-serif font-bold text-xl text-[#6F4E37] mt-3 mb-2">Vintage Novel Society</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Meets every Wednesday at 7:00 PM. Discussing classics from Austen to Orwell while sipping single-origins.</p>
+            </div>
+            <a href="contact.html" class="text-xs font-bold text-[#C4A484] hover:underline mt-4 inline-block">Join Club <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="uniform-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] bg-[#6F4E37]/10 text-[#6F4E37] px-2.5 py-1 rounded-full font-bold uppercase">Suspense</span>
+              <h3 class="font-serif font-bold text-xl text-[#6F4E37] mt-3 mb-2">Midnight Mystery Crew</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Meets every Friday at 8:30 PM. Solving complex whodunits and reviewing modern crime fiction masterpieces.</p>
+            </div>
+            <a href="contact.html" class="text-xs font-bold text-[#C4A484] hover:underline mt-4 inline-block">Join Club <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="uniform-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full">
+            <div>
+              <span class="text-[10px] bg-[#6F4E37]/10 text-[#6F4E37] px-2.5 py-1 rounded-full font-bold uppercase">Writing</span>
+              <h3 class="font-serif font-bold text-xl text-[#6F4E37] mt-3 mb-2">Ink & Espresso </h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Meets every Saturday at 10:00 AM. Creative writing sessions, collaborative peer reviews, and coffee tastings.</p>
+            </div>
+            <a href="contact.html" class="text-xs font-bold text-[#C4A484] hover:underline mt-4 inline-block">Join Club <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CTA: Seat Booking Form -->
+    <section id="events-cta" class="py-16 md:py-24 bg-paper-texture">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[30px] shadow-lg border border-[#EADBC8] scroll-reveal">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-serif text-[#6F4E37]">Reserve Your Seat</h2>
+            <p class="text-xs text-gray-500 mt-2">Space is limited. Secure your entry spot in advance.</p>
+          </div>
+
+          <form id="contactFormMain" class="space-y-4">
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <label for="evtName" class="form-label text-xs font-bold text-[#6F4E37] uppercase">Full Name</label>
+                <input type="text" id="evtName" class="form-control p-3 rounded-xl border-[#EADBC8] text-sm" required>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label for="evtEmail" class="form-label text-xs font-bold text-[#6F4E37] uppercase">Email Address</label>
+                <input type="email" id="evtEmail" class="form-control p-3 rounded-xl border-[#EADBC8] text-sm" required>
+              </div>
+            </div>
+
+            <div>
+              <label for="evtChoice" class="form-label text-xs font-bold text-[#6F4E37] uppercase">Select Event / Workshop</label>
+              <select id="evtChoice" class="form-select p-3 rounded-xl border-[#EADBC8] text-sm" required>
+                <option value="" disabled selected>Choose a gathering...</option>
+                <option value="poetry">Poetry Open Mic (June 12)</option>
+                <option value="reading">Author Reading (June 18)</option>
+                <option value="latte">Latte Art Class (June 13)</option>
+                <option value="chemex">Chemex Brewing Class (June 19)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full bg-[#6F4E37] text-white py-3 rounded-xl font-bold hover:bg-[#5a3e2b] transition-all mt-4 shadow-md">
+              Submit Reservation
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

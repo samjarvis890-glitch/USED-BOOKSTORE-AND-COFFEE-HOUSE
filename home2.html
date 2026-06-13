@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Pages & Perks — A premium used bookstore and artisan coffee house. Discover rare finds, sip handcrafted brews, and join a vibrant literary community.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>Pages & Perks | Literary Lounge — Home</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM — PAGES & PERKS  |  home2.html
+    ============================================================ */
+    :root {
+      --mocha:    #6F4E37;
+      --mocha-dk: #523524;
+      --gold:     #C4A484;
+      --cream:    #FAF7F2;
+      --linen:    #EADBC8;
+      --charcoal: #1B1B1B;
+      --ink:      #111111;
+      --warm-gray:#8C7B6B;
+      --white:    #FFFFFF;
+      --font-serif: 'Playfair Display', serif;
+      --font-dm:    'DM Serif Display', serif;
+      --font-sans:  'Inter', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* ---------- NAVBAR ---------- */
+    #mainNavbar {
+      background: rgba(250,247,242,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(111,78,55,0.12);
+      padding: 0.6rem 0;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #mainNavbar.scrolled {
+      background: rgba(250,247,242,0.99);
+      box-shadow: 0 4px 30px rgba(111,78,55,0.15);
+    }
+    .navbar-brand img { height: 58px; width: auto; object-fit: contain; }
+    .nav-link {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--charcoal) !important;
+      padding: 0.5rem 0.9rem !important;
+      position: relative;
+      letter-spacing: 0.02em;
+      transition: color 0.25s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      width: 0; height: 2px;
+      background: var(--mocha);
+      transform: translateX(-50%);
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 60%; }
+    .nav-link:hover { color: var(--mocha) !important; }
+    .dropdown-menu {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      background: var(--white);
+      padding: 0.5rem;
+    }
+    .dropdown-item {
+      border-radius: 8px;
+      font-size: 0.87rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      padding: 0.5rem 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-item:hover { background: var(--linen); color: var(--mocha); }
+    .btn-login {
+      background: var(--mocha);
+      color: var(--white) !important;
+      padding: 0.5rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn-login:hover { background: var(--mocha-dk); transform: translateY(-1px); }
+    .icon-btn {
+      background: none; border: none; cursor: pointer;
+      color: var(--charcoal); font-size: 1.1rem;
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      transition: background 0.2s, color 0.2s;
+    }
+    .icon-btn:hover { background: var(--linen); color: var(--mocha); }
+    .navbar-toggler { border: none; background: none; padding: 0.4rem; }
+    .navbar-toggler:focus { box-shadow: none; }
+
+    /* ============================================================
+       SECTION 1 — SPLIT-SCREEN CINEMATIC HERO
+       Header Style: Large editorial split with diagonal slash
+    ============================================================ */
+    .s1-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      padding-top: 80px;
+    }
+    @media (max-width: 900px) { .s1-hero { grid-template-columns: 1fr; } }
+    .s1-left {
+      background: var(--ink);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .s1-left::after {
+      content: '';
+      position: absolute; right: -60px; top: 0;
+      width: 120px; height: 100%;
+      background: var(--ink);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      z-index: 2;
+    }
+    @media (max-width: 900px) { .s1-left::after { display: none; } .s1-left { padding: 4rem 2rem 3rem; } }
+    .s1-right {
+      position: relative;
+      overflow: hidden;
+      min-height: 60vh;
+    }
+    .s1-right img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform-origin: center;
+      transition: transform 8s ease;
+    }
+    .s1-right:hover img { transform: scale(1.05); }
+    .s1-right-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(17,17,17,0.5) 0%, transparent 60%);
+    }
+    .s1-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 3px;
+      margin-bottom: 2rem;
+    }
+    .s1-headline {
+      font-family: var(--font-dm);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .s1-headline em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .s1-desc {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+    .s1-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary-hero {
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary-hero:hover { background: var(--white); transform: translateY(-2px); }
+    .btn-outline-hero {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .btn-outline-hero:hover { border-color: var(--gold); background: rgba(196,164,132,0.1); color: var(--gold); }
+    .s1-stats {
+      display: flex; gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+    .s1-stat-num {
+      font-family: var(--font-dm);
+      font-size: 2.2rem;
+      color: var(--white);
+      display: block;
+      line-height: 1;
+    }
+    .s1-stat-label {
+      font-size: 0.72rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      margin-top: 0.4rem;
+      display: block;
+    }
+    /* Floating badge on right panel */
+    .s1-badge {
+      position: absolute;
+      bottom: 2.5rem; left: -2rem;
+      background: var(--white);
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      display: flex; align-items: center; gap: 0.8rem;
+      z-index: 5;
+      animation: floatBadge 3s ease-in-out infinite;
+    }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .s1-badge-icon { font-size: 2rem; }
+    .s1-badge-text strong { font-size: 1rem; color: var(--charcoal); display: block; font-family: var(--font-serif); }
+    .s1-badge-text span { font-size: 0.72rem; color: var(--warm-gray); }
+    @media (max-width: 900px) { .s1-badge { display: none; } }
+
+    /* ============================================================
+       SECTION 2 — FEATURED EXPERIENCE CARDS
+       Header Style: Centered with decorative ribbon lines
+    ============================================================ */
+    .s2-experience {
+      background: var(--white);
+      padding: 7rem 0;
+    }
+    .header-ribbon {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .header-ribbon .ribbon-line {
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .ribbon-line .line { flex: 1; max-width: 80px; height: 1px; background: var(--gold); }
+    .ribbon-line .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mocha); }
+    .ribbon-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--mocha);
+    }
+    .ribbon-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-top: 0.5rem;
+    }
+    .ribbon-title em { font-style: italic; color: var(--mocha); }
+    .ribbon-sub {
+      color: var(--warm-gray);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 1rem auto 0;
+      line-height: 1.7;
+    }
+
+    /* Experience Cards — All Equal Height */
+    .exp-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 1100px) { .exp-card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .exp-card-grid { grid-template-columns: 1fr; } }
+    .exp-card {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.25,1,0.5,1), box-shadow 0.4s;
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 360px;
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mocha), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .exp-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(111,78,55,0.15); }
+    .exp-card:hover::before { transform: scaleX(1); }
+    .exp-card-img-wrap {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.5rem;
+      border: 3px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .exp-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .exp-icon-wrap {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, var(--mocha), var(--mocha-dk));
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .exp-card:hover .exp-icon-wrap { transform: scale(1.05); }
+    .exp-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+    .exp-card p {
+      font-size: 0.88rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+    .exp-card-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--mocha);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.2s, letter-spacing 0.3s;
+    }
+    .exp-card:hover .exp-card-link { color: var(--mocha-dk); letter-spacing: 0.18em; }
+
+    /* ============================================================
+       SECTION 3 — BESTSELLER SHOWCASE
+       Header Style: Left-aligned editorial newspaper style
+    ============================================================ */
+    .s3-books {
+      background: var(--ink);
+      padding: 7rem 0;
+    }
+    .header-newspaper {
+      margin-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .newspaper-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .newspaper-eyebrow::before, .newspaper-eyebrow::after {
+      content: '◆';
+      font-size: 0.5rem;
+    }
+    .newspaper-title {
+      font-family: var(--font-dm);
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .newspaper-title em { font-style: italic; color: var(--gold); }
+    .btn-see-all {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.7rem 1.8rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+      white-space: nowrap;
+    }
+    .btn-see-all:hover { background: var(--gold); border-color: var(--gold); color: var(--charcoal); }
+
+    /* Book Cards — Equal size grid */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 1100px) { .books-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .books-grid { grid-template-columns: 1fr; gap: 1rem; } }
+    .book-card {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.4s, border-color 0.3s, box-shadow 0.4s;
+      display: flex; flex-direction: column;
+    }
+    .book-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 20px 50px rgba(196,164,132,0.15);
+    }
+    .book-card-cover {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      position: relative;
+    }
+    .book-card-cover img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .book-card:hover .book-card-cover img { transform: scale(1.07); }
+    .book-badge {
+      position: absolute;
+      top: 0.8rem; left: 0.8rem;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 3px;
+    }
+    .book-card-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .book-genre {
+      font-size: 0.65rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .book-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 0.3rem;
+      flex: 1;
+    }
+    .book-author { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 0.8rem; }
+    .book-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 0.75rem;
+    }
+    .book-price { font-weight: 700; color: var(--white); font-size: 1rem; }
+    .book-stars { color: #F5C842; font-size: 0.65rem; letter-spacing: 1px; }
+
+    /* ============================================================
+       SECTION 4 — COFFEE & PASTRY MENU
+       Header Style: Centered with large decorative drop-cap number
+    ============================================================ */
+    .s4-menu {
+      background: var(--linen);
+      padding: 7rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .s4-menu::before {
+      content: '☕';
+      position: absolute;
+      right: -3rem; bottom: -3rem;
+      font-size: 20rem;
+      opacity: 0.05;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .header-dropcap {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    .dropcap-number {
+      font-family: var(--font-dm);
+      font-size: 12rem;
+      color: rgba(111,78,55,0.07);
+      line-height: 1;
+      position: absolute;
+      top: -3rem; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      white-space: nowrap;
+      font-style: italic;
+    }
+    .dropcap-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--mocha);
+      position: relative;
+    }
+    .dropcap-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: var(--charcoal);
+      line-height: 1.15;
+      margin: 0.6rem 0;
+      position: relative;
+    }
+    .dropcap-sub {
+      color: var(--warm-gray);
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    /* Menu Cards — Equal size */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .menu-grid { grid-template-columns: 1fr; } }
+    .menu-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+      display: flex; flex-direction: column;
+      box-shadow: 0 4px 20px rgba(111,78,55,0.07);
+    }
+    .menu-card:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(111,78,55,0.18); }
+    .menu-card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .menu-card:hover .menu-card-img img { transform: scale(1.08); }
+    .menu-card-tag {
+      position: absolute;
+      bottom: 0.8rem; right: 0.8rem;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(8px);
+      color: var(--mocha);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: var(--font-serif);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+    .menu-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .menu-card-category {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .menu-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .menu-card p {
+      font-size: 0.83rem;
+      color: var(--warm-gray);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .menu-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--linen);
+      padding-top: 0.9rem;
+    }
+    .menu-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--mocha);
+      font-family: var(--font-serif);
+    }
+    .menu-add-btn {
+      width: 34px; height: 34px;
+      background: var(--mocha);
+      border: none; border-radius: 50%;
+      color: var(--white);
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .menu-add-btn:hover { background: var(--mocha-dk); transform: scale(1.1); }
+
+    /* ============================================================
+       SECTION 5 — COMMUNITY STORIES / TESTIMONIALS
+       Header Style: Stacked with bold underline accent
+    ============================================================ */
+    .s5-stories {
+      background: var(--charcoal);
+      padding: 7rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .s5-stories::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 40px,
+        rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 80px
+      );
+      pointer-events: none;
+    }
+    .header-underline-accent {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .underline-accent-top {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .underline-accent-title {
+      font-family: var(--font-dm);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      color: var(--white);
+      line-height: 1.1;
+      position: relative;
+      display: inline-block;
+    }
+    .underline-accent-title span {
+      position: relative;
+      display: inline-block;
+    }
+    .underline-accent-title span::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .underline-accent-sub {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.95rem;
+      max-width: 460px;
+      margin: 1.2rem auto 0;
+      line-height: 1.75;
+    }
+
+    /* Testimonial Cards — Equal size */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    @media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .testimonial-grid { grid-template-columns: 1fr; } }
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s, border-color 0.35s, transform 0.35s;
+      display: flex; flex-direction: column;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -1rem; right: 1.5rem;
+      font-family: var(--font-dm);
+      font-size: 8rem;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+    }
+    .testimonial-card:hover {
+      background: rgba(196,164,132,0.08);
+      border-color: rgba(196,164,132,0.3);
+      transform: translateY(-6px);
+    }
+    .t-avatar-row {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .t-avatar {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+      background: var(--mocha);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .t-name { font-weight: 600; color: var(--white); font-size: 0.95rem; }
+    .t-role { font-size: 0.72rem; color: var(--gold); margin-top: 0.15rem; }
+    .t-stars {
+      display: flex; gap: 2px;
+      margin-bottom: 1rem;
+    }
+    .t-stars i { color: #F5C842; font-size: 0.75rem; }
+    .t-quote {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      font-style: italic;
+      flex: 1;
+    }
+    .t-tag {
+      display: inline-block;
+      background: rgba(196,164,132,0.12);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      margin-top: 1.2rem;
+    }
+
+    /* ============================================================
+       SECTION 6 — VISIT US / STORE FEATURES + MAP VIBE
+       Header Style: Asymmetric pill / badge style
+    ============================================================ */
+    .s6-visit {
+      background: var(--cream);
+      padding: 7rem 0;
+    }
+    .header-pill-badge {
+      margin-bottom: 4rem;
+    }
+    .pill-badge-inner {
+      display: flex; align-items: center; gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .pill-badge-left {
+      flex: 1;
+      min-width: 260px;
+    }
+    .pill-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--mocha);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+    .pill-badge-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: var(--charcoal);
+      line-height: 1.15;
+    }
+    .pill-badge-title em { color: var(--mocha); font-style: italic; }
+    .pill-badge-right {
+      max-width: 400px;
+    }
+    .pill-badge-right p {
+      color: var(--warm-gray);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .btn-visit {
+      background: var(--mocha);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-visit:hover { background: var(--mocha-dk); transform: translateY(-2px); color: var(--white); }
+
+    /* Feature Cards for Section 6 — Equal size */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .feature-grid { grid-template-columns: 1fr; } }
+    .feature-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s;
+      display: flex; flex-direction: column;
+      box-shadow: 0 2px 16px rgba(111,78,55,0.06);
+    }
+    .feature-card:hover { transform: translateY(-8px); box-shadow: 0 24px 56px rgba(111,78,55,0.13); }
+    .feature-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+    .feature-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .feature-card:hover .feature-card-img img { transform: scale(1.06); }
+    .feature-card-body {
+      padding: 1.5rem;
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .feature-num {
+      font-family: var(--font-dm);
+      font-size: 2.5rem;
+      color: var(--linen);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .feature-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .feature-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--mocha);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .feature-pill i { font-size: 0.65rem; }
+
+    /* Info Cards row in Section 6 */
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 900px) { .info-row { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .info-row { grid-template-columns: 1fr; } }
+    .info-card {
+      background: var(--mocha);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: 0.8rem;
+    }
+    .info-card i { font-size: 1.5rem; color: var(--gold); }
+    .info-card strong {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--white);
+      display: block;
+    }
+    .info-card span { font-size: 0.82rem; color: rgba(234,219,200,0.75); line-height: 1.6; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: linear-gradient(160deg, #1e120b 0%, #120b06 100%);
+      color: var(--linen);
+      padding: 5rem 0 2rem;
+      border-top: 3px solid var(--mocha);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+    @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-logo { height: 55px; width: auto; object-fit: contain; mix-blend-mode: luminosity; filter: brightness(1.3); margin-bottom: 1.2rem; }
+    .footer-desc { font-size: 0.87rem; color: rgba(234,219,200,0.6); line-height: 1.8; margin-bottom: 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .social-btn {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 0.85rem;
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
+    }
+    .social-btn:hover { background: var(--mocha); border-color: var(--mocha); transform: translateY(-3px); }
+    .footer-col-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(196,164,132,0.2);
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.65rem; }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: rgba(234,219,200,0.6);
+      transition: color 0.2s, padding-left 0.2s;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .footer-links a::before { content: '→'; font-size: 0.7rem; color: var(--mocha); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); padding-left: 4px; }
+    .footer-links a:hover::before { color: var(--gold); }
+    .footer-hours { font-size: 0.82rem; color: rgba(234,219,200,0.6); line-height: 2; }
+    .footer-hours strong { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 0.8rem; }
+    .footer-newsletter input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      color: var(--white);
+      font-size: 0.85rem;
+      outline: none;
+      margin-bottom: 0.75rem;
+      transition: border-color 0.2s;
+    }
+    .footer-newsletter input:focus { border-color: var(--gold); }
+    .footer-newsletter input::placeholder { color: rgba(255,255,255,0.3); }
+    .footer-newsletter button {
+      width: 100%;
+      background: var(--mocha);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .footer-newsletter button:hover { background: var(--gold); color: var(--charcoal); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      font-size: 0.8rem;
+      color: rgba(234,219,200,0.35);
+    }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { color: rgba(234,219,200,0.35); transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--gold); }
+
+    /* ============================================================
+       ANIMATIONS & SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Animated counter */
+    .count-up { display: inline-block; }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--mocha) 0%, #3d2316 100%);
+      padding: 3rem;
+      border-radius: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 2rem; flex-wrap: wrap;
+      margin: 3rem 0 0;
+    }
+    .cta-banner-text h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .cta-banner-text p { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+    .cta-banner-btn {
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .cta-banner-btn:hover { background: var(--white); transform: translateY(-2px); }
+
+    /* Container helper */
+    .container-xl { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    @media (max-width: 640px) { .container-xl { padding: 0 1.25rem; } }
+
+    /* ============================================================
+       DARK MODE OVERRIDES — home2.html
+    ============================================================ */
+    [data-theme="dark"] {
+      --cream:    #111008;
+      --linen:    #1E1610;
+      --white:    #231610;
+      --charcoal: #FAF7F2;
+      --warm-gray:#9d8f80;
+    }
+
+    [data-theme="dark"] body {
+      background-color: var(--cream) !important;
+      color: var(--charcoal) !important;
+    }
+
+    /* Navbar */
+    [data-theme="dark"] #mainNavbar {
+      background: rgba(17, 10, 8, 0.97) !important;
+      border-bottom: 1px solid rgba(234,219,200,0.14) !important;
+    }
+    [data-theme="dark"] #mainNavbar.scrolled {
+      background: rgba(17, 10, 8, 0.99) !important;
+    }
+    [data-theme="dark"] .nav-link {
+      color: #FAF7F2 !important;
+    }
+    [data-theme="dark"] .nav-link:hover {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .nav-link::after {
+      background: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .btn-login {
+      background: #C4A484 !important;
+      color: #111008 !important;
+    }
+    [data-theme="dark"] .btn-login:hover {
+      background: #FAF7F2 !important;
+      color: #111008 !important;
+    }
+    [data-theme="dark"] .dropdown-menu {
+      background: #1E1610 !important;
+    }
+    [data-theme="dark"] .dropdown-item {
+      color: #FAF7F2 !important;
+    }
+    [data-theme="dark"] .dropdown-item:hover {
+      background: #2a1e14 !important;
+      color: #E8C8A0 !important;
+    }
+
+    /* Section 2 — Experience */
+    [data-theme="dark"] .s2-experience {
+      background: var(--cream) !important;
+    }
+    [data-theme="dark"] .ribbon-title {
+      color: var(--charcoal) !important;
+    }
+    [data-theme="dark"] .ribbon-title em {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .ribbon-sub {
+      color: var(--warm-gray) !important;
+    }
+    [data-theme="dark"] .exp-card {
+      background: var(--white) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+    }
+    [data-theme="dark"] .exp-card h3 {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .exp-card p {
+      color: #c5bba3 !important;
+    }
+    [data-theme="dark"] .exp-card-link {
+      color: #E8C8A0 !important;
+      border-bottom-color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .exp-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+    }
+
+    /* Section 4 — Menu */
+    [data-theme="dark"] .s4-menu {
+      background: var(--linen) !important;
+    }
+    [data-theme="dark"] .dropcap-title {
+      color: var(--charcoal) !important;
+    }
+    [data-theme="dark"] .dropcap-sub {
+      color: var(--warm-gray) !important;
+    }
+    [data-theme="dark"] .dropcap-number {
+      color: rgba(232, 200, 160, 0.04) !important;
+    }
+    [data-theme="dark"] .menu-card {
+      background: var(--white) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+    }
+    [data-theme="dark"] .menu-card h4 {
+      color: var(--charcoal) !important;
+    }
+    [data-theme="dark"] .menu-card p {
+      color: #c5bba3 !important;
+    }
+    [data-theme="dark"] .menu-price {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .menu-card-footer {
+      border-top-color: rgba(234,219,200,0.1) !important;
+    }
+    [data-theme="dark"] .menu-card-tag {
+      background: rgba(30, 22, 16, 0.95) !important;
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .menu-add-btn {
+      background: #E8C8A0 !important;
+      color: #111008 !important;
+    }
+    [data-theme="dark"] .menu-add-btn:hover {
+      background: #FAF7F2 !important;
+    }
+
+    /* Section 6 — Visit */
+    [data-theme="dark"] .s6-visit {
+      background: var(--cream) !important;
+    }
+    [data-theme="dark"] .pill-badge-title {
+      color: var(--charcoal) !important;
+    }
+    [data-theme="dark"] .pill-badge-title em {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .pill-badge-right p {
+      color: #c5bba3 !important;
+    }
+    [data-theme="dark"] .btn-visit {
+      background: #FAF7F2 !important;
+      color: #111008 !important;
+    }
+    [data-theme="dark"] .btn-visit:hover {
+      background: #E8C8A0 !important;
+      color: #111008 !important;
+    }
+    [data-theme="dark"] .feature-card {
+      background: var(--white) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+    }
+    [data-theme="dark"] .feature-card h4 {
+      color: var(--charcoal) !important;
+    }
+    [data-theme="dark"] .feature-card p {
+      color: #c5bba3 !important;
+    }
+    [data-theme="dark"] .feature-pill {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .feature-num {
+      color: rgba(232, 200, 160, 0.4) !important;
+    }
+    [data-theme="dark"] .info-card {
+      background: var(--white) !important;
+      border: 1px solid rgba(234,219,200,0.15) !important;
+    }
+    [data-theme="dark"] .info-card strong {
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] .info-card span {
+      color: #c5bba3 !important;
+    }
+
+    /* ============================================================
+       DARK MODE CONTRAST FIXES FOR HOME2.HTML
+    ============================================================ */
+    [data-theme="dark"] body #s1-hero .s1-tag,
+    [data-theme="dark"] body #s1-hero span.s1-tag {
+      color: #111008 !important;
+    }
+    [data-theme="dark"] body #s1-hero .btn-primary-hero,
+    [data-theme="dark"] body #s1-hero a.btn-primary-hero {
+      color: #111008 !important;
+    }
+    [data-theme="dark"] body #s1-hero .s1-badge {
+      background-color: #1E1610 !important;
+      border: 1px solid rgba(234,219,200,0.15);
+    }
+    [data-theme="dark"] body #s1-hero .s1-badge-text strong {
+      color: #F5E4CC !important;
+    }
+    [data-theme="dark"] body #s2-experience {
+      background-color: #111008 !important;
+    }
+    [data-theme="dark"] body #s2-experience .exp-card {
+      background-color: #1E1610 !important;
+      border: 1px solid rgba(234,219,200,0.12);
+    }
+    [data-theme="dark"] body #s2-experience .ribbon-title,
+    [data-theme="dark"] body #s2-experience .ribbon-label,
+    [data-theme="dark"] body #s2-experience .exp-card h3 {
+      color: #F5E4CC !important;
+    }
+    [data-theme="dark"] body #s4-menu {
+      background-color: #111008 !important;
+    }
+    [data-theme="dark"] body #s4-menu .dropcap-title,
+    [data-theme="dark"] body #s4-menu .dropcap-eyebrow,
+    [data-theme="dark"] body #s4-menu .menu-card h4 {
+      color: #F5E4CC !important;
+    }
+    [data-theme="dark"] body #s4-menu .menu-card {
+      background-color: #1E1610 !important;
+      border: 1px solid rgba(234,219,200,0.12);
+    }
+    [data-theme="dark"] body #s4-menu .menu-card-tag {
+      background-color: rgba(30, 22, 16, 0.95) !important;
+      color: #E8C8A0 !important;
+    }
+    [data-theme="dark"] body #s5-stories h2.underline-accent-title,
+    [data-theme="dark"] body #s5-stories .underline-accent-title {
+      color: #231610 !important;
+    }
+    [data-theme="dark"] body #s5-stories .underline-accent-title span {
+      color: #6F4E37 !important;
+    }
+    [data-theme="dark"] body #s5-stories p.underline-accent-top,
+    [data-theme="dark"] body #s5-stories .underline-accent-top {
+      color: #6F4E37 !important;
+    }
+    [data-theme="dark"] body #s5-stories p.underline-accent-sub,
+    [data-theme="dark"] body #s5-stories .underline-accent-sub,
+    [data-theme="dark"] body #s5-stories p.t-quote {
+      color: #4a3b32 !important;
+    }
+    [data-theme="dark"] body #s5-stories .t-name {
+      color: #231610 !important;
+    }
+    [data-theme="dark"] body #s5-stories .t-role {
+      color: #6F4E37 !important;
+    }
+    [data-theme="dark"] body #s5-stories .testimonial-card {
+      background: rgba(35, 22, 16, 0.04) !important;
+      border: 1px solid rgba(35, 22, 16, 0.1) !important;
+    }
+    [data-theme="dark"] body #s5-stories .t-tag {
+      background: rgba(35, 22, 16, 0.05) !important;
+      color: #4a3b32 !important;
+    }
+    [data-theme="dark"] body #s5-stories div[style*="color:rgba(255,255,255,0.4)"] {
+      color: rgba(35, 22, 16, 0.6) !important;
+    }
+    [data-theme="dark"] body #s5-stories div[style*="background:rgba(255,255,255,0.1)"] {
+      background: rgba(35, 22, 16, 0.15) !important;
+    }
+    [data-theme="dark"] body #s6-visit .pill-badge-inner {
+      background-color: #1E1610 !important;
+      border: 1px solid rgba(234,219,200,0.15);
+    }
+    [data-theme="dark"] body #s6-visit h2.pill-badge-title,
+    [data-theme="dark"] body #s6-visit .pill-badge-title {
+      color: #F5E4CC !important;
+    }
+    [data-theme="dark"] body #s6-visit .feature-card {
+      background-color: #1E1610 !important;
+      border: 1px solid rgba(234,219,200,0.12);
+    }
+    [data-theme="dark"] body #s6-visit .feature-card h3 {
+      color: #F5E4CC !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--mocha);"></i>
+      </button>
+
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item active" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — SPLIT-SCREEN CINEMATIC HERO
+         Unique Header: Large editorial split with diagonal slash
+    ============================================================ -->
+    <section class="s1-hero" id="s1-hero" aria-label="Hero">
+      <!-- LEFT: Dark editorial panel -->
+      <div class="s1-left">
+        <span class="s1-tag reveal">Est. 2010 · Literary Lounge</span>
+        <h1 class="s1-headline reveal reveal-delay-1">
+          Every Book<br>
+          <em>Has a Story.</em>
+        </h1>
+        <p class="s1-desc reveal reveal-delay-2">
+          Discover forgotten classics, thrilling mysteries, and rare signed editions waiting to be read again.
+        </p>
+        <div class="s1-btns reveal reveal-delay-3">
+          <a href="books.html" class="btn-primary-hero">Explore Books</a>
+          <a href="cafe.html" class="btn-outline-hero">Our Café</a>
+        </div>
+        <div class="s1-stats reveal reveal-delay-4">
+          <div>
+            <span class="s1-stat-num" data-target="25000">0</span><span class="s1-stat-num">+</span>
+            <span class="s1-stat-label">Books Available</span>
+          </div>
+          <div>
+            <span class="s1-stat-num" data-target="5000">0</span><span class="s1-stat-num">+</span>
+            <span class="s1-stat-label">Happy Readers</span>
+          </div>
+          <div>
+            <span class="s1-stat-num" data-target="50">0</span><span class="s1-stat-num">+</span>
+            <span class="s1-stat-label">Events/Year</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Full-bleed hero image -->
+      <div class="s1-right">
+        <img src="images/project_hero.jpg" alt="A warm, inviting bookstore interior with tall bookshelves, a coffee bar in the background, soft lighting, and comfortable reading nooks" loading="eager">
+        <div class="s1-right-overlay"></div>
+        <!-- Floating badge -->
+        
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 2 — WHAT WE OFFER (EXPERIENCE CARDS)
+         Unique Header: Centered with decorative ribbon lines
+    ============================================================ -->
+    <section class="s2-experience" id="s2-experience" aria-label="Our Experience">
+      <div class="container-xl">
+
+        <!-- Ribbon-style header -->
+        <header class="header-ribbon">
+          <div class="ribbon-line reveal">
+            <span class="line"></span>
+            <span class="dot"></span>
+            <span class="ribbon-label">Everything We Offer</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+          </div>
+          <h2 class="ribbon-title reveal reveal-delay-1">The Pages &amp; Perks <em>Experience</em></h2>
+          <p class="ribbon-sub reveal reveal-delay-2">
+            More than a bookstore — we are a full literary lifestyle destination.
+            Discover what makes us the most loved reading retreat in town.
+          </p>
+        </header>
+
+        <!-- 4 Experience Cards — All equal height -->
+        <div class="exp-card-grid">
+
+          <article class="exp-card reveal">
+            <div class="exp-icon-wrap"><i class="fas fa-book-open"></i></div>
+            <h3>Rare &amp; Used Books</h3>
+            <p>Over 25,000 hand-picked titles spanning every genre — from first-edition classics to hidden contemporary gems. Every shelf tells a story waiting to find its next reader.</p>
+            <a href="books.html" class="exp-card-link">Browse Collection →</a>
+          </article>
+
+          <article class="exp-card reveal reveal-delay-1">
+            <div class="exp-icon-wrap"><i class="fas fa-mug-hot"></i></div>
+            <h3>Artisan Coffee Bar</h3>
+            <p>Our master baristas craft single-origin pour-overs, velvety flat whites, and seasonal specialty drinks using ethically sourced beans roasted fresh every morning.</p>
+            <a href="cafe.html" class="exp-card-link">See Full Menu →</a>
+          </article>
+
+          <article class="exp-card reveal reveal-delay-2">
+            <div class="exp-icon-wrap"><i class="fas fa-couch"></i></div>
+            <h3>Reading Lounges</h3>
+            <p>Sink into plush leather armchairs in our curated reading zones — from a silent study nook to sun-drenched patio seating with garden views and natural light.</p>
+            <a href="about.html" class="exp-card-link">Tour the Space →</a>
+          </article>
+
+          <article class="exp-card reveal reveal-delay-3">
+            <div class="exp-icon-wrap"><i class="fas fa-calendar-days"></i></div>
+            <h3>Community Events</h3>
+            <p>Author signings, poetry slams, barista masterclasses, book club nights, and literary speed-dating — there's always something happening at Pages &amp; Perks.</p>
+            <a href="events.html" class="exp-card-link">View Calendar →</a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3 — BESTSELLING BOOKS
+         Unique Header: Left-aligned editorial newspaper style
+    ============================================================ -->
+    <section class="s3-books" id="s3-books" aria-label="Bestselling Books">
+      <div class="container-xl">
+
+        <!-- Newspaper-style header -->
+        <header class="header-newspaper reveal">
+          <div>
+            <div class="newspaper-eyebrow">Staff Picks · Curated Weekly</div>
+            <h2 class="newspaper-title">Our Bestselling<br><em>Books This Season</em></h2>
+          </div>
+          <a href="books.html" class="btn-see-all">View All Titles</a>
+        </header>
+
+        <!-- 4 equal book cards -->
+        <div class="books-grid">
+
+          <article class="book-card reveal">
+            <div class="book-card-cover">
+              <img src="images/book_gatsby.png" alt="The Great Gatsby cover art" loading="lazy">
+              <span class="book-badge">Classic</span>
+            </div>
+            <div class="book-card-body">
+              <span class="book-genre">Literary Classic</span>
+              <h3 class="book-title">The Great Gatsby</h3>
+              <p class="book-author">F. Scott Fitzgerald</p>
+              <div class="book-footer">
+                <span class="book-price">$14.99</span>
+                <div>
+                  <div class="book-stars">★★★★★</div>
+                  <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">4.8 (2,140)</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card reveal reveal-delay-1">
+            <div class="book-card-cover">
+              <img src="images/book_1984.png" alt="1984 cover art" loading="lazy">
+              <span class="book-badge">Fiction</span>
+            </div>
+            <div class="book-card-body">
+              <span class="book-genre">Dystopian</span>
+              <h3 class="book-title">1984</h3>
+              <p class="book-author">George Orwell</p>
+              <div class="book-footer">
+                <span class="book-price">$9.50</span>
+                <div>
+                  <div class="book-stars">★★★★★</div>
+                  <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">4.9 (5,820)</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card reveal reveal-delay-2">
+            <div class="book-card-cover">
+              <img src="images/book_dune.png" alt="Dune cover art" loading="lazy">
+              <span class="book-badge">Sci-Fi</span>
+            </div>
+            <div class="book-card-body">
+              <span class="book-genre">Science Fiction</span>
+              <h3 class="book-title">Dune</h3>
+              <p class="book-author">Frank Herbert</p>
+              <div class="book-footer">
+                <span class="book-price">$16.00</span>
+                <div>
+                  <div class="book-stars">★★★★★</div>
+                  <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">4.7 (3,310)</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card reveal reveal-delay-3">
+            <div class="book-card-cover">
+              <img src="images/book_mockingbird.png" alt="To Kill a Mockingbird cover art" loading="lazy">
+              <span class="book-badge">Classic</span>
+            </div>
+            <div class="book-card-body">
+              <span class="book-genre">Classic Fiction</span>
+              <h3 class="book-title">To Kill a Mockingbird</h3>
+              <p class="book-author">Harper Lee</p>
+              <div class="book-footer">
+                <span class="book-price">$18.00</span>
+                <div>
+                  <div class="book-stars">★★★★★</div>
+                  <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">4.9 (9,400)</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- CTA Banner inside books section -->
+        <div class="cta-banner reveal" style="margin-top:2.5rem;">
+          <div class="cta-banner-text">
+            <h3>Sell or Trade Your Books</h3>
+            <p>Got books collecting dust? Trade them for store credit or cash — it's fast, fair, and sustainable.</p>
+          </div>
+          <a href="tradein.html" class="cta-banner-btn">Start Trade-In →</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4 — COFFEE & PASTRY MENU
+         Unique Header: Centered with large italic drop-cap style
+    ============================================================ -->
+    <section class="s4-menu" id="s4-menu" aria-label="Coffee Menu">
+      <div class="container-xl">
+
+        <!-- Drop-cap style header -->
+        <header class="header-dropcap">
+          <div class="dropcap-number" aria-hidden="true">04</div>
+          <p class="dropcap-eyebrow reveal">Artisan Brews &amp; Bites</p>
+          <h2 class="dropcap-title reveal reveal-delay-1">Handcrafted Café Menu<br>— Made With Love</h2>
+          <p class="dropcap-sub reveal reveal-delay-2">
+            Every drink is a small ceremony. From single-origin pour-overs to
+            buttery croissants — our café menu pairs beautifully with any chapter.
+          </p>
+        </header>
+
+        <!-- 6 equal menu cards (3 × 2 grid) -->
+        <div class="menu-grid">
+
+          <article class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="images/signature_espresso.jpg" alt="Rich espresso shot in a small ceramic cup" loading="lazy">
+              <span class="menu-card-tag">$3.50</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-card-category">Espresso Bar</span>
+              <h4>Signature Espresso</h4>
+              <p>A bold, full-bodied shot pulled from our house blend of Ethiopian and Colombian single-origin beans. Perfect crema, balanced sweetness, lingering finish.</p>
+              <div class="menu-card-footer">
+                <span class="menu-price">$3.50</span>
+                <button class="menu-add-btn" aria-label="Add Espresso to order">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal reveal-delay-1">
+            <div class="menu-card-img">
+              <img src="images/signature_cappuccino.jpg" alt="Creamy cappuccino with micro foam in a large white cup" loading="lazy">
+              <span class="menu-card-tag">$4.80</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-card-category">Milk Drinks</span>
+              <h4>Velvet Cappuccino</h4>
+              <p>Equal thirds of rich espresso, silky steamed milk, and dense micro-foam. Each cup is a masterpiece of temperature and texture — the barista's signature.</p>
+              <div class="menu-card-footer">
+                <span class="menu-price">$4.80</span>
+                <button class="menu-add-btn" aria-label="Add Cappuccino to order">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal reveal-delay-2">
+            <div class="menu-card-img">
+              <img src="images/menu_pourover.jpg" alt="Elegant pour-over coffee being brewed through a glass dripper" loading="lazy">
+              <span class="menu-card-tag">$5.50</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-card-category">Filter Coffee</span>
+              <h4>Ethiopian Pour-Over</h4>
+              <p>Slow-brewed Yirgacheffe beans with notes of blueberry, jasmine, and dark chocolate. A contemplative cup for those who appreciate coffee as a ritual.</p>
+              <div class="menu-card-footer">
+                <span class="menu-price">$5.50</span>
+                <button class="menu-add-btn" aria-label="Add Pour-Over to order">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal reveal-delay-3">
+            <div class="menu-card-img">
+              <img src="images/menu_latte.jpg" alt="Latte art in a wide ceramic mug with a leaf pattern" loading="lazy">
+              <span class="menu-card-tag">$4.50</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-card-category">Latte Specials</span>
+              <h4>Bookshelf Latte</h4>
+              <p>Our house latte with a hint of brown sugar and cardamom syrup. Topped with a rosette of micro-foam art — warm, sweet, and utterly comforting every time.</p>
+              <div class="menu-card-footer">
+                <span class="menu-price">$4.50</span>
+                <button class="menu-add-btn" aria-label="Add Latte to order">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal reveal-delay-1">
+            <div class="menu-card-img">
+              <img src="images/signature_nitro.jpg" alt="Cold brew nitro coffee with creamy nitrogen head" loading="lazy">
+              <span class="menu-card-tag">$5.00</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-card-category">Cold Brews</span>
+              <h4>Nitro Cold Brew</h4>
+              <p>18-hour cold-steeped Kenyan AA beans infused with nitrogen for a smooth, creamy pour that tastes like dessert in a glass. No ice needed, served straight.</p>
+              <div class="menu-card-footer">
+                <span class="menu-price">$5.00</span>
+                <button class="menu-add-btn" aria-label="Add Nitro Cold Brew to order">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal reveal-delay-2">
+            <div class="menu-card-img">
+              <img src="images/menu_croissant.jpg" alt="Golden flaky croissant on a wooden board with jam" loading="lazy">
+              <span class="menu-card-tag">$3.80</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-card-category">Bakery &amp; Bites</span>
+              <h4>Butter Croissant</h4>
+              <p>Baked fresh each morning using classic French lamination technique. Shatteringly crisp, golden layers with a custardy interior. Best enjoyed with our espresso.</p>
+              <div class="menu-card-footer">
+                <span class="menu-price">$3.80</span>
+                <button class="menu-add-btn" aria-label="Add Croissant to order">+</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center" style="margin-top:3rem;">
+          <a href="cafe.html" class="btn-primary-hero" style="display:inline-block;background:var(--mocha);color:var(--white);">
+            View Full Café Menu
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 5 — COMMUNITY STORIES
+         Unique Header: Bold stacked text with underline accent
+    ============================================================ -->
+    <section class="s5-stories" id="s5-stories" aria-label="Community Stories">
+      <div class="container-xl">
+
+        <!-- Bold underline accent header -->
+        <header class="header-underline-accent">
+          <p class="underline-accent-top reveal">Real Stories · Real People</p>
+          <h2 class="underline-accent-title reveal reveal-delay-1">
+            What Our <span>Community</span><br>Is Saying
+          </h2>
+          <p class="underline-accent-sub reveal reveal-delay-2">
+            Every review, every return visit, every "just one more chapter" — these are
+            the moments that make Pages &amp; Perks more than just a store.
+          </p>
+        </header>
+
+        <!-- 3 equal testimonial cards -->
+        <div class="testimonial-grid">
+
+          <article class="testimonial-card reveal">
+            <div class="t-avatar-row">
+              <div class="t-avatar">E</div>
+              <div>
+                <div class="t-name">Emma Reynolds</div>
+                <div class="t-role">Loyal Reader · Since 2019</div>
+              </div>
+            </div>
+            <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="t-quote">
+              "The atmosphere is unlike anywhere I've been. I found a first-edition copy of my favorite novel while sipping the most incredible latte. This place is pure magic — I visit every single week without fail."
+            </p>
+            <span class="t-tag"><i class="fas fa-book"></i> Books &amp; Coffee</span>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-1">
+            <div class="t-avatar-row">
+              <div class="t-avatar">M</div>
+              <div>
+                <div class="t-name">Marcus Chen</div>
+                <div class="t-role">Coffee Enthusiast · Since 2021</div>
+              </div>
+            </div>
+            <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="t-quote">
+              "As a coffee professional, I rarely visit bookstore cafés. But their Ethiopian pour-over is genuinely specialty-grade — floral, complex, beautiful. The baristas know their craft deeply and it shows in single cup."
+            </p>
+            <span class="t-tag"><i class="fas fa-mug-hot"></i> Specialty Coffee</span>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-2">
+            <div class="t-avatar-row">
+              <div class="t-avatar">S</div>
+              <div>
+                <div class="t-name">Sophia Martinez</div>
+                <div class="t-role">Community Member · Since 2020</div>
+              </div>
+            </div>
+            <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="t-quote">
+              "The weekly poetry nights are the absolute highlight of my month. Pages &amp; Perks is more than a store — it's a vibrant, welcoming hub for every creative soul and curious mind in this city."
+            </p>
+            <span class="t-tag"><i class="fas fa-microphone"></i> Events &amp; Community</span>
+          </article>
+
+        </div>
+
+        <!-- Review summary bar -->
+        <div style="margin-top:3rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;" class="reveal">
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-dm);font-size:3.5rem;color:var(--white);line-height:1;">4.9</div>
+            <div style="color:var(--gold);font-size:1rem;margin:0.3rem 0;">★★★★★</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.15em;">Average Rating</div>
+          </div>
+          <div style="width:1px;height:80px;background:rgba(255,255,255,0.1);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-dm);font-size:3.5rem;color:var(--white);line-height:1;">1,240+</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.15em;margin-top:0.8rem;">Verified Reviews</div>
+          </div>
+          <div style="width:1px;height:80px;background:rgba(255,255,255,0.1);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-dm);font-size:3.5rem;color:var(--white);line-height:1;">98%</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.15em;margin-top:0.8rem;">Would Recommend</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 6 — VISIT US / STORE SPACES
+         Unique Header: Asymmetric pill badge style
+    ============================================================ -->
+    <section class="s6-visit" id="s6-visit" aria-label="Visit Our Store">
+      <div class="container-xl">
+
+        <!-- Pill badge asymmetric header -->
+        <header class="header-pill-badge">
+          <div class="pill-badge-inner reveal">
+            <div class="pill-badge-left">
+              <span class="pill-eyebrow"><i class="fas fa-location-dot"></i> Open 7 Days</span>
+              <h2 class="pill-badge-title">
+                Your Home Away<br>From Home —<br><em>Come Find Us</em>
+              </h2>
+            </div>
+            <div class="pill-badge-right">
+              <p>
+                Pages &amp; Perks is more than a destination — it's a daily ritual for
+                thousands of readers and coffee lovers across the city. Three floors of curated
+                books, a full-service café bar, private event rooms, and sun-drenched reading
+                patios await you every single day.
+              </p>
+              <a href="contact.html" class="btn-visit"><i class="fas fa-map-pin"></i> Get Directions</a>
+            </div>
+          </div>
+        </header>
+
+        <!-- 3 equal feature cards with images -->
+        <div class="feature-grid">
+
+          <article class="feature-card reveal">
+            <div class="feature-card-img">
+              <img src="images/seating_lounge.jpg" alt="Cozy reading lounge with leather armchairs and tall bookshelves" loading="lazy">
+            </div>
+            <div class="feature-card-body">
+              <div class="feature-num" aria-hidden="true">01</div>
+              <h4>The Reading Lounge</h4>
+              <p>Plush leather armchairs, floor-to-ceiling shelves, soft ambient music, and warm reading lamps. Our flagship quiet zone — where hours disappear into the pages.</p>
+              <span class="feature-pill"><i class="fas fa-volume-xmark"></i> Quiet Zone · Capacity 30</span>
+            </div>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-1">
+            <div class="feature-card-img">
+              <img src="images/seating_study.jpg" alt="Community study tables with power outlets and good lighting" loading="lazy">
+            </div>
+            <div class="feature-card-body">
+              <div class="feature-num" aria-hidden="true">02</div>
+              <h4>Community Study Hall</h4>
+              <p>Reclaimed wood communal tables with USB-C power outlets, high-speed Wi-Fi, and natural daylight. Perfect for students, freelancers, and book clubs alike.</p>
+              <span class="feature-pill"><i class="fas fa-wifi"></i> Free Wi-Fi · Power Outlets</span>
+            </div>
+          </article>
+
+          <article class="feature-card reveal reveal-delay-2">
+            <div class="feature-card-img">
+              <img src="images/garden_reading_patio.jpg" alt="Outdoor reading patio with plants and cozy seating" loading="lazy">
+            </div>
+            <div class="feature-card-body">
+              <div class="feature-num" aria-hidden="true">03</div>
+              <h4>Garden Reading Patio</h4>
+              <p>A sun-drenched outdoor terrace wrapped in greenery, heated year-round. Fresh air, birdsong, cold brew in hand — the ultimate al fresco reading experience.</p>
+              <span class="feature-pill"><i class="fas fa-sun"></i> Open Year-Round · Heated</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Info cards row -->
+        <div class="info-row">
+          <div class="info-card reveal">
+            <i class="fas fa-map-marker-alt"></i>
+            <strong>Our Location</strong>
+            <span>123 Book Lover's Lane<br>Coffee Haven, CH 12345</span>
+          </div>
+          <div class="info-card reveal reveal-delay-1">
+            <i class="fas fa-clock"></i>
+            <strong>Opening Hours</strong>
+            <span>Mon–Fri: 8:00 AM – 10:00 PM<br>Sat–Sun: 9:00 AM – 11:00 PM</span>
+          </div>
+          <div class="info-card reveal reveal-delay-2">
+            <i class="fas fa-phone"></i>
+            <strong>Get In Touch</strong>
+            <span>+1 (555) 234-5678<br>hello@pagesandperks.com</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  
+    <!-- 5b. SPOTLIGHT: Curator's Quote & Philosophy -->
+    <section id="spotlight-quote" class="py-16 bg-[#FAF7F2] relative z-10">
+      <div class="container mx-auto px-4 text-center max-w-3xl scroll-reveal">
+        <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Bookstore Wisdom</span>
+        <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-3 mb-8 rounded-full"></div>
+        <blockquote class="font-serif text-xl md:text-2xl text-[#6F4E37] italic leading-relaxed mb-6">
+          "A room without books is like a body without a soul, but a room with books and the aroma of roasted coffee beans is where the soul finds its home."
+        </blockquote>
+        <cite class="text-xs uppercase tracking-wider text-gray-500 font-bold block">— Curator Helena Blake</cite>
+      </div>
+    </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* ---- Navbar scroll effect ---- */
+    const nav = document.getElementById('mainNavbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    /* ---- Scroll Reveal ---- */
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ---- Animated Counter ---- */
+    function animateCount(el, target, duration = 1800) {
+      let start = 0;
+      const step = Math.ceil(target / (duration / 16));
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) { el.textContent = target.toLocaleString(); clearInterval(timer); }
+        else { el.textContent = start.toLocaleString(); }
+      }, 16);
+    }
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = parseInt(e.target.dataset.target, 10);
+          if (!isNaN(target)) animateCount(e.target, target);
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-target]').forEach(el => statObserver.observe(el));
+
+    /* ---- Menu Add Button Feedback ---- */
+    document.querySelectorAll('.menu-add-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.textContent = '✓';
+        this.style.background = '#4a7c59';
+        setTimeout(() => { this.textContent = '+'; this.style.background = ''; }, 1200);
+      });
+    });
+  </script>
+
+</body>
+</html>

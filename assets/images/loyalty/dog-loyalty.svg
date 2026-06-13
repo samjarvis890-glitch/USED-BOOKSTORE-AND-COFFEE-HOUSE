@@ -1,0 +1,54 @@
+<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 600 400 width=600 height=400>
+  <rect width=600 height=400 fill=#FAF7F2/>
+  <!-- Stars background decoration -->
+  <text x=50 y=80 font-size=20 fill=#C4A484 opacity=0.3>?</text>
+  <text x=520 y=120 font-size=16 fill=#C4A484 opacity=0.3>?</text>
+  <text x=100 y=340 font-size=14 fill=#C4A484 opacity=0.3>?</text>
+  <!-- Gold crown -->
+  <polygon points=280,60 300,40 320,60 340,45 360,60 380,60 380,80 220,80 220,60 240,45 fill=#D4AF37 opacity=0.8/>
+  <circle cx=300 cy=52 r=8 fill=#C4A484/>
+  <circle cx=260 cy=62 r=6 fill=#C4A484/>
+  <circle cx=340 cy=62 r=6 fill=#C4A484/>
+  <!-- Black labrador body -->
+  <ellipse cx=300 cy=300 rx=90 ry=70 fill=#2B1810/>
+  <!-- Head -->
+  <circle cx=300 cy=210 r=62 fill=#2B1810/>
+  <!-- Ear markings -->
+  <ellipse cx=250 cy=225 rx=24 ry=42 fill=#1a1008 transform=rotate(-12 250 225)/>
+  <ellipse cx=350 cy=225 rx=24 ry=42 fill=#1a1008 transform=rotate(12 350 225)/>
+  <!-- Bright brown eyes on dark dog -->
+  <circle cx=282 cy=205 r=14 fill=#8B4513/>
+  <circle cx=318 cy=205 r=14 fill=#8B4513/>
+  <circle cx=282 cy=205 r=8 fill=#2B1810/>
+  <circle cx=318 cy=205 r=8 fill=#2B1810/>
+  <circle cx=285 cy=202 r=4 fill=white/>
+  <circle cx=321 cy=202 r=4 fill=white/>
+  <!-- Nose -->
+  <ellipse cx=300 cy=228 rx=14 ry=9 fill=#1a1008/>
+  <ellipse cx=297 cy=226 rx=5 ry=3 fill=#444 opacity=0.5/>
+  <!-- Big happy smile -->
+  <path d=M282 240 Q300 256 318 240 fill=#8B0000/>
+  <path d=M282 240 Q300 256 318 240 fill=none stroke=#3B2012 stroke-width=2/>
+  <!-- Tongue -->
+  <ellipse cx=300 cy=252 rx=12 ry=9 fill=#E8916A/>
+  <!-- Paws holding loyalty card -->
+  <ellipse cx=210 cy=310 rx=40 ry=30 fill=#2B1810/>
+  <ellipse cx=390 cy=310 rx=40 ry=30 fill=#2B1810/>
+  <!-- Loyalty card -->
+  <rect x=222 y=280 width=156 height=98 rx=12 fill=#6F4E37/>
+  <rect x=230 y=288 width=140 height=82 rx=8 fill=#8B5E3C/>
+  <!-- Coffee stamp circles -->
+  <circle cx=254 cy=308 r=10 fill=#C4A484 stroke=#EADBC8 stroke-width=2/>
+  <text x=254 y=312 text-anchor=middle font-size=10 fill=#6F4E37>?</text>
+  <circle cx=280 cy=308 r=10 fill=#C4A484 stroke=#EADBC8 stroke-width=2/>
+  <text x=280 y=312 text-anchor=middle font-size=10 fill=#6F4E37>?</text>
+  <circle cx=306 cy=308 r=10 fill=#C4A484 stroke=#EADBC8 stroke-width=2/>
+  <text x=306 y=312 text-anchor=middle font-size=10 fill=#6F4E37>?</text>
+  <circle cx=332 cy=308 r=10 fill=white stroke=#EADBC8 stroke-width=2 opacity=0.4/>
+  <circle cx=358 cy=308 r=10 fill=white stroke=#EADBC8 stroke-width=2 opacity=0.4/>
+  <text x=300 y=350 text-anchor=middle font-family=Georgia font-size=9 fill=#EADBC8>Pages &amp; Perks VIP</text>
+  <!-- Dog collar with tag -->
+  <rect x=268 y=260 width=64 height=12 rx=6 fill=#8B0000/>
+  <circle cx=300 cy=272 r=8 fill=#D4AF37/>
+  <text x=300 y=276 text-anchor=middle font-size=7 fill=#6F4E37 font-weight=bold>VIP</text>
+</svg>

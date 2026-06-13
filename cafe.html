@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Explore the gourmet cafe menu at Pages & Perks. Specialty coffee, pour-overs, organic matcha, and fresh pastries.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>Gourmet Cafe Menu | Used Bookstore & Coffee House</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+      
+      <!-- Mobile Toggle Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
+      </button>
+      
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main style="margin-top: 80px;">
+    
+    <!-- 1. HERO SECTION: Barista Craft & Coffee Profile Split -->
+    <section id="cafe-hero" class="relative overflow-hidden py-20 lg:py-28 bg-[#1E140F] text-white">
+      <!-- Background Graphic Overlay -->
+      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div class="absolute -left-20 -top-20 w-96 h-96 bg-[#C4A484] rounded-full blur-[120px]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#6F4E37] rounded-full blur-[120px]"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          
+          <!-- LEFT COLUMN: Elegant Cafe Intro -->
+          <div class="lg:w-1/2 text-center lg:text-left space-y-6 scroll-reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C4A484]/30 bg-[#C4A484]/10 backdrop-blur-sm justify-center lg:justify-start">
+              <span class="w-2 h-2 rounded-full bg-[#C4A484] animate-pulse"></span>
+              <span class="text-[#C4A484] uppercase tracking-widest text-xs font-bold font-sans">Artisan Roastery & Lounge</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight text-[#FAF7F2]">
+              The Perfect Brew for <br class="hidden lg:block"><span class="text-[#C4A484] italic font-light">Every Chapter</span>
+            </h1>
+            
+            <p class="text-base md:text-lg text-[#EADBC8] max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans">
+              Indulge in our carefully sourced single-origin coffees, extracted with meticulous precision by certified baristas. Settle into our comfortable bookish sanctuary.
+            </p>
+            
+            <!-- Quick Interactive Flavor Selector Preview -->
+            <div class="bg-[#2C1E16] border border-[#C4A484]/20 p-4 rounded-2xl max-w-md mx-auto lg:mx-0 text-left">
+              <div class="flex items-center justify-between text-xs text-[#C4A484] font-bold uppercase tracking-wider mb-2">
+                <span>Today's Bar Roastery</span>
+                <span class="bg-[#C4A484]/25 text-[#FAF7F2] px-2.5 py-0.5 rounded-full text-[10px]">Ethiopia Yirgacheffe</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded-full text-white/80"><i class="fas fa-seedling text-[#C4A484] me-1"></i> Jasmine</span>
+                <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded-full text-white/80"><i class="fas fa-lemon text-[#C4A484] me-1"></i> Lemon Peel</span>
+                <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded-full text-white/80"><i class="fas fa-cookie text-[#C4A484] me-1"></i> Honey Blossom</span>
+              </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+              <a href="#cafe-menu" class="px-8 py-3.5 rounded-full bg-[#C4A484] text-[#1B1B1B] font-bold shadow-lg hover:bg-white hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 no-underline">
+                View Lounge Menu
+              </a>
+              <a href="contact.html" class="px-8 py-3.5 rounded-full border-2 border-white/20 text-white font-bold hover:bg-white/10 transition-all duration-300 no-underline">
+                Reserve Lounge Seat
+              </a>
+            </div>
+          </div>
+          
+          <!-- RIGHT COLUMN: Premium Coffee Profile Card -->
+          <div class="lg:w-1/2 w-full flex justify-center scroll-reveal delay-200">
+            <div class="relative w-full max-w-md bg-[#251A14] border border-[#C4A484]/30 rounded-[32px] p-5 md:p-6 shadow-2xl hover:border-[#C4A484] transition-all duration-500 group text-left">
+              <!-- Animated floating beans decoration -->
+              <div class="absolute -top-6 -right-6 w-16 h-16 bg-[#C4A484] opacity-25 rounded-full blur-xl animate-pulse"></div>
+              
+              <!-- Featured Brew Header -->
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Barista's Choice</span>
+                <div class="flex items-center gap-1.5">
+                  <i class="fas fa-fire text-[#C4A484] text-xs"></i>
+                  <span class="text-[11px] font-semibold text-[#EADBC8]">Freshly Roasted</span>
+                </div>
+              </div>
+              
+              <!-- Image Container with Brew Stats Overlays -->
+              <div class="relative h-60 rounded-2xl overflow-hidden mb-5">
+                <img src="images/cafe_hero.jpg" alt="Artisan extraction pouring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                
+                <!-- Floating Brew Stats -->
+                <div class="absolute top-4 left-4 bg-[#1E140F]/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-xl text-center">
+                  <p class="text-[9px] uppercase tracking-wider text-[#C4A484] font-bold mb-0">Temp</p>
+                  <p class="text-xs font-bold text-[#FAF7F2] mb-0">94°C / 201°F</p>
+                </div>
+                
+                <div class="absolute bottom-4 right-4 bg-[#1E140F]/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-xl text-center">
+                  <p class="text-[9px] uppercase tracking-wider text-[#C4A484] font-bold mb-0">Ratio</p>
+                  <p class="text-xs font-bold text-[#FAF7F2] mb-0">1:16 Brew</p>
+                </div>
+              </div>
+              
+              <!-- Brew Profile Specs -->
+              <div class="space-y-4">
+                <div>
+                  <h3 class="text-2xl font-serif text-[#FAF7F2] mb-1">Pour-Over Chemex</h3>
+                  <p class="text-xs text-[#EADBC8]/70 font-sans mb-0">Crafted slowly to highlight delicate floral & citrus notes.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3 border-t border-[#C4A484]/25 pt-4">
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-[#C4A484] font-semibold block mb-0.5">Origin</span>
+                    <span class="text-sm font-bold text-[#FAF7F2]">Sidama, Ethiopia</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-[#C4A484] font-semibold block mb-0.5">Grind Level</span>
+                    <span class="text-sm font-bold text-[#FAF7F2]">Medium Coarse</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-[#C4A484] font-semibold block mb-0.5">Roast Level</span>
+                    <span class="text-sm font-bold text-[#FAF7F2]">Light-Medium</span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-[#C4A484] font-semibold block mb-0.5">Extraction Time</span>
+                    <span class="text-sm font-bold text-[#FAF7F2]">3m 45s</span>
+                  </div>
+                </div>
+                
+                <!-- Live Barista Info -->
+                <div class="bg-[#1E140F] border border-[#C4A484]/20 p-3 rounded-xl flex items-center justify-between mt-2">
+                  <div class="flex items-center gap-3">
+                    <img src="images/about-team-2.jpg" alt="Barista Julian" class="w-8 h-8 rounded-full object-cover">
+                    <div>
+                      <p class="text-[10px] text-[#C4A484] font-bold uppercase tracking-wider mb-0 leading-none">On Bar Today</p>
+                      <p class="text-xs font-bold text-[#FAF7F2] mb-0 mt-1">Julian Reed (Barista)</p>
+                    </div>
+                  </div>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#3D8B5C]" title="Online - Pulling Shots"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Bottom Separator Wave -->
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
+        <svg class="relative block w-full h-10" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#ffffff" class="fill-white dark:fill-[#1E1610]"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. SIGNATURE COFFEE: Alternating Image Blocks -->
+    <section id="cafe-signature" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">House Specialty</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-[#6F4E37] mt-1">Our Signature Roasts</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <!-- Block 1: Left Image, Right Text -->
+        <div class="flex flex-col lg:flex-row items-center gap-12 mb-20 scroll-reveal">
+          <div class="lg:w-1/2">
+            <img src="images/signature_espresso.jpg" alt="Velvet Espresso Shot" class="rounded-3xl shadow-xl w-full object-cover h-96">
+          </div>
+          <div class="lg:w-1/2 space-y-4">
+            <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Double Shot extraction</span>
+            <h3 class="text-2xl md:text-3xl font-serif text-[#6F4E37]">The Velvet Double Espresso</h3>
+            <p class="text-gray-700">
+              Pulled from our custom Ethiopian-Colombian organic beans.<br>
+              Notes subtle hints of dark cocoa, toasted hazelnuts, and a smooth molasses finish.<br>
+              Pairs beautifully with a classical fiction novel or cozy afternoon reading session.
+            </p>
+            <span class="inline-block px-4 py-2 bg-[#FAF7F2] rounded-full text-xs font-bold text-[#6F4E37] border border-[#EADBC8]">$4.50</span>
+          </div>
+        </div>
+
+        <!-- Block 2: Right Image, Left Text -->
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-12 mb-20 scroll-reveal">
+          <div class="lg:w-1/2">
+            <img src="images/signature_cappuccino.jpg" alt="Tan Cappuccino Cup" class="rounded-3xl shadow-xl w-full object-cover h-96">
+          </div>
+          <div class="lg:w-1/2 space-y-4">
+            <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Thick Microfoam</span>
+            <h3 class="text-2xl md:text-3xl font-serif text-[#6F4E37]">Specialty Tan Cappuccino</h3>
+            <p class="text-gray-700">
+              Perfectly steamed dense microfoam layered over rich, artisanal espresso.<br>
+              Completed with a dusting of organic cinnamon and fresh nutmeg flakes.<br>
+              An elegant and classic choice to warm up your study hour in the lounge.
+            </p>
+            <span class="inline-block px-4 py-2 bg-[#FAF7F2] rounded-full text-xs font-bold text-[#6F4E37] border border-[#EADBC8]">$5.00</span>
+          </div>
+        </div>
+
+        <!-- Block 3: Left Image, Right Text -->
+        <div class="flex flex-col lg:flex-row items-center gap-12 scroll-reveal">
+          <div class="lg:w-1/2">
+            <img src="images/signature_nitro.jpg" alt="Nitro Cold Brew Glass" class="rounded-3xl shadow-xl w-full object-cover h-96">
+          </div>
+          <div class="lg:w-1/2 space-y-4">
+            <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Cold extraction draft</span>
+            <h3 class="text-2xl md:text-3xl font-serif text-[#6F4E37]">Rich Nitro Draft Cold Brew</h3>
+            <p class="text-gray-700">
+              Slow-dripped for 16 hours and nitrogen-infused fresh on tap.<br>
+              Cascades with a creamy stout-like head and a smooth texture.<br>
+              Offers a strong, high caffeine kick with absolutely zero bitterness.
+            </p>
+            <span class="inline-block px-4 py-2 bg-[#FAF7F2] rounded-full text-xs font-bold text-[#6F4E37] border border-[#EADBC8]">$5.75</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- 2b. BREWING ARTISTRY: Specialty Methods -->
+    <section id="brewing-guide" class="py-16 bg-white relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Science & Craft</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-[#6F4E37] mt-1">Our Brewing Rituals</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-3 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 text-center">
+          <div class="uniform-card p-6 bg-[#FAF7F2] rounded-2xl border border-gray-100 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#6F4E37]/10 text-[#6F4E37] flex items-center justify-center text-2xl mx-auto mb-4"><i class="fas fa-filter"></i></div>
+            <h4 class="font-serif font-bold text-[#6F4E37] mb-2">V60 Drip</h4>
+            <p class="text-xs text-gray-500 mb-0 leading-relaxed">Clean, crisp body highlighting high acidity and sweet, bright notes.</p>
+          </div>
+          <div class="uniform-card p-6 bg-[#FAF7F2] rounded-2xl border border-gray-100 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#6F4E37]/10 text-[#6F4E37] flex items-center justify-center text-2xl mx-auto mb-4"><i class="fas fa-hourglass-start"></i></div>
+            <h4 class="font-serif font-bold text-[#6F4E37] mb-2">Chemex</h4>
+            <p class="text-xs text-gray-500 mb-0 leading-relaxed">Thicker filters remove all bitter oils, offering sediment-free, pure cup.</p>
+          </div>
+          <div class="uniform-card p-6 bg-[#FAF7F2] rounded-2xl border border-gray-100 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#6F4E37]/10 text-[#6F4E37] flex items-center justify-center text-2xl mx-auto mb-4"><i class="fas fa-compress-arrows-alt"></i></div>
+            <h4 class="font-serif font-bold text-[#6F4E37] mb-2">Aeropress</h4>
+            <p class="text-xs text-gray-500 mb-0 leading-relaxed">Rapid, total immersion filtration yielding full-bodied, low-acid brew.</p>
+          </div>
+          <div class="uniform-card p-6 bg-[#FAF7F2] rounded-2xl border border-gray-100 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#6F4E37]/10 text-[#6F4E37] flex items-center justify-center text-2xl mx-auto mb-4"><i class="fas fa-cogs"></i></div>
+            <h4 class="font-serif font-bold text-[#6F4E37] mb-2">Cold Brew</h4>
+            <p class="text-xs text-gray-500 mb-0 leading-relaxed">16-hour cold water steep resulting in chocolatey, bold, low-acid flavor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. COFFEE MENU: Interactive Tabbed Menu -->
+    <section id="cafe-menu" class="py-16 md:py-24 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <h2 class="text-3xl font-serif text-[#6F4E37]">Gourmet Lounge Menu</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-2 rounded-full"></div>
+          
+          <!-- Menu Category Tabs -->
+          <div class="flex flex-wrap justify-center gap-3 mt-8 cafe-menu-tabs">
+            <button data-category="all" class="px-6 py-2 bg-[#6F4E37] text-white rounded-full font-semibold transition-all">All Items</button>
+            <button data-category="espresso" class="px-6 py-2 bg-[#EADBC8] text-[#6F4E37] rounded-full font-semibold transition-all">Espresso Classics</button>
+            <button data-category="brews" class="px-6 py-2 bg-[#EADBC8] text-[#6F4E37] rounded-full font-semibold transition-all">Manual Brews</button>
+            <button data-category="teas" class="px-6 py-2 bg-[#EADBC8] text-[#6F4E37] rounded-full font-semibold transition-all">Organic Teas</button>
+            <button data-category="pastries" class="px-6 py-2 bg-[#EADBC8] text-[#6F4E37] rounded-full font-semibold transition-all">Fresh Pastries</button>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-center">
+          <!-- Item 1 (Espresso) -->
+          <div class="col-12 col-md-6 menu-category-section flex" id="menu-espresso">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 w-full">
+              <img src="images/menu_latte.jpg" alt="Latte" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+              <div class="flex-grow">
+                <div class="flex justify-between font-bold text-[#6F4E37]">
+                  <span>Specialty Vanilla Latte</span>
+                  <span>$5.50</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">Made with premium Madagascar vanilla syrup and double espresso shot.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 (Pastries) -->
+          <div class="col-12 col-md-6 menu-category-section flex" id="menu-pastries">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 w-full">
+              <img src="images/menu_croissant.jpg" alt="Croissant" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+              <div class="flex-grow">
+                <div class="flex justify-between font-bold text-[#6F4E37]">
+                  <span>Flaky Butter Croissant</span>
+                  <span>$3.75</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">Baked daily using pure French butter. Warm & crispy. Simply delicious.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 (Brews) -->
+          <div class="col-12 col-md-6 menu-category-section flex" id="menu-brews">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 w-full">
+              <img src="images/menu_pourover.jpg" alt="Chemex Pour over" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+              <div class="flex-grow">
+                <div class="flex justify-between font-bold text-[#6F4E37]">
+                  <span>Chemex Pour-Over</span>
+                  <span>$4.95</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">Precision brewed single origin beans, highlighting crisp floral notes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 (Teas) -->
+          <div class="col-12 col-md-6 menu-category-section flex" id="menu-teas">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 w-full">
+              <img src="images/menu_tea.jpg" alt="Matcha Latte" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+              <div class="flex-grow">
+                <div class="flex justify-between font-bold text-[#6F4E37]">
+                  <span>Ceremonial Matcha Latte</span>
+                  <span>$5.25</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">Organic stone-ground matcha whisked with oat milk. Highly recommended.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CAFE GALLERY: Premium Photo Grid -->
+    <section id="cafe-gallery" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <h2 class="text-3xl font-serif text-[#6F4E37]">Lounge Gallery</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="row g-4 scroll-reveal items-stretch">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+              <img src="images/gallery_1.jpg" alt="Espresso extraction" class="w-full h-full object-cover hover:scale-110 transition-all duration-300">
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+              <img src="images/gallery_2.jpg" alt="Bookshelves fireplace" class="w-full h-full object-cover hover:scale-110 transition-all duration-300">
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+              <img src="images/gallery_3.jpg" alt="Pastry case display" class="w-full h-full object-cover hover:scale-110 transition-all duration-300">
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="h-64 rounded-2xl overflow-hidden shadow-sm">
+              <img src="images/gallery_4.jpg" alt="Comfortable armchairs" class="w-full h-full object-cover hover:scale-110 transition-all duration-300">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SEATING EXPERIENCE: Seating Cards -->
+    <section id="cafe-seating" class="py-16 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Find Your Corner</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-1">Cozy Seating Spaces</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-stretch">
+          <div class="scroll-reveal delay-100 h-full">
+            <div class="coffee-card h-full flex flex-col bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
+              <img src="images/seating_cozy.png" alt="Reading Armchair" class="w-full h-48 object-cover rounded-xl mb-4">
+              <h3 class="text-xl font-bold text-[#6F4E37]">Cozy Fireplace Nooks</h3>
+              <p class="text-gray-600 text-xs mt-2 leading-relaxed flex-grow">
+                Plush velvet armchairs directly nestled beside shelves of classical literature. Features warm reading lamps.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="scroll-reveal delay-200 h-full">
+            <div class="coffee-card h-full flex flex-col bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
+              <img src="images/seating_study.jpg" alt="Study Desk" class="w-full h-48 object-cover rounded-xl mb-4">
+              <h3 class="text-xl font-bold text-[#6F4E37]">Silent Study Desks</h3>
+              <p class="text-gray-600 text-xs mt-2 leading-relaxed flex-grow">
+                Equipped with individual power outlets, warm desk lighting, and soft acoustic shielding. 
+              </p>
+            </div>
+          </div>
+ 
+          <div class="scroll-reveal delay-300 h-full md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full">
+            <div class="coffee-card h-full flex flex-col bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
+              <img src="images/seating_lounge.jpg" alt="Group Sofas" class="w-full h-48 object-cover rounded-xl mb-4">
+              <h3 class="text-xl font-bold text-[#6F4E37]">Social Velvet Sofas</h3>
+              <p class="text-gray-600 text-xs mt-2 leading-relaxed flex-grow">
+                Spacious couch circles surrounding solid oak coffee tables. Optimal for book club groups and collaborative discussions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CTA: Booking reserve -->
+    <section id="cafe-cta" class="py-20 text-white" style="background-image: linear-gradient(rgba(27,27,27,0.88), rgba(27,27,27,0.88)), url('images/cafe_cta.jpg'); background-size: cover; background-position: center;">
+      <div class="container mx-auto px-4 text-center scroll-reveal">
+        <h2 class="text-3xl md:text-5xl font-serif mb-4 text-[#FAF7F2]">Sip, Read, and Relax</h2>
+        <p class="text-base md:text-lg max-w-xl mx-auto mb-8 text-[#EADBC8]">
+          Planning a study session or book group event? Reserve a dedicated desk nook or coffee lounge circle in advance.
+        </p>
+        <a href="contact.html" class="px-8 py-3.5 bg-[#C4A484] text-black rounded-full font-bold hover:bg-white transition-all">
+          Reserve Table & Desk
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

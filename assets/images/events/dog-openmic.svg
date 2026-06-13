@@ -1,0 +1,60 @@
+<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 600 400 width=600 height=400>
+  <rect width=600 height=400 fill=#1B1B1B/>
+  <!-- Stage spotlights -->
+  <path d=M200 0 L120 250 L280 250 Z fill=#FFEDCC opacity=0.06/>
+  <path d=M400 0 L320 250 L480 250 Z fill=#FFEDCC opacity=0.06/>
+  <!-- Stage platform -->
+  <rect x=80 y=290 width=440 height=50 rx=6 fill=#3B2012/>
+  <rect x=80 y=286 width=440 height=8 fill=#8B5E3C/>
+  <!-- Microphone stand -->
+  <rect x=292 y=180 width=16 height=110 rx=4 fill=#444/>
+  <rect x=262 y=284 width=76 height=8 rx=4 fill=#555/>
+  <!-- Microphone head -->
+  <ellipse cx=300 cy=175 rx=16 ry=22 fill=#333/>
+  <rect x=284 y=178 width=32 height=16 rx=3 fill=#555/>
+  <!-- Corgi dog standing at mic -->
+  <!-- Body -->
+  <ellipse cx=300 cy=264 rx=55 ry=38 fill=#D4956A/>
+  <!-- Short corgi legs -->
+  <rect x=262 y=296 width=20 height=20 rx=6 fill=#D4956A/>
+  <rect x=288 y=296 width=20 height=20 rx=6 fill=#D4956A/>
+  <rect x=318 y=296 width=20 height=20 rx=6 fill=#D4956A/>
+  <rect x=344 y=296 width=20 height=20 rx=6 fill=#D4956A/>
+  <!-- Head -->
+  <circle cx=300 cy=222 r=46 fill=#D4956A/>
+  <!-- Corgi white face patch -->
+  <ellipse cx=300 cy=235 rx=30 ry=22 fill=#FAF7F2/>
+  <!-- Large corgi ears -->
+  <ellipse cx=264 cy=204 rx=20 ry=36 fill=#D4956A transform=rotate(-15 264 204)/>
+  <ellipse cx=336 cy=204 rx=20 ry=36 fill=#D4956A transform=rotate(15 336 204)/>
+  <!-- Inner ear -->
+  <ellipse cx=264 cy=205 rx=12 ry=24 fill=#E8916A opacity=0.5 transform=rotate(-15 264 205)/>
+  <ellipse cx=336 cy=205 rx=12 ry=24 fill=#E8916A opacity=0.5 transform=rotate(15 336 205)/>
+  <!-- Eyes -->
+  <circle cx=286 cy=218 r=9 fill=#2B1810/>
+  <circle cx=314 cy=218 r=9 fill=#2B1810/>
+  <circle cx=288 cy=215 r=3.5 fill=white/>
+  <circle cx=316 cy=215 r=3.5 fill=white/>
+  <!-- Nose -->
+  <ellipse cx=300 cy=232 rx=10 ry=7 fill=#2B1810/>
+  <!-- Open mouth singing! -->
+  <path d=M288 244 Q300 258 312 244 fill=#8B0000/>
+  <path d=M288 244 Q300 258 312 244 fill=none stroke=#9B5A2A stroke-width=2 stroke-linecap=round/>
+  <!-- Blush circles -->
+  <ellipse cx=272 cy=232 rx=12 ry=7 fill=#E8916A opacity=0.3/>
+  <ellipse cx=328 cy=232 rx=12 ry=7 fill=#E8916A opacity=0.3/>
+  <!-- Music notes floating -->
+  <text x=150 y=200 font-size=28 fill=#C4A484 opacity=0.6 font-family=serif>?</text>
+  <text x=420 y=180 font-size=22 fill=#C4A484 opacity=0.6 font-family=serif>?</text>
+  <text x=180 y=160 font-size=18 fill=#C4A484 opacity=0.4 font-family=serif>?</text>
+  <text x=440 y=220 font-size=20 fill=#C4A484 opacity=0.4 font-family=serif>?</text>
+  <!-- Audience silhouettes -->
+  <ellipse cx=120 cy=380 rx=25 ry=18 fill=#2c2c2c/>
+  <circle cx=120 cy=358 r=20 fill=#2c2c2c/>
+  <ellipse cx=180 cy=375 rx=25 ry=18 fill=#2c2c2c/>
+  <circle cx=180 cy=353 r=20 fill=#2c2c2c/>
+  <ellipse cx=420 cy=380 rx=25 ry=18 fill=#2c2c2c/>
+  <circle cx=420 cy=358 r=20 fill=#2c2c2c/>
+  <ellipse cx=480 cy=375 rx=25 ry=18 fill=#2c2c2c/>
+  <circle cx=480 cy=353 r=20 fill=#2c2c2c/>
+</svg>

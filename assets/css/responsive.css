@@ -1,0 +1,548 @@
+/* ==========================================================================
+   USED BOOKSTORE & COFFEE HOUSE — RESPONSIVE v2.0 (responsive.css)
+   Complete responsive system — all sections align properly
+   ========================================================================== */
+
+/* ── MOBILE XS (320px – 480px) ── */
+@media (max-width: 480px) {
+  body { font-size: 0.9rem; }
+  
+  main { margin-top: 70px !important; }
+
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  h1 { font-size: 1.9rem !important; line-height: 1.2 !important; }
+  h2 { font-size: 1.6rem !important; }
+  h3 { font-size: 1.25rem !important; }
+
+  .hero-main-img {
+    border-radius: 16px !important;
+    margin-top: 1.5rem;
+  }
+
+  .book-card,
+  .coffee-card,
+  .step-card,
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+
+  .auth-card {
+    padding: 1.5rem !important;
+    margin: 0.75rem !important;
+    border-radius: 20px !important;
+  }
+
+  .hide-on-mobile { display: none !important; }
+
+  /* Navbar brand on tiny screens */
+  .navbar-brand .brand-sub { display: none; }
+  .navbar-brand .brand-name { font-size: 1rem !important; }
+  .navbar-brand .brand-logo-img { max-height: 38px !important; }
+
+  /* Nav icons on small screens */
+  .nav-icons { flex-wrap: wrap; gap: 0.4rem !important; }
+  .login-btn { padding: 7px 16px !important; font-size: 0.8rem !important; }
+
+  /* Section divider centered */
+  .section-divider { margin: 0.75rem auto !important; }
+  .section-divider.left { margin-left: auto !important; }
+
+  /* Events cards stacked */
+  .event-date-badge { width: 48px !important; height: 48px !important; }
+  .event-date-badge .day { font-size: 1.1rem !important; }
+
+  /* Footer */
+  footer { text-align: center; }
+  footer .nav-social-row { justify-content: center !important; }
+  footer .footer-col { margin-bottom: 2rem; }
+
+  /* Stats grid on mobile */
+  .grid.grid-cols-3 {
+    gap: 0.5rem !important;
+  }
+  .grid.grid-cols-3 > div {
+    text-align: center;
+  }
+}
+
+/* ── MOBILE SM (481px – 639px) ── */
+@media (min-width: 481px) and (max-width: 639px) {
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.9rem !important; }
+
+  section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .dog-img-container { min-height: 260px; }
+}
+
+/* ── MOBILE MD (640px – 767px) ── */
+@media (min-width: 640px) and (max-width: 767px) {
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* ── TABLET (768px – 1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 { font-size: 2.8rem !important; }
+  h2 { font-size: 2.2rem !important; }
+
+  section {
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  /* Timeline adjustments */
+  .timeline-pathway::after { left: 35px !important; }
+  .timeline-block {
+    width: 100% !important;
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+  }
+  .timeline-block-left,
+  .timeline-block-right { left: 0 !important; }
+  .timeline-dot { left: 25px !important; right: auto !important; }
+
+  /* Grid cols tablet */
+  .grid-cols-tablet-2 { grid-template-columns: repeat(2, 1fr) !important; }
+
+}
+
+/* ── LAPTOP (1024px – 1279px) ── */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .container { max-width: 980px !important; }
+}
+@media (min-width: 1200px) and (max-width: 1279px) {
+  .container { max-width: 1140px !important; }
+}
+
+/* ── RARE BOOK CARDS RESPONSIVE OVERRIDES ── */
+@media (max-width: 1199px) {
+  #books-rare .rare-book-card {
+    flex-direction: column !important;
+  }
+  #books-rare .rare-book-card img {
+    width: 100% !important;
+    height: 256px !important;
+    object-fit: cover !important;
+  }
+}
+
+/* ── DESKTOP (1280px – 1439px) ── */
+@media (min-width: 1280px) {
+  .container { max-width: 1220px !important; }
+}
+
+/* ── LARGE DESKTOP (1440px+) ── */
+@media (min-width: 1440px) {
+  .container { max-width: 1360px !important; }
+  h1 { font-size: 4rem !important; }
+  h2 { font-size: 3rem !important; }
+}
+
+/* ── ULTRA WIDE (1920px+) ── */
+@media (min-width: 1920px) {
+  .container { max-width: 1680px !important; }
+}
+
+/* ── COMMON ALIGNMENT FIXES ── */
+
+/* Sections with flex layouts */
+@media (max-width: 767px) {
+  /* Force stack on mobile */
+  .lg\:flex-row { flex-direction: column !important; }
+  .lg\:w-1\/2,
+  .lg\:w-5\/12,
+  .lg\:w-7\/12 { width: 100% !important; }
+
+  /* Center text when stacked */
+  .text-center-mobile { text-align: center !important; }
+
+  /* Image first or second */
+  .order-first-mobile { order: -1 !important; }
+  .order-last-mobile { order: 1 !important; }
+
+  /* Navbar collapse override in style.css works here */
+  .timeline-pathway::after { left: 28px !important; }
+  .timeline-block {
+    width: 100% !important;
+    padding-left: 60px !important;
+    padding-right: 16px !important;
+    left: 0 !important;
+  }
+  .timeline-dot {
+    left: 18px !important;
+    right: auto !important;
+  }
+}
+
+/* ── GRID RESPONSIVE HELPERS ── */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.grid-auto-fit-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── HERO SECTION ALIGNMENT ── */
+@media (max-width: 767px) {
+  #hero-section .flex,
+  .hero-split { 
+    flex-direction: column !important; 
+    text-align: center !important; 
+  }
+
+  #hero-section .lg\:text-left { text-align: center !important; }
+  #hero-section .justify-center { justify-content: center !important; }
+  #hero-section .mx-0 { margin-left: auto !important; margin-right: auto !important; }
+}
+
+/* ── IMAGE RESPONSIVE ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-responsive {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  #mainNavbar,
+  #backToTop,
+  footer .newsletter-form { display: none !important; }
+
+  body { color: #000 !important; background: white !important; }
+  h1, h2, h3, h4 { color: #000 !important; }
+  a { color: #000 !important; }
+  section { padding: 1rem 0 !important; }
+}
+
+/* ── TOUCH DEVICE IMPROVEMENTS ── */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover transform effects that don't work well on touch */
+  .book-card:hover,
+  .coffee-card:hover,
+  .step-card:hover,
+  .glass-card:hover {
+    transform: none !important;
+  }
+
+  /* Larger tap targets */
+  .nav-link { padding: 0.9rem 1rem !important; }
+  .btn-primary-pp,
+  .btn-outline-pp,
+  .login-btn { padding: 14px 28px !important; }
+
+  /* Buttons should still look normal, just no transform */
+  .btn-submit:hover { transform: none; }
+  .social-btn:hover { transform: none; }
+}
+
+/* ── ACCESSIBILITY: FOCUS VISIBLE ── */
+*:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .floating-book {
+    animation: none !important;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ── COMPREHENSIVE ALIGNMENT FIXES (Nav & Footer) ── */
+
+/* Mobile Alignment (< 768px) */
+@media (max-width: 767px) {
+  /* Navbar */
+  .navbar-collapse {
+    text-align: center;
+  }
+  .navbar-nav {
+    align-items: center;
+    width: 100%;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+  .navbar-nav .nav-link {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+  .nav-icons {
+    justify-content: center !important;
+    width: 100%;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center !important;
+  }
+  footer .flex {
+    justify-content: center !important;
+  }
+  footer .items-start {
+    align-items: center !important;
+  }
+  footer .nav-social-row {
+    justify-content: center !important;
+  }
+  footer .footer-col {
+    margin-bottom: 2.5rem;
+  }
+  footer form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  footer h4 {
+    text-align: center !important;
+  }
+  footer .text-left {
+    text-align: center !important;
+  }
+  footer .justify-between {
+    justify-content: center !important;
+  }
+}
+
+/* Tablet/Laptop Alignment (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Navbar */
+  .navbar-collapse {
+    text-align: center;
+  }
+  .navbar-nav {
+    align-items: center;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+  .navbar-nav .nav-link {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+  .nav-icons {
+    justify-content: center !important;
+  }
+
+  /* Footer */
+  footer {
+    text-align: left;
+  }
+  footer h4 {
+    text-align: left;
+  }
+  footer .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Desktop Alignment (1200px+) */
+@media (min-width: 1200px) {
+  /* Navbar */
+  .navbar-nav {
+    align-items: center;
+  }
+  .nav-icons {
+    justify-content: flex-end;
+  }
+
+  /* Footer */
+  footer {
+    text-align: left;
+  }
+  footer h4 {
+    text-align: left;
+  }
+}
+
+
+/* ── GLOBAL EQUAL HEIGHT AND SAME-LINE ALIGNMENT FIXES (All Pages) ── */
+
+/* 1. Card Layout Equal Heights & Content Alignment on Tablet & Desktop (>= 768px) */
+@media (min-width: 768px) {
+  /* Grids and row wrappers should display flex to stretch children */
+  .grid,
+  .books-grid,
+  .exp-card-grid,
+  .menu-grid,
+  .testimonial-grid,
+  .feature-grid,
+  .books-grid-container {
+    align-items: stretch !important;
+  }
+
+  /* Make grid card wrapper divs (like scroll-reveal) flex containers to stretch their child cards */
+  .grid > div,
+  .books-grid-container > div,
+  .books-grid > div,
+  .exp-card-grid > div,
+  .menu-grid > div,
+  .testimonial-grid > div,
+  .feature-grid > div,
+  .row.items-stretch > div {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Force all cards to grow and stretch to 100% of their wrappers */
+  .grid > .scroll-reveal > *,
+  .books-grid-container > [class*="col-"] > *,
+  .row.items-stretch > [class*="col-"] > *,
+  .book-card,
+  .coffee-card,
+  .step-card,
+  .glass-card,
+  .testimonial-card,
+  .uniform-card,
+  .menu-card,
+  .feature-card,
+  .exp-card {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+  }
+
+  /* Ensure card content wrappers stretch and push footers/buttons to the bottom */
+  .book-card-body,
+  .menu-card-body,
+  .testimonial-content,
+  .uniform-card-content,
+  .card-content,
+  .book-card > div:last-child,
+  .coffee-card > div:last-child,
+  .glass-card > div:last-child {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* Align action links or buttons to the bottom of the card contents */
+  .book-card a,
+  .coffee-card a,
+  .step-card a,
+  .glass-card a,
+  .testimonial-card a,
+  .uniform-card-footer,
+  .menu-card-footer,
+  #events-section .grid > div > div > a {
+    margin-top: auto !important;
+  }
+}
+
+/* Restore rare-book-card flex-row layout on large screens */
+@media (min-width: 1200px) {
+  .grid > .scroll-reveal > .rare-book-card {
+    flex-direction: row !important;
+  }
+}
+
+/* 2. Keep Split Sections & Heroes side-by-side on Tablet view (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Force flex row layout for lg:flex-row on tablet */
+  .flex.flex-col.lg\:flex-row {
+    flex-direction: row !important;
+  }
+  .flex.flex-col.lg\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  /* Set equal widths for side-by-side split columns on tablet */
+  .flex.flex-col.lg\:flex-row > .lg\:w-1\/2,
+  .flex.flex-col.lg\:flex-row-reverse > .lg\:w-1\/2 {
+    width: 50% !important;
+  }
+  .flex.flex-col.lg\:flex-row > .lg\:w-5\/12 {
+    width: 41.666667% !important;
+  }
+  .flex.flex-col.lg\:flex-row > .lg\:w-7\/12 {
+    width: 58.333333% !important;
+  }
+
+  /* Keep text left-aligned and align content nicely when side-by-side */
+  .flex.flex-col.lg\:flex-row .lg\:text-left,
+  .flex.flex-col.lg\:flex-row-reverse .lg\:text-left {
+    text-align: left !important;
+  }
+  .flex.flex-col.lg\:flex-row .lg\:mx-0,
+  .flex.flex-col.lg\:flex-row-reverse .lg\:mx-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Ensure images in split layouts fit properly */
+  .flex.flex-col.lg\:flex-row img,
+  .flex.flex-col.lg\:flex-row-reverse img {
+    max-height: 450px !important;
+    object-fit: cover !important;
+  }
+}
+
+/* ── 22. RTL FOOTER ALIGNMENT OVERRIDES ── */
+[dir="rtl"] footer,
+[dir="rtl"] footer h4,
+[dir="rtl"] footer .text-left {
+  text-align: right !important;
+}
+
+/* ── 23. FOOTER GRID ALIGNMENT FIX ── */
+/* Exclude footer columns and their direct children from generic equal-height grid styles */
+@media (min-width: 768px) {
+  footer .grid > div {
+    display: block !important;
+    height: auto !important;
+  }
+
+  footer .grid > div > * {
+    display: block !important;
+    flex-grow: 0 !important;
+    height: auto !important;
+  }
+
+  footer .grid > div > .flex {
+    display: flex !important;
+  }
+  footer .grid > div > .flex-col {
+    flex-direction: column !important;
+  }
+}
+
+
+

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Join Pages & Perks Loyalty Program. Collect reward stamps, unlock rank benefits, and claim free specialty coffee.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>Pages & Perks Loyalty Club | Used Bookstore & Coffee House</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <style>
+    .punchcard-card {
+      background: linear-gradient(135deg, #6F4E37, #1B1B1B);
+      border-radius: 24px;
+      color: #FAF7F2;
+      border: 1px solid rgba(196,164,132,0.3);
+    }
+    .hero-split-image {
+      border-radius: 2rem 0 0 2rem;
+      object-fit: cover;
+      height: 100%;
+      min-height: 500px;
+    }
+    @media (max-width: 991px) {
+      .hero-split-image {
+        border-radius: 2rem;
+        min-height: 350px;
+        margin-top: 2rem;
+      }
+    }
+    .floating-badge {
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .uniform-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .uniform-card-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .uniform-card-footer {
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body class="bg-[#FAF7F2]">
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+      
+      <!-- Mobile Toggle Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
+      </button>
+      
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link active font-bold text-[#6F4E37]" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main style="margin-top: 80px;">
+    
+    <!-- 1. HERO SECTION: Creative Split Design -->
+    <section id="loyalty-hero" class="pt-12 pb-20 lg:pt-20 lg:pb-24 overflow-hidden bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="row align-items-center">
+          <div class="col-lg-5 order-2 order-lg-1 z-10">
+            <div class="pr-lg-4 scroll-reveal">
+              <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6 border border-[#EADBC8]">
+                <i class="fas fa-star text-[#C4A484] text-sm"></i>
+                <span class="text-[#6F4E37] text-xs font-bold uppercase tracking-widest">Premium Rewards Program</span>
+              </div>
+              <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-[#2c1e16] leading-tight mb-6">
+                Sip, Read, <span class="text-[#C4A484] italic">Earn Perks</span>
+              </h1>
+              <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                Transform your everyday visits into extraordinary experiences. Earn points on every specialty coffee and vintage book you take home.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="register.html" class="px-8 py-4 bg-[#6F4E37] text-white rounded-full font-bold hover:bg-[#2c1e16] transition-all shadow-lg hover:-translate-y-1">
+                  Join for Free
+                </a>
+                <a href="#loyalty-ranks" class="px-8 py-4 bg-white text-[#6F4E37] border-2 border-[#6F4E37] rounded-full font-bold hover:bg-[#6F4E37] hover:text-white transition-all shadow-sm flex items-center gap-2">
+                  View Benefits <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              
+              <div class="mt-10 flex items-center gap-4 text-sm text-gray-500 font-medium">
+                <div class="flex -space-x-3">
+                  <img src="images/loyalty/testimonial-1.jpg" alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="images/loyalty/testimonial-2.jpg" alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <div class="w-10 h-10 rounded-full border-2 border-white bg-[#EADBC8] flex items-center justify-center text-[#6F4E37] font-bold text-xs">+5k</div>
+                </div>
+                <span>Happy Members Already Joined</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-7 order-1 order-lg-2 relative mb-12 mb-lg-0 scroll-reveal">
+            <!-- Decorative Background Element -->
+            <div class="absolute -right-20 -top-20 w-[600px] h-[600px] bg-[#EADBC8]/30 rounded-full blur-3xl -z-10"></div>
+            
+            <div class="relative h-full">
+              <img src="images/loyalty/loyalty-hero.jpg" alt="Luxury Cafe Ambience" class="hero-split-image w-full shadow-2xl">
+              
+              
+                
+              </div>
+              
+              <!-- Floating Card 2 -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. NEW SECTION: How It Works -->
+    <section id="loyalty-how-it-works" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Simple Process</span>
+          <h2 class="text-4xl font-serif text-[#2c1e16] mt-2">How to Earn & Spend</h2>
+          <div class="w-20 h-1 bg-[#6F4E37] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-10 mb-lg-0 scroll-reveal">
+            <div class="relative">
+              <img src="images/loyalty/faq-image.jpg" alt="Person buying coffee and book" class="w-full rounded-3xl shadow-lg object-cover h-[500px]">
+              <div class="absolute inset-0 rounded-3xl border-2 border-[#C4A484] translate-x-4 translate-y-4 -z-10"></div>
+            </div>
+          </div>
+          
+          <div class="col-lg-5 offset-lg-1">
+            <div class="space-y-10">
+              <!-- Step 1 -->
+              <div class="flex gap-5 scroll-reveal delay-100">
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-[#FAF7F2] border border-[#EADBC8] flex items-center justify-center text-xl font-bold text-[#6F4E37] shadow-sm">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-[#2c1e16] mb-2">Create an Account</h3>
+                  <p class="text-gray-600">Sign up online or at the register. It’s completely free and takes less than a minute. You’ll automatically become a Silver member.</p>
+                </div>
+              </div>
+              
+              <!-- Step 2 -->
+              <div class="flex gap-5 scroll-reveal delay-200">
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-[#FAF7F2] border border-[#EADBC8] flex items-center justify-center text-xl font-bold text-[#6F4E37] shadow-sm">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-[#2c1e16] mb-2">Earn Points on Everything</h3>
+                  <p class="text-gray-600">Scan your digital ID with every purchase. Earn points on lattes, pastries, new arrivals, and even trade-in bonuses.</p>
+                </div>
+              </div>
+              
+              <!-- Step 3 -->
+              <div class="flex gap-5 scroll-reveal delay-300">
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-[#6F4E37] text-white flex items-center justify-center text-xl font-bold shadow-md transform scale-110">
+                  <i class="fas fa-gift"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-[#2c1e16] mb-2">Unlock HD Rewards</h3>
+                  <p class="text-gray-600">Redeem points for premium drinks, exclusive books, event tickets, and VIP lounge access. Your loyalty truly pays off.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PUNCH CARD PROGRAM: Interactive stamp card simulator -->
+    <section id="loyalty-punchcard" class="py-20 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto punchcard-card p-8 md:p-14 shadow-2xl scroll-reveal">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/20 pb-6 mb-10 gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-coffee text-[#C4A484] text-2xl"></i>
+                <h2 class="text-3xl font-serif font-bold text-[#EADBC8]">Digital Punch Card</h2>
+              </div>
+              <p class="text-sm text-gray-300">Buy 9 handcrafted coffee drinks, get the 10th absolutely FREE!</p>
+            </div>
+            <span class="bg-[#FAF7F2] text-[#6F4E37] text-sm font-bold px-4 py-2 rounded-full shadow-inner" id="punchStatusText">0 / 10 Stamps Collected</span>
+          </div>
+
+          <!-- Stamp slots -->
+          <div class="grid grid-cols-5 md:grid-cols-10 gap-4 md:gap-3 justify-items-center mb-10">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">1</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">2</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">3</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">4</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">5</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">6</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">7</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">8</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#FAF7F2]/50 flex items-center justify-center bg-black/20 stamp-slot-box punch-stamp-slot font-bold text-lg">9</div>
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-dashed border-[#C4A484] flex items-center justify-center bg-[#C4A484]/20 stamp-slot-box punch-stamp-slot transform scale-110">
+              <i class="fas fa-gift text-2xl text-[#C4A484]"></i>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="button" id="addStampBtn" class="px-8 py-4 bg-[#C4A484] text-black font-bold rounded-full hover:bg-white hover:text-[#6F4E37] transition-all shadow-md flex items-center gap-2 mx-auto">
+              <i class="fas fa-mug-hot"></i> Mock Purchase & Add Stamp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. REWARDS: Tiered List of Prizes -->
+    <section id="loyalty-rewards" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Reward Catalog</span>
+          <h2 class="text-4xl font-serif text-[#2c1e16] mt-2">Points Exchange Rewards</h2>
+          <div class="w-20 h-1 bg-[#6F4E37] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Uniform Cards Row -->
+        <div class="row g-4 align-items-stretch">
+          <!-- Reward 1 -->
+          <div class="col-md-4 scroll-reveal delay-100">
+            <div class="bg-[#FAF7F2] rounded-[2rem] border border-[#EADBC8] p-6 uniform-card transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img src="images/loyalty/reward-coffee.jpg" alt="Free Latte Cup" class="w-full rounded-[1.5rem] h-56 object-cover mb-5 shadow-sm">
+              <div class="uniform-card-content text-center">
+                <span class="inline-block text-xs uppercase tracking-widest text-[#6F4E37] font-bold bg-[#EADBC8] px-4 py-1.5 rounded-full mb-4">100 Points</span>
+                <h3 class="text-2xl font-bold text-[#2c1e16] mb-3">Free Specialty Brewed</h3>
+                <p class="text-gray-600 text-sm">Claim any handcrafted latte, pour-over, or organic hot matcha drink of any size, complete with flavor syrups.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reward 2 -->
+          <div class="col-md-4 scroll-reveal delay-200">
+            <div class="bg-[#FAF7F2] rounded-[2rem] border border-[#EADBC8] p-6 uniform-card transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img src="images/loyalty/reward-book.jpg" alt="Free Used Book Stack" class="w-full rounded-[1.5rem] h-56 object-cover mb-5 shadow-sm">
+              <div class="uniform-card-content text-center">
+                <span class="inline-block text-xs uppercase tracking-widest text-[#6F4E37] font-bold bg-[#EADBC8] px-4 py-1.5 rounded-full mb-4">250 Points</span>
+                <h3 class="text-2xl font-bold text-[#2c1e16] mb-3">Free Used Book Copy</h3>
+                <p class="text-gray-600 text-sm">Choose any book from our fiction, classic, or history shelves. Excludes rare collectibles and first editions.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reward 3 -->
+          <div class="col-md-4 scroll-reveal delay-300">
+            <div class="bg-[#FAF7F2] rounded-[2rem] border border-[#EADBC8] p-6 uniform-card transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img src="images/loyalty/reward-vip.jpg" alt="Author Ticket" class="w-full rounded-[1.5rem] h-56 object-cover mb-5 shadow-sm">
+              <div class="uniform-card-content text-center">
+                <span class="inline-block text-xs uppercase tracking-widest text-[#6F4E37] font-bold bg-[#EADBC8] px-4 py-1.5 rounded-full mb-4">500 Points</span>
+                <h3 class="text-2xl font-bold text-[#2c1e16] mb-3">VIP Guest Ticket</h3>
+                <p class="text-gray-600 text-sm">Get priority seating, complimentary drinks, and signed copies during our exclusive guest author readings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- 4b. COMPARISON: Membership Tiers & Perks -->
+    <section id="loyalty-comparison" class="py-16 bg-white relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Privilege Comparison</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-2">Tiers & Privileges</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-3 rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto overflow-hidden rounded-3xl border border-[#C4A484]/20 shadow-md">
+          <table class="table mb-0 w-full">
+            <thead>
+              <tr class="bg-[#FAF7F2] text-center font-serif text-[#6F4E37]">
+                <th class="py-4 text-left px-6">Perks & Privileges</th>
+                <th class="py-4">Coffee Apprentice</th>
+                <th class="py-4">Book Sage</th>
+                <th class="py-4 font-bold">Coffee & Book Legend</th>
+              </tr>
+            </thead>
+            <tbody class="text-center text-xs text-gray-600">
+              <tr class="border-b border-gray-100">
+                <td class="py-3 text-left px-6 font-semibold">Earn Rate</td>
+                <td class="py-3">1 Point / $1</td>
+                <td class="py-3">1.2 Points / $1</td>
+                <td class="py-3 font-bold text-[#6F4E37]">1.5 Points / $1</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 text-left px-6 font-semibold">Free Birthday Coffee</td>
+                <td class="py-3"><i class="fas fa-check text-green-600"></i></td>
+                <td class="py-3"><i class="fas fa-check text-green-600"></i></td>
+                <td class="py-3"><i class="fas fa-check text-green-600"></i></td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 text-left px-6 font-semibold">Rare Book Reserve Privileges</td>
+                <td class="py-3"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-3">24-Hour Hold</td>
+                <td class="py-3 font-bold text-[#6F4E37]">7-Day Hold</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-left px-6 font-semibold">Free Coffee Lounge Access</td>
+                <td class="py-3"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-3"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-3"><i class="fas fa-check text-green-600"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MEMBERSHIP BENEFITS: Silver, Gold, Platinum ranks comparative columns -->
+    <section id="loyalty-ranks" class="py-20 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Ranks</span>
+          <h2 class="text-4xl font-serif text-[#2c1e16] mt-2">Membership Benefits Tiers</h2>
+          <div class="w-20 h-1 bg-[#C4A484] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Silver -->
+          <div class="col-md-4 scroll-reveal delay-100">
+            <div class="bg-white p-8 rounded-[2rem] border border-gray-200 shadow-sm uniform-card hover:shadow-md transition-all">
+              <div class="uniform-card-content">
+                <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 mb-6 mx-auto">
+                  <i class="fas fa-medal text-2xl"></i>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs uppercase tracking-widest text-gray-400 font-bold block mb-1">Rank 1</span>
+                  <h3 class="text-3xl font-bold text-[#2c1e16] mt-1">Silver Tier</h3>
+                  <p class="text-sm text-gray-500 mt-2 font-medium">Automatic entry on account registration</p>
+                </div>
+                <div class="w-full h-[1px] bg-gray-100 my-6"></div>
+                <ul class="space-y-4 text-[15px] text-gray-700 font-medium">
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#3D8B5C] mt-1"></i><span>Collect 1 point per $1 spent</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#3D8B5C] mt-1"></i><span>Free leather bookmark on entry</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#3D8B5C] mt-1"></i><span>Receive monthly bookstore circular</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#3D8B5C] mt-1"></i><span>Free handcrafted coffee on your birthday</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gold -->
+          <div class="col-md-4 scroll-reveal delay-200">
+            <div class="bg-white p-8 rounded-[2rem] border-2 border-[#C4A484] shadow-xl uniform-card relative transform scale-105 z-10">
+              <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#C4A484] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">Most Popular</span>
+              <div class="uniform-card-content">
+                <div class="w-16 h-16 rounded-full bg-[#EADBC8] flex items-center justify-center text-[#C4A484] mb-6 mx-auto">
+                  <i class="fas fa-award text-2xl"></i>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold block mb-1">Rank 2</span>
+                  <h3 class="text-3xl font-bold text-[#6F4E37] mt-1">Gold Tier</h3>
+                  <p class="text-sm text-gray-500 mt-2 font-medium">Unlocks after collecting 1,000 points</p>
+                </div>
+                <div class="w-full h-[1px] bg-gray-100 my-6"></div>
+                <ul class="space-y-4 text-[15px] text-gray-700 font-medium">
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#C4A484] mt-1"></i><span>Collect 1.2 points per $1 spent</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#C4A484] mt-1"></i><span>10% off all handcrafted coffee drinks</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#C4A484] mt-1"></i><span>Priority queue at evaluator desk</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#C4A484] mt-1"></i><span>Free birthday used book voucher</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Platinum -->
+          <div class="col-md-4 scroll-reveal delay-300">
+            <div class="bg-white p-8 rounded-[2rem] border border-gray-200 shadow-sm uniform-card hover:shadow-md transition-all">
+              <div class="uniform-card-content">
+                <div class="w-16 h-16 rounded-full bg-[#2c1e16] flex items-center justify-center text-[#FAF7F2] mb-6 mx-auto">
+                  <i class="fas fa-crown text-2xl"></i>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs uppercase tracking-widest text-[#6F4E37] font-bold block mb-1">Rank 3</span>
+                  <h3 class="text-3xl font-bold text-[#2c1e16] mt-1">Platinum Tier</h3>
+                  <p class="text-sm text-gray-500 mt-2 font-medium">Unlocks after collecting 3,000 points</p>
+                </div>
+                <div class="w-full h-[1px] bg-gray-100 my-6"></div>
+                <ul class="space-y-4 text-[15px] text-gray-700 font-medium">
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#2c1e16] mt-1"></i><span>Collect 1.5 points per $1 spent</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#2c1e16] mt-1"></i><span>15% off all book and cafe items</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#2c1e16] mt-1"></i><span>Access to VIP silent study room</span></li>
+                  <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left"><i class="fas fa-check-circle text-[#2c1e16] mt-1"></i><span>Free entries to all guest workshops</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TESTIMONIALS: Customer story cards -->
+    <section id="loyalty-testimonials" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Community</span>
+          <h2 class="text-4xl font-serif text-[#2c1e16] mt-2">What Our Members Say</h2>
+          <div class="w-20 h-1 bg-[#6F4E37] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center align-items-stretch">
+          <div class="col-md-6 col-lg-5 scroll-reveal">
+            <div class="bg-[#FAF7F2] p-10 rounded-[2rem] border border-[#EADBC8] uniform-card shadow-sm hover:shadow-md transition-all">
+              <div class="uniform-card-content">
+                <i class="fas fa-quote-left text-4xl text-[#EADBC8] mb-6"></i>
+                <p class="text-gray-700 italic text-lg leading-relaxed mb-8 flex-grow">
+                  "I've been a Gold member for two years. The 10% discount on coffee basically paid for my weekend pastries, and trading in books makes the library cycle so sustainable and fun."
+                </p>
+                <div class="uniform-card-footer flex items-center gap-5 mt-auto pt-6 border-t border-gray-200">
+                  <img src="images/loyalty/testimonial-1.jpg" alt="Marcus" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#2c1e16]">Marcus K.</h4>
+                    <span class="text-sm text-[#C4A484] font-bold"><i class="fas fa-award me-1"></i> Gold Rank</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-5 scroll-reveal delay-200">
+            <div class="bg-[#FAF7F2] p-10 rounded-[2rem] border border-[#EADBC8] uniform-card shadow-sm hover:shadow-md transition-all">
+              <div class="uniform-card-content">
+                <i class="fas fa-quote-left text-4xl text-[#EADBC8] mb-6"></i>
+                <p class="text-gray-700 italic text-lg leading-relaxed mb-8 flex-grow">
+                  "Pages & Perks is my study sanctuary. Achieving Platinum meant I could book silent study tables for free. The baristas know my order, and the books are always in pristine quality!"
+                </p>
+                <div class="uniform-card-footer flex items-center gap-5 mt-auto pt-6 border-t border-gray-200">
+                  <img src="images/loyalty/testimonial-2.jpg" alt="Sophia" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#2c1e16]">Sophia L.</h4>
+                    <span class="text-sm text-[#6F4E37] font-bold"><i class="fas fa-crown me-1"></i> Platinum Rank</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA: Fast Enrollment Form -->
+    <section id="loyalty-cta" class="py-24 text-white relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="images/loyalty/cta.jpg" alt="Join Loyalty Program" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-[#2c1e16]/80 mix-blend-multiply"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 text-center relative z-10 scroll-reveal">
+        <div class="max-w-3xl mx-auto bg-black/40 p-10 md:p-14 rounded-[3rem] backdrop-blur-sm border border-white/20 shadow-2xl">
+          <i class="fas fa-gem text-5xl text-[#C4A484] mb-6"></i>
+          <h2 class="text-4xl md:text-6xl font-serif mb-6 text-white leading-tight">Ready to Earn <br/><span class="text-[#C4A484] italic">Luxury Perks?</span></h2>
+          <p class="text-lg md:text-xl mb-10 text-gray-300 font-light max-w-2xl mx-auto">
+            Enroll in our loyalty club in 30 seconds. Register a free account to automatically start collecting points and unlock the finest coffee and books today.
+          </p>
+          <a href="register.html" class="inline-block px-10 py-4 bg-[#C4A484] text-[#2c1e16] rounded-full font-bold text-lg hover:bg-white hover:-translate-y-1 transition-all shadow-lg">
+            Register Free Account Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

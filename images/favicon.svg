@@ -1,0 +1,36 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .book-bg { fill: #EBE1D5; }
+      .book-line { fill: none; stroke: #5C4033; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .cup-fill { fill: #5C4033; }
+      .steam-line { fill: none; stroke: #B89578; stroke-width: 4; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <g transform="translate(15, 25)">
+    <!-- Book Left Page -->
+    <path class="book-bg" d="M 10 15 L 45 30 L 45 90 L 10 75 Z" />
+    <path class="book-line" d="M 10 15 L 45 30 L 45 90 L 10 75 Z" />
+    
+    <!-- Book Right Page -->
+    <path class="book-bg" d="M 45 30 L 80 15 L 80 75 L 45 90 Z" />
+    <path class="book-line" d="M 45 30 L 80 15 L 80 75 L 45 90 Z" />
+    
+    <!-- Book Spine -->
+    <line class="book-line" x1="45" y1="30" x2="45" y2="90" />
+    <line class="book-line" x1="18" y1="21" x2="18" y2="80" stroke-width="2" opacity="0.5" />
+    <line class="book-line" x1="26" y1="24" x2="26" y2="83" stroke-width="2" opacity="0.5" />
+
+    <!-- Coffee Cup -->
+    <path class="cup-fill" d="M 45 40 L 85 40 Q 85 85 65 85 Q 45 85 45 40 Z" />
+    <!-- Cup Handle -->
+    <path class="book-line" d="M 85 50 Q 100 50 100 60 Q 100 70 80 70" />
+    <!-- Cup Inner Lip -->
+    <ellipse cx="65" cy="40" rx="20" ry="3" fill="#3E2B22" />
+
+    <!-- Steam -->
+    <path class="steam-line" d="M 55 30 Q 50 20 60 10 Q 70 0 65 -10" />
+    <path class="steam-line" d="M 75 30 Q 70 20 80 10 Q 90 0 85 -10" />
+  </g>
+</svg>

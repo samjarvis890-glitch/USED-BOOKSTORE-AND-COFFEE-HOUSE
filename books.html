@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Browse our premium used books shelf. Filter by fiction, mystery, rare books, and history collectibles.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>Browse Used Books | Used Bookstore & Coffee House</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+      
+      <!-- Mobile Toggle Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
+      </button>
+      
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main style="margin-top: 80px;">
+    
+    <!-- 1. HERO SECTION: Creative overlapping layout -->
+    <section id="books-hero" class="relative py-24 md:py-32 bg-[#2c1e16] overflow-hidden">
+      <!-- Background pattern/image with overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="images/books-hero.jpg" alt="Library Background" class="w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2c1e16] via-[#2c1e16]/90 to-transparent"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <!-- Text Content -->
+          <div class="lg:w-1/2 space-y-6 text-center lg:text-left scroll-reveal">
+            <div class="inline-block px-4 py-1.5 rounded-full border border-[#C4A484]/30 bg-[#C4A484]/10 backdrop-blur-sm">
+              <span class="text-[#C4A484] uppercase tracking-widest text-xs font-bold">Curated Collection • 25,000+ Titles</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif text-[#EADBC8] leading-tight">
+              Every Book<br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C4A484] to-[#e8d5c4] italic font-light">Has a Story.</span>
+            </h1>
+            <p class="text-gray-300 text-sm md:text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Discover forgotten classics, thrilling mysteries, and rare signed editions waiting to be read again.
+            </p>
+            <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+              <a href="#books-genres" class="px-8 py-3.5 bg-[#C4A484] text-[#2c1e16] rounded-full font-bold hover:bg-white hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-[#C4A484]/20">
+                Explore Genres
+              </a>
+              <a href="#books-bestsellers" class="px-8 py-3.5 bg-transparent border border-[#C4A484] text-[#C4A484] rounded-full font-bold hover:bg-[#C4A484]/10 transition-all duration-300">
+                View Bestsellers
+              </a>
+            </div>
+          </div>
+          
+          <!-- Image Composition -->
+          <div class="lg:w-1/2 w-full scroll-reveal delay-200 relative hidden md:block">
+            <div class="relative w-full max-w-lg mx-auto aspect-square">
+               <!-- Main Image Card -->
+               <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 rounded-2xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-[#3c2a1e] z-20">
+                 <img src="images/hero-main.jpg" alt="Featured Book" class="w-full h-full object-cover">
+               </div>
+               
+               <!-- Accent Image 1 -->
+               <div class="absolute top-0 right-0 w-1/3 h-1/3 rounded-xl overflow-hidden shadow-xl -rotate-6 border-4 border-[#2c1e16] z-30 transform hover:scale-110 transition-transform">
+                 <img src="images/hero-accent1.jpg" alt="Rare Book" class="w-full h-full object-cover">
+               </div>
+               
+               <!-- Accent Image 2 -->
+               <div class="absolute bottom-4 left-0 w-2/5 h-2/5 rounded-xl overflow-hidden shadow-xl rotate-12 border-4 border-[#2c1e16] z-30 transform hover:scale-110 transition-transform">
+                 <img src="images/hero-accent2.jpg" alt="Fantasy Book" class="w-full h-full object-cover">
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Wave or separator -->
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#ffffff"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. GENRES GRID: Uniform Layout -->
+    <section id="books-genres" class="py-20 bg-[#FAF7F2] relative">
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Browse By Category</span>
+          <h2 class="text-4xl font-serif text-[#6F4E37] mt-2">Explore Genres</h2>
+          <div class="w-20 h-1 bg-[#C4A484] mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
+          <!-- Item 1 -->
+          <div class="relative rounded-2xl overflow-hidden group shadow-lg h-72 cursor-pointer">
+            <img src="images/genre-fiction.jpg" alt="Fiction Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a110c]/90 via-[#1a110c]/40 to-transparent flex flex-col justify-end p-6">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-2xl font-serif font-bold">Fiction</h3>
+                <p class="text-[#C4A484] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Bestsellers, Romance & Lit Novels</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="relative rounded-2xl overflow-hidden group shadow-lg h-72 cursor-pointer">
+            <img src="images/genre-mystery.jpg" alt="Mystery Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a110c]/90 via-[#1a110c]/40 to-transparent flex flex-col justify-end p-6">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-2xl font-serif font-bold">Mystery & Thriller</h3>
+                <p class="text-[#C4A484] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Crime & Suspense</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="relative rounded-2xl overflow-hidden group shadow-lg h-72 cursor-pointer">
+            <img src="images/genre-nonfiction.jpg" alt="Nonfiction Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a110c]/90 via-[#1a110c]/40 to-transparent flex flex-col justify-end p-6">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-2xl font-serif font-bold">Nonfiction</h3>
+                <p class="text-[#C4A484] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Science, Biography & Guides</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="relative rounded-2xl overflow-hidden group shadow-lg h-72 cursor-pointer">
+            <img src="images/genre-history.jpg" alt="History Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a110c]/90 via-[#1a110c]/40 to-transparent flex flex-col justify-end p-6">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-2xl font-serif font-bold">History</h3>
+                <p class="text-[#C4A484] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Biographies & War Records</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="relative rounded-2xl overflow-hidden group shadow-lg h-72 cursor-pointer">
+            <img src="images/genre-fantasy.jpg" alt="Fantasy Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a110c]/90 via-[#1a110c]/40 to-transparent flex flex-col justify-end p-6">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-2xl font-serif font-bold">Fantasy & Sci-Fi</h3>
+                <p class="text-[#C4A484] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Otherworldly Tales & Space Epics</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 6 -->
+          <div class="relative rounded-2xl overflow-hidden group shadow-lg h-72 cursor-pointer">
+            <img src="images/genre-classics.jpg" alt="Classics Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a110c]/90 via-[#1a110c]/40 to-transparent flex flex-col justify-end p-6">
+              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-2xl font-serif font-bold">Classics</h3>
+                <p class="text-[#C4A484] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Vintage Literary Treasures</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BEST SELLERS: Book Shelf cards -->
+    <section id="books-bestsellers" class="py-16 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <h2 class="text-3xl font-serif text-[#6F4E37]">Bestseller Shelf</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div class="scroll-reveal delay-100 flex">
+            <div class="book-card w-full shadow-lg rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div class="relative overflow-hidden h-72 bg-[#EADBC8] flex items-center justify-center">
+                <img src="images/bestseller-1.jpg" alt="Gatsby" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-[#6F4E37] min-h-[3.5rem] flex items-center leading-snug">The Great Gatsby</h3>
+                  <p class="text-gray-500 text-xs mt-1">F. Scott Fitzgerald • Classics</p>
+                </div>
+                <div class="flex justify-between items-center mt-6">
+                  <span class="text-xl font-serif font-bold text-[#6F4E37]">$8.99</span>
+                  <a href="#" class="px-4 py-2 bg-[#EADBC8] rounded-full text-xs font-semibold text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white transition-colors">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="scroll-reveal delay-200 flex">
+            <div class="book-card w-full shadow-lg rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div class="relative overflow-hidden h-72 bg-[#EADBC8] flex items-center justify-center">
+                <img src="images/bestseller-2.jpg" alt="Mockingbird" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-[#6F4E37] min-h-[3.5rem] flex items-center leading-snug">To Kill a Mockingbird</h3>
+                  <p class="text-gray-500 text-xs mt-1">Harper Lee • Classics</p>
+                </div>
+                <div class="flex justify-between items-center mt-6">
+                  <span class="text-xl font-serif font-bold text-[#6F4E37]">$9.50</span>
+                  <a href="#" class="px-4 py-2 bg-[#EADBC8] rounded-full text-xs font-semibold text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white transition-colors">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="scroll-reveal delay-300 flex md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full">
+            <div class="book-card w-full shadow-lg rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div class="relative overflow-hidden h-72 bg-[#EADBC8] flex items-center justify-center">
+                <img src="images/bestseller-3.jpg" alt="1984" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-[#6F4E37] min-h-[3.5rem] flex items-center leading-snug">1984</h3>
+                  <p class="text-gray-500 text-xs mt-1">George Orwell • Fiction</p>
+                </div>
+                <div class="flex justify-between items-center mt-6">
+                  <span class="text-xl font-serif font-bold text-[#6F4E37]">$7.99</span>
+                  <a href="#" class="px-4 py-2 bg-[#EADBC8] rounded-full text-xs font-semibold text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white transition-colors">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. RARE BOOKS: Split luxury layout -->
+    <section id="books-rare" class="py-16 md:py-24 bg-[#1B1B1B] text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Collector Library</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-[#EADBC8] mt-1">Featured Rare & First Editions</h2>
+          <div class="w-20 h-0.5 bg-[#C4A484] mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div class="scroll-reveal">
+            <div class="bg-[#2c2c2c] p-6 rounded-3xl border border-[#C4A484]/30 flex flex-col lg:flex-row gap-6 rare-book-card h-full">
+              <img src="images/rare-1.jpg" alt="Hamlet Rare" class="w-full lg:w-48 rounded-xl object-cover h-64 border border-[#C4A484]/25">
+              <div class="flex flex-col justify-between w-full">
+                <div>
+                  <span class="text-xs text-[#C4A484] font-bold uppercase tracking-wider">Dated 1603</span>
+                  <h3 class="text-xl font-serif text-white mt-1">First Edition Hamlet</h3>
+                  <p class="text-[#C4A484] text-xs font-medium mt-1 mb-2">William Shakespeare • Drama</p>
+                  <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                    Highly preserved archival print. Bound in hand-sewn leather cresting. Comes with certificate of authenticity.
+                  </p>
+                  <ul class="mt-3 space-y-1.5">
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-certificate text-[#C4A484]"></i> Original 1603 Printing</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-shield-alt text-[#C4A484]"></i> Archival Grade Preservation</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-book-open text-[#C4A484]"></i> Custom Hand-Sewn Leather</li>
+                  </ul>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-serif text-[#C4A484] font-bold">$2,400</span>
+                  <a href="contact.html" class="px-4 py-2 bg-[#C4A484] text-[#2c1e16] rounded-full text-xs font-bold hover:bg-white transition-all">Inquire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal delay-200">
+            <div class="bg-[#2c2c2c] p-6 rounded-3xl border border-[#C4A484]/30 flex flex-col lg:flex-row gap-6 rare-book-card h-full">
+              <img src="images/rare-2.jpg" alt="Ulysses Signed" class="w-full lg:w-48 rounded-xl object-cover h-64 border border-[#C4A484]/25">
+              <div class="flex flex-col justify-between w-full">
+                <div>
+                  <span class="text-xs text-[#C4A484] font-bold uppercase tracking-wider">Dated 1922</span>
+                  <h3 class="text-xl font-serif text-white mt-1">Ulysses Signed Copy</h3>
+                  <p class="text-[#C4A484] text-xs font-medium mt-1 mb-2">James Joyce • Modernist Fiction</p>
+                  <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                    Personally signed by James Joyce during the Shakespeare and Company store cataloging in Paris.
+                  </p>
+                  <ul class="mt-3 space-y-1.5">
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-pen-nib text-[#C4A484]"></i> Hand-Signed by Author</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-star text-[#C4A484]"></i> First Edition (1922)</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-bookmark text-[#C4A484]"></i> Original Blue Wrappers</li>
+                  </ul>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-serif text-[#C4A484] font-bold">$4,850</span>
+                  <a href="contact.html" class="px-4 py-2 bg-[#C4A484] text-[#2c1e16] rounded-full text-xs font-bold hover:bg-white transition-all">Inquire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal">
+            <div class="bg-[#2c2c2c] p-6 rounded-3xl border border-[#C4A484]/30 flex flex-col lg:flex-row gap-6 rare-book-card h-full">
+              <img src="images/hero-accent1.jpg" alt="Rare Book" class="w-full lg:w-48 rounded-xl object-cover h-64 border border-[#C4A484]/25">
+              <div class="flex flex-col justify-between w-full">
+                <div>
+                  <span class="text-xs text-[#C4A484] font-bold uppercase tracking-wider">Dated 1890</span>
+                  <h3 class="text-xl font-serif text-white mt-1">The Picture of Dorian Gray</h3>
+                  <p class="text-[#C4A484] text-xs font-medium mt-1 mb-2">Oscar Wilde • Philosophical Fiction</p>
+                  <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                    First edition, early printing. Features original binding with gilt lettering. Extremely rare find.
+                  </p>
+                  <ul class="mt-3 space-y-1.5">
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-gem text-[#C4A484]"></i> 1890 Lippincott's Edition</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-eye-slash text-[#C4A484]"></i> Uncensored Original Text</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-paint-brush text-[#C4A484]"></i> Intact Gilt Lettering</li>
+                  </ul>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-serif text-[#C4A484] font-bold">$3,100</span>
+                  <a href="contact.html" class="px-4 py-2 bg-[#C4A484] text-[#2c1e16] rounded-full text-xs font-bold hover:bg-white transition-all">Inquire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal delay-200">
+            <div class="bg-[#2c2c2c] p-6 rounded-3xl border border-[#C4A484]/30 flex flex-col lg:flex-row gap-6 rare-book-card h-full">
+              <img src="images/hero-accent2.jpg" alt="Antique Book" class="w-full lg:w-48 rounded-xl object-cover h-64 border border-[#C4A484]/25">
+              <div class="flex flex-col justify-between w-full">
+                <div>
+                  <span class="text-xs text-[#C4A484] font-bold uppercase tracking-wider">Dated 1937</span>
+                  <h3 class="text-xl font-serif text-white mt-1">The Hobbit First Edition</h3>
+                  <p class="text-[#C4A484] text-xs font-medium mt-1 mb-2">J.R.R. Tolkien • Fantasy</p>
+                  <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                    A true first edition with the original map and dust jacket. A masterpiece of fantasy literature.
+                  </p>
+                  <ul class="mt-3 space-y-1.5">
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-crown text-[#C4A484]"></i> First Impression (1937)</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-map text-[#C4A484]"></i> Includes Original Map</li>
+                    <li class="flex items-center gap-2 text-xs text-gray-300"><i class="fas fa-layer-group text-[#C4A484]"></i> Intact Dust Jacket</li>
+                  </ul>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-serif text-[#C4A484] font-bold">$12,500</span>
+                  <a href="contact.html" class="px-4 py-2 bg-[#C4A484] text-[#2c1e16] rounded-full text-xs font-bold hover:bg-white transition-all">Inquire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- 4b. BOOK & COFFEE PAIRINGS: Elegant Sensory Grid -->
+    <section id="book-pairings" class="py-16 bg-[#FAF7F2] relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Sensory Harmony</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-2">Literary & Brew Pairings</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-3 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div class="bg-white p-6 rounded-2xl border border-[#C4A484]/20 shadow-md scroll-reveal delay-100 flex flex-col justify-between text-center">
+            <div>
+              <div class="flex flex-col items-center gap-2 mb-4">
+                <div class="w-12 h-12 rounded-full bg-[#6F4E37]/10 flex items-center justify-center text-[#6F4E37] text-xl"><i class="fas fa-book-open"></i></div>
+                <div>
+                  <h4 class="font-serif font-bold text-[#6F4E37] mb-0">Mystery & Thrillers</h4>
+                  <span class="text-[10px] text-gray-500 font-sans uppercase">Paired with</span>
+                </div>
+              </div>
+              <h5 class="text-sm font-bold text-[#C4A484] mb-2"><i class="fas fa-mug-hot me-1.5"></i> Velvet Double </h5>
+              <p class="text-xs text-gray-600 leading-relaxed">The sharp, intense hit of our dark chocolate espresso matches the suspense and fast-paced thrill of a great mystery.</p>
+            </div>
+            <a href="cafe.html" class="text-xs font-bold text-[#C4A484] hover:underline mt-4 inline-block">Order at Cafe <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-[#C4A484]/20 shadow-md scroll-reveal delay-200 flex flex-col justify-between text-center">
+            <div>
+              <div class="flex flex-col items-center gap-2 mb-4">
+                <div class="w-12 h-12 rounded-full bg-[#6F4E37]/10 flex items-center justify-center text-[#6F4E37] text-xl"><i class="fas fa-feather"></i></div>
+                <div>
+                  <h4 class="font-serif font-bold text-[#6F4E37] mb-0">Classic Literature</h4>
+                  <span class="text-[10px] text-gray-500 font-sans uppercase">Paired with</span>
+                </div>
+              </div>
+              <h5 class="text-sm font-bold text-[#C4A484] mb-2"><i class="fas fa-mug-hot me-1.5"></i> Pour-Over Chemex</h5>
+              <p class="text-xs text-gray-600 leading-relaxed">A slow, clear, and complex pour-over brew lets you savor the subtle undertones of vintage prose page by page.</p>
+            </div>
+            <a href="cafe.html" class="text-xs font-bold text-[#C4A484] hover:underline mt-4 inline-block">Order at Cafe <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-[#C4A484]/20 shadow-md scroll-reveal delay-300 flex flex-col justify-between text-center md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full">
+            <div>
+              <div class="flex flex-col items-center gap-2 mb-4">
+                <div class="w-12 h-12 rounded-full bg-[#6F4E37]/10 flex items-center justify-center text-[#6F4E37] text-xl"><i class="fas fa-wand-magic-sparkles"></i></div>
+                <div>
+                  <h4 class="font-serif font-bold text-[#6F4E37] mb-0">Fantasy & Sci-Fi</h4>
+                  <span class="text-[10px] text-gray-500 font-sans uppercase">Paired with</span>
+                </div>
+              </div>
+              <h5 class="text-sm font-bold text-[#C4A484] mb-2"><i class="fas fa-mug-hot me-1.5"></i> Matcha Latte</h5>
+              <p class="text-xs text-gray-600 leading-relaxed">The bright green, earthy tones of ceremonial matcha whisks you away to fantastical, lush alien worlds and fonts.</p>
+            </div>
+            <a href="cafe.html" class="text-xs font-bold text-[#C4A484] hover:underline mt-4 inline-block">Order at Cafe <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SEARCH PREVIEW: Live Search Component and Shelf Layout -->
+    <section id="search-preview-section" class="py-16 bg-white" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('images/search-bg.jpg'); background-size: cover; background-position: center;">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto mb-12 scroll-reveal">
+          <h2 class="text-2xl md:text-3xl font-serif text-center text-[#6F4E37] mb-6">Interactive Library Shelf</h2>
+          <div class="flex flex-col md:flex-row gap-4 bg-[#FAF7F2] p-4 rounded-3xl shadow-md border border-[#C4A484]/30">
+            <div class="flex-grow relative">
+              <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+              <input type="text" id="bookSearchInput" placeholder="Search by title, author, key term..." class="w-full pl-12 pr-4 py-3 rounded-2xl bg-white border border-[#EADBC8] outline-none text-[#6F4E37]">
+            </div>
+            <div class="w-full md:w-52">
+              <select id="genreFilter" class="w-full py-3 px-4 rounded-2xl bg-white border border-[#EADBC8] outline-none text-[#6F4E37]">
+                <option value="all">All Genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="mystery">Mystery</option>
+                <option value="science">Science</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="classics">Classics</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 books-grid-container scroll-reveal">
+          <!-- Book A -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="book-card shadow-sm rounded-2xl overflow-hidden bg-white" data-genre="fiction">
+              <div class="relative overflow-hidden h-64 bg-[#EADBC8] flex justify-center items-center">
+                 <img src="images/book-search-1.jpg" alt="The Alchemist" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                 <span class="absolute top-4 left-4 bg-[#6F4E37] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Fiction</span>
+              </div>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-[#6F4E37] leading-tight">The Alchemist</h3>
+                  <p class="text-gray-500 text-xs mt-1">Paulo Coelho</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="font-serif font-bold text-[#6F4E37]">$12.90</span>
+                  <a href="#" class="text-xs font-bold text-[#C4A484] hover:underline">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book B -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="book-card shadow-sm rounded-2xl overflow-hidden bg-white" data-genre="fantasy">
+              <div class="relative overflow-hidden h-64 bg-[#EADBC8] flex justify-center items-center">
+                 <img src="images/book-search-2.jpg" alt="Dune" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                 <span class="absolute top-4 left-4 bg-[#6F4E37] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Fantasy</span>
+              </div>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-[#6F4E37] leading-tight">Dune</h3>
+                  <p class="text-gray-500 text-xs mt-1">Frank Herbert</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="font-serif font-bold text-[#6F4E37]">$14.50</span>
+                  <a href="#" class="text-xs font-bold text-[#C4A484] hover:underline">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book C -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="book-card shadow-sm rounded-2xl overflow-hidden bg-white" data-genre="mystery">
+              <div class="relative overflow-hidden h-64 bg-[#EADBC8] flex justify-center items-center">
+                 <img src="images/book-search-3.jpg" alt="Gone Girl" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                 <span class="absolute top-4 left-4 bg-[#6F4E37] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Mystery</span>
+              </div>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-[#6F4E37] leading-tight">Gone Girl</h3>
+                  <p class="text-gray-500 text-xs mt-1">Gillian Flynn</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="font-serif font-bold text-[#6F4E37]">$11.99</span>
+                  <a href="#" class="text-xs font-bold text-[#C4A484] hover:underline">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book D -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="book-card shadow-sm rounded-2xl overflow-hidden bg-white" data-genre="science">
+              <div class="relative overflow-hidden h-64 bg-[#EADBC8] flex justify-center items-center">
+                 <img src="images/book-search-4.jpg" alt="A Brief History of Time" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                 <span class="absolute top-4 left-4 bg-[#6F4E37] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Science</span>
+              </div>
+              <div class="p-5 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-base font-bold text-[#6F4E37] leading-tight">A Brief History of Time</h3>
+                  <p class="text-gray-500 text-xs mt-1">Stephen Hawking</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="font-serif font-bold text-[#6F4E37]">$13.99</span>
+                  <a href="#" class="text-xs font-bold text-[#C4A484] hover:underline">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CTA BANNER: Trade-in prompt -->
+    <section id="books-cta" class="py-20 text-white" style="background-image: linear-gradient(rgba(111,78,55,0.92), rgba(111,78,55,0.92)), url('images/cta.jpg'); background-size: cover; background-position: center;">
+      <div class="container mx-auto px-4 text-center scroll-reveal">
+        <h2 class="text-3xl md:text-5xl font-serif mb-4 text-[#FAF7F2]">Got Books Gathering Dust?</h2>
+        <p class="text-base md:text-lg max-w-xl mx-auto mb-8 text-[#EADBC8]">
+          Bring them down to Pages & Perks. Trade them in for instant store credit or premium coffee vouchers.
+        </p>
+        <a href="tradein.html" class="px-8 py-3.5 bg-white text-[#6F4E37] rounded-full font-bold hover:bg-[#EADBC8] transition-all">
+          Calculate Trade Value
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

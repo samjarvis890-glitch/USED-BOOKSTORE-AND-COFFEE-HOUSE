@@ -1,0 +1,65 @@
+<svg xmlns=http://www.w3.org/2000/svg viewBox=0 0 600 400 width=600 height=400>
+  <rect width=600 height=400 fill=#FAF7F2/>
+  <!-- Reception desk -->
+  <rect x=0 y=290 width=600 height=110 fill=#8B5E3C/>
+  <rect x=0 y=285 width=600 height=10 fill=#C4A484/>
+  <!-- Desk items -->
+  <rect x=380 y=250 width=35 height=44 rx=4 fill=#2c2c2c/>
+  <rect x=370 y=244 width=55 height=12 rx=3 fill=#444/>
+  <!-- Monitor -->
+  <rect x=365 y=210 width=90 height=60 rx=6 fill=#1B1B1B/>
+  <rect x=370 y=215 width=80 height=50 rx=4 fill=#2d6b2d opacity=0.6/>
+  <text x=410 y=244 text-anchor=middle font-size=8 fill=#EADBC8>Pages &amp; Perks</text>
+  <text x=410 y=256 text-anchor=middle font-size=6 fill=#C4A484>Welcome!</text>
+  <!-- Flower vase -->
+  <rect x=480 y=258 width=22 height=36 rx=6 fill=#C4A484 opacity=0.8/>
+  <circle cx=484 cy=252 r=8 fill=#8B0000 opacity=0.7/>
+  <circle cx=491 cy=248 r=8 fill=#D4AF37 opacity=0.7/>
+  <circle cx=498 cy=252 r=8 fill=#8B0000 opacity=0.7/>
+  <!-- Border collie dog - black and white -->
+  <!-- Body -->
+  <ellipse cx=235 cy=300 rx=85 ry=58 fill=#2B1810/>
+  <!-- White chest -->
+  <ellipse cx=235 cy=308 rx=50 ry=40 fill=#FAF7F2/>
+  <!-- Head -->
+  <circle cx=235 cy=228 r=60 fill=#2B1810/>
+  <!-- White face blaze -->
+  <ellipse cx=235 cy=240 rx=28 ry=40 fill=#FAF7F2/>
+  <!-- Border collie long ears -->
+  <ellipse cx=185 cy=235 rx=22 ry=48 fill=#2B1810 transform=rotate(-10 185 235)/>
+  <ellipse cx=285 cy=235 rx=22 ry=48 fill=#2B1810 transform=rotate(10 285 235)/>
+  <!-- Eyes - ice blue for border collie -->
+  <circle cx=218 cy=220 r=11 fill=#4A8FD5/>
+  <circle cx=252 cy=220 r=11 fill=#4A8FD5/>
+  <circle cx=218 cy=220 r=7 fill=#2B1810/>
+  <circle cx=252 cy=220 r=7 fill=#2B1810/>
+  <circle cx=220 cy=217 r=3.5 fill=white/>
+  <circle cx=254 cy=217 r=3.5 fill=white/>
+  <!-- Nose -->
+  <ellipse cx=235 cy=244 rx=12 ry=8 fill=#2B1810/>
+  <!-- Mouth -->
+  <path d=M224 254 Q235 264 246 254 fill=none stroke=#9B5A2A stroke-width=2.5 stroke-linecap=round/>
+  <!-- Headset/telephone headpiece -->
+  <path d=M185 225 Q180 210 185 195 fill=none stroke=#444 stroke-width=6 stroke-linecap=round/>
+  <circle cx=185 cy=224 r=10 fill=#333/>
+  <rect x=188 y=222 width=55 height=6 rx=3 fill=#444/>
+  <circle cx=188 cy=232 r=8 fill=#333/>
+  <!-- Paws on desk holding pen -->
+  <ellipse cx=155 cy=292 rx=38 ry=28 fill=#2B1810/>
+  <ellipse cx=315 cy=292 rx=38 ry=28 fill=#2B1810/>
+  <!-- White paw patches -->
+  <circle cx=148 cy=284 r=9 fill=#FAF7F2/>
+  <circle cx=160 cy=279 r=9 fill=#FAF7F2/>
+  <circle cx=172 cy=279 r=9 fill=#FAF7F2/>
+  <!-- Pen in paw -->
+  <rect x=308 y=270 width=8 height=50 rx=3 fill=#6F4E37 transform=rotate(-20 308 270)/>
+  <!-- Notepad -->
+  <rect x=90 y=260 width=90 height=70 rx=5 fill=white/>
+  <rect x=90 y=260 width=90 height=12 rx=5 fill=#6F4E37/>
+  <line x1=98 y1=282 x2=172 y2=282 stroke=#EADBC8 stroke-width=1.5/>
+  <line x1=98 y1=292 x2=172 y2=292 stroke=#EADBC8 stroke-width=1.5/>
+  <line x1=98 y1=302 x2=165 y2=302 stroke=#EADBC8 stroke-width=1.5/>
+  <!-- Tail wagging behind desk -->
+  <path d=M310 335 Q350 310 370 280 fill=none stroke=#2B1810 stroke-width=18 stroke-linecap=round/>
+  <path d=M308 335 Q348 306 366 278 fill=none stroke=#FAF7F2 stroke-width=6 stroke-linecap=round/>
+</svg>

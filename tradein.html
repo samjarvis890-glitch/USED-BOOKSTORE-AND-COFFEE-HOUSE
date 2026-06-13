@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Trade in your pre-loved used books for store credit or specialty cafe vouchers at Pages & Perks.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>Used Book Trade-In Program | Used Bookstore & Coffee House</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+      
+      <!-- Mobile Toggle Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
+      </button>
+      
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main style="margin-top: 80px;">
+    
+    <!-- 1. HERO SECTION: Creative Glassmorphism Overlay -->
+    <section id="tradein-hero" class="relative py-24 md:py-32 flex items-center justify-center min-h-[70vh]" style="background-image: url('images/tradein/tradein-hero.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="container mx-auto px-4 relative z-10 flex justify-center">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-10 md:p-16 rounded-[40px] text-center max-w-3xl shadow-2xl scroll-reveal">
+          <span class="inline-block bg-[#6F4E37] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">Circular Stories</span>
+          <h1 class="text-4xl md:text-6xl font-serif text-white leading-tight mb-6 drop-shadow-lg">Trade Pre-Loved Books. Recirculate Literature.</h1>
+          <p class="text-white/90 text-sm md:text-lg mb-8 font-medium">
+            Clear your shelves and get rewarded. Bring your read books to our counter, receive immediate store credit, or collect vouchers for handcrafted specialty cafe drinks.
+          </p>
+          <a href="#tradein-calculator" class="inline-block bg-white text-[#6F4E37] px-8 py-3.5 rounded-full font-bold hover:bg-[#EADBC8] transition-all shadow-lg transform hover:-translate-y-1">
+            Calculate Your Credit
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HOW IT WORKS: 3-Step Process Design -->
+    <section id="tradein-steps" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <h2 class="text-3xl font-serif text-[#6F4E37]">How The Program Works</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
+          <!-- Step 1 -->
+          <div class="scroll-reveal delay-100 h-full">
+            <div class="step-card bg-[#FAF7F2] p-6 rounded-[30px] border border-[#EADBC8] h-full flex flex-col relative text-center">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-[#6F4E37] text-white rounded-full flex items-center justify-center font-bold font-serif text-xl border-4 border-white shadow-sm">1</div>
+              <img src="images/tradein/tradein-step-1.jpg" alt="Bring books" class="rounded-xl w-full h-48 object-cover mb-4 mt-2">
+              <h3 class="text-lg font-bold text-[#6F4E37] mt-auto">Bring Books to Counter</h3>
+              <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                Bring any read or clean books to our store during business hours. No appointment needed.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="scroll-reveal delay-200 h-full">
+            <div class="step-card bg-[#FAF7F2] p-6 rounded-[30px] border border-[#EADBC8] h-full flex flex-col relative text-center">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-[#6F4E37] text-white rounded-full flex items-center justify-center font-bold font-serif text-xl border-4 border-white shadow-sm">2</div>
+              <img src="images/tradein/tradein-step-2.jpg" alt="Evaluation process" class="rounded-xl w-full h-48 object-cover mb-4 mt-2">
+              <h3 class="text-lg font-bold text-[#6F4E37] mt-auto">Quick Curatorial Review</h3>
+              <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                Our curators will evaluate the cover, spine, pages, and market demands in 10 minutes or less.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="scroll-reveal delay-300 h-full">
+            <div class="step-card bg-[#FAF7F2] p-6 rounded-[30px] border border-[#EADBC8] h-full flex flex-col relative text-center">
+              <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-[#6F4E37] text-white rounded-full flex items-center justify-center font-bold font-serif text-xl border-4 border-white shadow-sm">3</div>
+              <img src="images/tradein/tradein-step-3.jpg" alt="Receive store credit" class="rounded-xl w-full h-48 object-cover mb-4 mt-2">
+              <h3 class="text-lg font-bold text-[#6F4E37] mt-auto">Spend Credits or Vouchers</h3>
+              <p class="text-gray-600 text-xs mt-2 leading-relaxed">
+                Use your credit immediately to purchase other books or spend it on specialty coffee espresso drinks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRADE VALUE: Interactive Calculator -->
+    <section id="tradein-calculator" class="py-16 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-[30px] shadow-lg border border-[#EADBC8] scroll-reveal">
+          <div class="flex flex-col lg:flex-row gap-8 items-center">
+            <!-- Form Details -->
+            <div class="w-full lg:w-1/2 space-y-4">
+              <h2 class="text-3xl font-serif text-[#6F4E37]">Store Credit Calculator</h2>
+              <p class="text-xs text-gray-500">Get a quick estimation of your trade valuation credit instantly.</p>
+              
+              <div class="space-y-3 pt-2">
+                <div>
+                  <label for="calcCategory" class="form-label text-xs font-bold text-[#6F4E37]">Book Category</label>
+                  <select id="calcCategory" class="form-select p-3 rounded-xl border-[#EADBC8] text-sm">
+                    <option value="fiction">Fiction Novels</option>
+                    <option value="textbook">Academic Textbooks</option>
+                    <option value="collectible">Rare Collectibles / Hardcovers</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="calcCondition" class="form-label text-xs font-bold text-[#6F4E37]">Overall Condition</label>
+                  <select id="calcCondition" class="form-select p-3 rounded-xl border-[#EADBC8] text-sm">
+                    <option value="new">Like New (Unread, Mint)</option>
+                    <option value="good">Good (Clean sheets, slightly bent)</option>
+                    <option value="fair">Fair (Spine worn, pages yellowed)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="calcQuantity" class="form-label text-xs font-bold text-[#6F4E37]">Number of Books</label>
+                  <input type="number" id="calcQuantity" value="5" min="1" class="form-control p-3 rounded-xl border-[#EADBC8] text-sm">
+                </div>
+              </div>
+
+              <button type="button" id="calcCreditBtn" class="w-full bg-[#6F4E37] text-white py-3.5 rounded-xl font-bold hover:bg-[#5a3e2b] transition-all shadow-md">
+                Compute Estimated Credit
+              </button>
+            </div>
+            
+            <!-- Result Box -->
+            <div class="w-full lg:w-1/2" id="calcResultBox" style="display: none; transition: all 0.3s ease;">
+              <!-- Javascript injects content here -->
+            </div>
+            <div class="w-full lg:w-1/2 flex items-center justify-center bg-paper-texture rounded-3xl p-8 border border-dashed border-[#C4A484]" id="calcPlaceholderBox">
+              <div class="text-center text-gray-400 space-y-2">
+                <i class="fas fa-calculator text-4xl"></i>
+                <p class="text-xs">Fill the parameters to compute credit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CATEGORIES ACCEPTED: Grids accepted -->
+    <section id="tradein-categories" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">What we buy</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-1">Accepted Book Categories</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-reveal delay-100 h-full">
+            <div class="bg-[#FAF7F2] p-6 rounded-2xl border border-[#EADBC8] text-center h-full flex flex-col">
+              <img src="images/tradein/tradein-category-textbook.jpg" alt="Textbooks" class="w-full rounded-xl object-cover h-48 mb-4">
+              <h3 class="text-lg font-bold text-[#6F4E37] mt-auto">Textbooks</h3>
+              <p class="text-xs text-gray-600 mt-2">Latest editions of academic college sciences and literatures.</p>
+            </div>
+          </div>
+
+          <div class="scroll-reveal delay-200 h-full">
+            <div class="bg-[#FAF7F2] p-6 rounded-2xl border border-[#EADBC8] text-center h-full flex flex-col">
+              <img src="images/tradein/tradein-category-fiction.jpg" alt="Fiction novels" class="w-full rounded-xl object-cover h-48 mb-4">
+              <h3 class="text-lg font-bold text-[#6F4E37] mt-auto">Fiction & Classics</h3>
+              <p class="text-xs text-gray-600 mt-2">Novels in readable states with no heavy cover stains.</p>
+            </div>
+          </div>
+
+          <div class="scroll-reveal delay-300 h-full">
+            <div class="bg-[#FAF7F2] p-6 rounded-2xl border border-[#EADBC8] text-center h-full flex flex-col">
+              <img src="images/tradein/tradein-category-collectible.jpg" alt="Collectibles" class="w-full rounded-xl object-cover h-48 mb-4">
+              <h3 class="text-lg font-bold text-[#6F4E37] mt-auto">Hardcovers & Collectibles</h3>
+              <p class="text-xs text-gray-600 mt-2">Premium 1st editions, signed prints, and classic encyclopedias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- 4b. TRENDS: Top Traded Books & Authors -->
+    <section id="tradein-trends" class="py-16 bg-white relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Demand Board</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-2">Top Traded Authors This Week</h2>
+          <div class="w-16 h-1 bg-[#C4A484] mx-auto mt-3 rounded-full"></div>
+        </div>
+        <div class="max-w-2xl mx-auto bg-[#FAF7F2] rounded-3xl p-6 border border-[#C4A484]/20 shadow-sm">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-200/50 pb-2">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#6F4E37] text-white flex items-center justify-center font-bold text-xs">1</span>
+                <span class="font-bold text-sm text-[#6F4E37]">Stephen King</span>
+              </div>
+              <span class="text-xs text-gray-500 font-semibold uppercase">High Demand (+15% Credit)</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-200/50 pb-2">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#6F4E37] text-white flex items-center justify-center font-bold text-xs">2</span>
+                <span class="font-bold text-sm text-[#6F4E37]">Agatha Christie</span>
+              </div>
+              <span class="text-xs text-gray-500 font-semibold uppercase">Stable Demand</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-gray-200/50 pb-2">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#6F4E37] text-white flex items-center justify-center font-bold text-xs">3</span>
+                <span class="font-bold text-sm text-[#6F4E37]">Brandon Sanderson</span>
+              </div>
+              <span class="text-xs text-gray-500 font-semibold uppercase">High Demand (+10% Credit)</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#6F4E37] text-white flex items-center justify-center font-bold text-xs">4</span>
+                <span class="font-bold text-sm text-[#6F4E37]">J.R.R. Tolkien</span>
+              </div>
+              <span class="text-xs text-gray-500 font-semibold uppercase">High Demand</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BENEFITS: Cozy Highlight Card -->
+    <section id="tradein-benefits" class="py-16 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12 scroll-reveal">
+          <div class="lg:w-1/2">
+            <img src="images/tradein/tradein-benefits.jpg" alt="Ecology recycling books" class="rounded-[30px] shadow-md w-full h-[400px] object-cover">
+          </div>
+          <div class="lg:w-1/2 space-y-4">
+            <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Ecology Value</span>
+            <h3 class="text-3xl font-serif text-[#6F4E37]">Recycling Stories for a Greener Tomorrow</h3>
+            <p class="text-gray-700 text-sm">
+              Buying and selling used books is a core green initiative. Recirculating paper prints saves thousands of trees annually and reduces chemical pulp processing. Extend the life of story chapters and join the zero-waste literary cycle with us.
+            </p>
+            <ul class="space-y-3 mt-6 text-sm text-gray-700">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-leaf text-[#C4A484] mt-1 text-lg"></i>
+                <span><strong>Save Trees:</strong> Every 100 books traded saves approximately one mature tree from being harvested.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-water text-[#C4A484] mt-1 text-lg"></i>
+                <span><strong>Conserve Water:</strong> Paper production is water-intensive. Reusing books saves thousands of gallons annually.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-recycle text-[#C4A484] mt-1 text-lg"></i>
+                <span><strong>Reduce Landfill:</strong> Keep perfectly readable stories out of waste streams and in the hands of eager readers.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FAQ SECTION -->
+    <section id="tradein-faq" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Got Questions?</span>
+          <h2 class="text-3xl font-serif text-[#6F4E37] mt-1">Frequently Asked Questions</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-2 rounded-full"></div>
+        </div>
+        
+        <div class="space-y-4 scroll-reveal delay-100">
+          <div class="border border-[#EADBC8] rounded-2xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 bg-[#FAF7F2] hover:bg-[#F0E6D8] transition-colors flex justify-between items-center text-[#6F4E37] font-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+              What types of books do you not accept?
+              <i class="fas fa-chevron-down text-sm"></i>
+            </button>
+            <div class="collapse" id="faq1">
+              <div class="p-6 bg-white text-gray-600 text-sm">
+                We generally do not accept books with severe water damage, missing covers, excessive highlighting or writing, outdated travel guides, or encyclopedias older than 10 years.
+              </div>
+            </div>
+          </div>
+          
+          <div class="border border-[#EADBC8] rounded-2xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 bg-[#FAF7F2] hover:bg-[#F0E6D8] transition-colors flex justify-between items-center text-[#6F4E37] font-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Do store credits expire?
+              <i class="fas fa-chevron-down text-sm"></i>
+            </button>
+            <div class="collapse" id="faq2">
+              <div class="p-6 bg-white text-gray-600 text-sm">
+                No! The store credit you receive from trading in books does not expire and can be used indefinitely towards books or cafe items.
+              </div>
+            </div>
+          </div>
+          
+          <div class="border border-[#EADBC8] rounded-2xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 bg-[#FAF7F2] hover:bg-[#F0E6D8] transition-colors flex justify-between items-center text-[#6F4E37] font-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Can I get cash instead of store credit?
+              <i class="fas fa-chevron-down text-sm"></i>
+            </button>
+            <div class="collapse" id="faq3">
+              <div class="p-6 bg-white text-gray-600 text-sm">
+                Currently, we only offer store credit or cafe vouchers to encourage recirculating literature and supporting our in-house cafe experience. We do not offer cash payouts.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA: Evaluator Form -->
+    <section id="tradein-cta" class="py-20 text-white relative" style="background-image: url('images/tradein/tradein-cta.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="absolute inset-0 bg-[#6F4E37]/90 mix-blend-multiply"></div>
+      <div class="container mx-auto px-4 text-center scroll-reveal relative z-10">
+        <h2 class="text-3xl md:text-5xl font-serif mb-4 text-[#FAF7F2]">Clear Your Shelves Today</h2>
+        <p class="text-base md:text-lg max-w-xl mx-auto mb-8 text-[#EADBC8]">
+          Pack your read items and visit the Pages & Perks evaluator desk. We offer estimations in minutes.
+        </p>
+        <a href="contact.html" class="px-8 py-3.5 bg-white text-[#6F4E37] rounded-full font-bold hover:bg-[#EADBC8] transition-all">
+          Get Store Directions
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Adjust calculator placeholder box toggle in tradein page
+    const cBtn = document.getElementById('calcCreditBtn');
+    if(cBtn) {
+      cBtn.addEventListener('click', () => {
+        const pBox = document.getElementById('calcPlaceholderBox');
+        const rBox = document.getElementById('calcResultBox');
+        
+        if(pBox) pBox.style.display = 'none';
+        
+        const category = document.getElementById('calcCategory').value;
+        const condition = document.getElementById('calcCondition').value;
+        const quantity = parseInt(document.getElementById('calcQuantity').value) || 0;
+        
+        let baseValue = 0;
+        if (category === 'fiction') baseValue = 3;
+        else if (category === 'textbook') baseValue = 15;
+        else if (category === 'collectible') baseValue = 25;
+        
+        let multiplier = 1;
+        if (condition === 'new') multiplier = 1.2;
+        else if (condition === 'good') multiplier = 1.0;
+        else if (condition === 'fair') multiplier = 0.6;
+        
+        const totalValue = (baseValue * multiplier * quantity).toFixed(2);
+        
+        if (rBox) {
+          rBox.style.display = 'block';
+          rBox.innerHTML = `
+            <div class="bg-[#FAF7F2] rounded-3xl p-8 border border-[#EADBC8] h-full flex flex-col justify-center">
+              <h3 class="text-[#6F4E37] font-serif text-2xl mb-2">Estimated Value</h3>
+              <p class="text-xs text-gray-500 mb-6">Based on ${quantity} ${category} book(s) in ${condition} condition.</p>
+              
+              <div class="bg-white rounded-xl p-6 border border-[#EADBC8] text-center shadow-sm">
+                <span class="block text-xs uppercase tracking-widest text-[#C4A484] font-bold mb-2">Store Credit</span>
+                <span class="text-4xl md:text-5xl font-bold text-[#6F4E37]">$${totalValue}</span>
+              </div>
+              
+              <p class="text-xs text-gray-400 mt-4 text-center italic">
+                * Note: Final evaluation may vary based on in-store curator review.
+              </p>
+            </div>
+          `;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

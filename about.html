@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Our Story Timeline - Discover how Pages & Perks bookstore & coffee house grew from a tiny library nook.">
+  <meta name="theme-color" content="#6F4E37">
+  <title>About Our Story | Used Bookstore & Coffee House</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.svg">
+  
+  <!-- CDNs: Bootstrap 5, Tailwind CSS, FontAwesome 6, Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Local Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-xl fixed-top">
+    <div class="container px-3 px-lg-4">
+      <!-- LEFT: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.svg" alt="Folio & Froth Logo" class="logo-light transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      <img src="images/logo-dark.svg" alt="Folio & Froth Logo" class="logo-dark transition-transform duration-300 hover:scale-105" style="height: 65px; width: auto; max-width: 250px; object-fit: contain;">
+      </a>
+      
+      <!-- Mobile Toggle Toggle -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
+      </button>
+      
+      <!-- CENTER & RIGHT -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdownHome">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe.html">Cafe</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="tradein.html">Trade-In</a></li>
+          <li class="nav-item"><a class="nav-link" href="loyalty.html">Loyalty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-icons flex items-center gap-3">
+          <button id="darkModeToggle" class="icon-btn text-gray-700 hover:text-black transition" aria-label="Dark Mode" title="Toggle Theme" style="background: transparent; border: none;">
+            <i class="far fa-moon text-lg"></i>
+          </button>
+          <button id="ltrToggleBtn" class="flex items-center gap-2 bg-[#f4f0eb] px-3 py-1.5 rounded-full text-sm font-semibold text-gray-800 hover:bg-[#e8e2da] transition border-0" aria-label="LTR/RTL Toggle" title="Switch Direction">
+            <i class="fas fa-language"></i> LTR
+          </button>
+          <a href="login.html" class="login-btn flex items-center gap-2 bg-[#6b4731] hover:bg-[#523524] text-white px-5 py-2 rounded-full font-semibold transition shadow-sm no-underline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main style="margin-top: 80px;">
+    
+    <!-- 1. HERO SECTION: Centered Parallax Style Hero -->
+    <section id="about-hero" class="relative py-24 md:py-32 text-white text-center flex items-center justify-center min-h-[60vh]" style="background-image: linear-gradient(rgba(44, 30, 22, 0.85), rgba(26, 17, 12, 0.9)), url('images/about_project_hero.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="container mx-auto px-4 relative z-10 scroll-reveal">
+        <span class="inline-block bg-[#C4A484] text-[#2c1e16] text-sm font-bold px-5 py-2 rounded-full uppercase tracking-widest mb-6 shadow-lg">Curated Collection • 25,000+ Titles</span>
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-[#FAF7F2] mb-6 leading-tight">Every Book <br/><span class="text-[#C4A484] italic">Has a Story.</span></h1>
+        <p class="text-lg md:text-2xl max-w-3xl mx-auto text-[#EADBC8] font-light leading-relaxed">
+          Discover forgotten classics, thrilling mysteries, and rare signed editions waiting to be read again.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. STORY TIMELINE: Alternating Timeline Grid on Paper Texture -->
+    <section id="story-timeline" class="py-16 md:py-24 bg-paper-texture">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <h2 class="text-3xl md:text-5xl font-serif text-[#6F4E37]">Timeline of Milestones</h2>
+          <div class="w-20 h-1 bg-[#C4A484] mx-auto mt-3 rounded-full"></div>
+          <p class="text-gray-600 mt-3 text-sm">How a simple bookshelf evolved into a premium coffee house sanctuary.</p>
+        </div>
+
+        <div class="timeline-pathway">
+          <!-- Milestone 1 -->
+          <div class="timeline-block timeline-block-left scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-8 h-full flex flex-col justify-between transition-transform hover:-translate-y-2 duration-300">
+              <img src="images/about-timeline-1.jpg" alt="Tiny Bookstore Corner" class="rounded-xl w-full mb-5 object-cover h-56 shadow-sm">
+              <div>
+                <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">2012 — The Genesis</span>
+                <h3 class="text-xl font-bold mt-2 text-[#6F4E37]">Tiny Bookstore Corner</h3>
+                <p class="text-gray-700 text-sm mt-3 leading-relaxed">
+                  Clara Vance opened a small corner bookstore with only 1,000 used books, operating in a historic brick house.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-block timeline-block-right scroll-reveal delay-100">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-8 h-full flex flex-col justify-between transition-transform hover:-translate-y-2 duration-300">
+              <img src="images/about-timeline-2.jpg" alt="Artisan Espresso Integration" class="rounded-xl w-full mb-5 object-cover h-56 shadow-sm">
+              <div>
+                <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">2017 — The Cafe Fusion</span>
+                <h3 class="text-xl font-bold mt-2 text-[#6F4E37]">Specialty Coffee Integration</h3>
+                <p class="text-gray-700 text-sm mt-3 leading-relaxed">
+                  Partnered with master barista Julian Reed, installing a premium espresso machine and converting half the shop.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-block timeline-block-left scroll-reveal delay-200">
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-8 h-full flex flex-col justify-between transition-transform hover:-translate-y-2 duration-300">
+              <img src="images/about-timeline-3.jpg" alt="Renovating the Lounge" class="rounded-xl w-full mb-5 object-cover h-56 shadow-sm">
+              <div>
+                <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">2023 — The Lounge Expansion</span>
+                <h3 class="text-xl font-bold mt-2 text-[#6F4E37]">Renovating The Lounge</h3>
+                <p class="text-gray-700 text-sm mt-3 leading-relaxed">
+                  Relaunched the loyalty ranks, expanded our floor plan to 5,000 square feet, and introduced daily literary readings.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MISSION: Bold Full-Width Core Statement -->
+    <section id="about-mission" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2 scroll-reveal">
+            <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">Our Calling</span>
+            <h2 class="text-3xl md:text-5xl font-serif text-[#6F4E37] mt-1">To recycle stories, elevate sips, and spark conversations.</h2>
+            <p class="text-gray-700 mt-4 leading-relaxed">
+              We believe a bookstore is more than a retail shop; it is a community sanctuary. By circulating pre-loved books, we preserve literature sustainably, while our hand-poured coffees create space for quiet contemplation and warm friendship.
+            </p>
+          </div>
+          <div class="lg:w-1/2 scroll-reveal delay-200">
+            <img src="images/about-mission.jpg" alt="Open Book and Coffee cup" class="rounded-3xl shadow-2xl w-full object-cover h-[400px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. VALUES: Three Pillars Card Grid -->
+    <section id="about-values" class="py-16 md:py-24 bg-[#FAF7F2]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">What Guides Us</span>
+          <h2 class="text-3xl md:text-4xl font-serif mt-1 text-[#6F4E37]">Our Core Value Pillars</h2>
+          <div class="w-16 h-1 bg-[#6F4E37] mx-auto mt-3 rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-reveal delay-100 h-full">
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center h-full flex flex-col">
+              <div class="w-16 h-16 bg-[#EADBC8] text-[#6F4E37] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl flex-shrink-0">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#6F4E37]">Sustainability</h3>
+              <p class="text-gray-600 mt-3 text-sm flex-grow">
+                Recycling literary works reduces waste and extends the carbon cycle. Every traded book is a green step forward.
+              </p>
+            </div>
+          </div>
+
+          <div class="scroll-reveal delay-200 h-full">
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center h-full flex flex-col">
+              <div class="w-16 h-16 bg-[#EADBC8] text-[#6F4E37] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl flex-shrink-0">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#6F4E37]">Community</h3>
+              <p class="text-gray-600 mt-3 text-sm flex-grow">
+                Creating cozy safe spaces for local authors, students, baristas, and book clubs to interact warmly.
+              </p>
+            </div>
+          </div>
+
+          <div class="scroll-reveal delay-300 h-full">
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-md text-center h-full flex flex-col">
+              <div class="w-16 h-16 bg-[#EADBC8] text-[#6F4E37] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl flex-shrink-0">
+                <i class="fas fa-gem"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#6F4E37]">Luxury Quality extra two words</h3>
+              <p class="text-gray-600 mt-3 text-sm flex-grow">
+                No compromises. From clean, un-damaged pages to specialty single-origin coffee beans good for health warmly
+                .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- 4b. GREEN INITIATIVE: Sustainability & Community -->
+    <section id="about-sustainability" class="py-16 bg-[#FAF7F2] relative z-10">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2 scroll-reveal">
+            <span class="text-xs uppercase tracking-widest text-[#C4A484] font-bold">Conscious Culture</span>
+            <h2 class="text-3xl md:text-4xl font-serif text-[#6F4E37] mt-2">Caring for Pages & Planet</h2>
+            <div class="w-16 h-1 bg-[#C4A484] mt-3 mb-6 rounded-full"></div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              At Pages & Perks, we believe that the stories of tomorrow depend on how we treat the earth today. We are committed to minimizing our environmental impact through sustainable sourcing and community partnerships.
+            </p>
+            <ul class="space-y-3 text-xs text-gray-600 list-unstyled ps-0">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-[#3D8B5C]"></i> 100% biodegradable, plant-based cups and straws</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-[#3D8B5C]"></i> Organic, fair-trade coffee beans sourced directly from family farms</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-[#3D8B5C]"></i> Book circular economy - recycling and donating unsellable volumes</li>
+            </ul>
+          </div>
+          <div class="lg:w-1/2 scroll-reveal delay-200">
+            <div class="bg-white p-6 rounded-3xl border border-[#C4A484]/30 shadow-md text-center">
+              <span class="text-[50px] text-[#3D8B5C] mb-4 block"><i class="fas fa-hand-holding-heart animate-pulse"></i></span>
+              <h4 class="font-serif font-bold text-[#6F4E37] text-xl mb-2">Our Community Pledge</h4>
+              <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                We donate 5% of all coffee sales on the first Tuesday of every month to local public libraries and child literacy programs.
+              </p>
+              <span class="inline-block px-4 py-2 bg-[#3D8B5C]/10 rounded-full text-xs font-bold text-[#3D8B5C]">12,500+ Books Donated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TEAM: Profile Cards with Hover Effects -->
+    <section id="about-team" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm uppercase tracking-widest text-[#C4A484] font-bold">The Curators</span>
+          <h2 class="text-3xl md:text-5xl font-serif text-[#6F4E37]">Meet Our Lounge Team</h2>
+          <div class="w-24 h-1 bg-[#C4A484] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div class="scroll-reveal delay-100 h-full">
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 text-center group h-full flex flex-col justify-between transition-transform hover:-translate-y-2 duration-300">
+              <div class="relative overflow-hidden rounded-2xl mb-5 h-72 bg-gray-100 shadow-inner">
+                <img src="images/about-team-1.jpg" alt="Clara Vance Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-[#6F4E37]">Clara Vance</h3>
+                <p class="text-xs text-[#C4A484] font-bold uppercase tracking-widest mt-2 mb-4">Founder & Lead Book Curator</p>
+                <div class="flex justify-center gap-4 text-gray-400">
+                  <a href="#" class="hover:text-[#6F4E37] transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                  <a href="#" class="hover:text-[#6F4E37] transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="scroll-reveal delay-200 h-full">
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 text-center group h-full flex flex-col justify-between transition-transform hover:-translate-y-2 duration-300">
+              <div class="relative overflow-hidden rounded-2xl mb-5 h-72 bg-gray-100 shadow-inner">
+                <img src="images/about-team-2.jpg" alt="Julian Reed Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-[#6F4E37]">Julian Reed</h3>
+                <p class="text-xs text-[#C4A484] font-bold uppercase tracking-widest mt-2 mb-4">Master Barista & Cafe Manager</p>
+                <div class="flex justify-center gap-4 text-gray-400">
+                  <a href="#" class="hover:text-[#6F4E37] transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                  <a href="#" class="hover:text-[#6F4E37] transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="scroll-reveal delay-300 h-full">
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 text-center group h-full flex flex-col justify-between transition-transform hover:-translate-y-2 duration-300">
+              <div class="relative overflow-hidden rounded-2xl mb-5 h-72 bg-gray-100 shadow-inner">
+                <img src="images/about-team-3.jpg" alt="Elena Cross Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-[#6F4E37]">Elena Cross</h3>
+                <p class="text-xs text-[#C4A484] font-bold uppercase tracking-widest mt-2 mb-4"> Events Coordinator</p>
+                <div class="flex justify-center gap-4 text-gray-400">
+                  <a href="#" class="hover:text-[#6F4E37] transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                  <a href="#" class="hover:text-[#6F4E37] transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CTA: Horizontal Story Banner -->
+    <section id="about-cta" class="py-24 text-white" style="background-image: linear-gradient(rgba(44,30,22,0.85), rgba(44,30,22,0.85)), url('images/about-cta.jpg'); background-size: cover; background-position: center;">
+      <div class="container mx-auto px-4 text-center scroll-reveal">
+        <h2 class="text-3xl md:text-5xl font-serif mb-4 text-[#FAF7F2]">Our Story is Your Story</h2>
+        <p class="text-base md:text-lg max-w-xl mx-auto mb-8 text-[#EADBC8]">
+          Step inside Pages & Perks today to find your favorite reading spot and a perfectly extracted brew.
+        </p>
+        <a href="books.html" class="px-8 py-3.5 rounded-full bg-white text-[#6F4E37] font-bold hover:bg-[#EADBC8] transition-all">
+          Explore Books Collection
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative pt-24 pb-12 mt-20" style="background: linear-gradient(135deg, #2c1e16 0%, #1a110c 100%); color: #EADBC8; font-family: 'Inter', sans-serif; border-top: 4px solid #6F4E37;">
+    <!-- Creative decorative top border element -->
+    <div class="absolute top-0 bg-[#6F4E37] text-[#EADBC8] w-20 h-20 rounded-full d-flex align-items-center justify-content-center shadow-lg border-4 border-[#EADBC8]" style="left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-book-open text-2xl"></i>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Logo & Description -->
+        <div class="space-y-6 text-center md:text-left">
+          <div class="bg-[#F8F5F0] p-3 rounded-2xl inline-block shadow-lg border-2 border-[#C4A484]/50 transition-transform duration-300 hover:-translate-y-1 mx-auto md:mx-0">
+            <img src="images/logo.svg" alt="Folio & Froth" class="logo-light" style="height: 50px; width: auto; object-fit: contain;">
+            <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <p class="text-sm leading-relaxed text-[#c4b3a0]">
+            Where every page turns into a story and every sip fuels your imagination. Welcome to your new favorite escape.
+          </p>
+          <div class="flex gap-4 justify-center md:justify-start">
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social w-10 h-10 flex-shrink-0 rounded-full bg-[#3c2a1e] flex items-center justify-center hover:bg-[#C4A484] hover:text-[#2c1e16] hover:-translate-y-1 transition-all duration-300 shadow-md" style="display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Explore
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-3 text-sm flex flex-col items-center md:items-start">
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Our Story</a></li>
+            <li><a href="books.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Rare Collections</a></li>
+            <li><a href="cafe.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Artisanal Coffee</a></li>
+            <li><a href="events.html" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group"><span class="w-2 h-2 rounded-full bg-[#6F4E37] group-hover:bg-[#C4A484] transition-colors"></span> Community Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Visit Us
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <ul class="space-y-4 text-sm text-[#c4b3a0] flex flex-col items-center md:items-start">
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-map-marker-alt text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <span>123 Book Lover's Lane,<br>Coffee Haven, CH 12345</span>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-clock text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <div>
+                <p>Mon - Fri: 8:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 9:00 AM - 11:00 PM</p>
+              </div>
+            </li>
+            <li class="flex flex-col md:flex-row items-center md:items-start gap-3 text-center md:text-left">
+              <i class="fas fa-envelope text-[#C4A484] mb-2 md:mb-0 md:mt-1 text-lg"></i>
+              <a href="mailto:hello@folioandfroth.com" class="hover:text-white transition-colors">hello@folioandfroth.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="text-center md:text-left">
+          <h4 class="text-[#C4A484] font-serif font-bold text-xl mb-6 relative inline-block">
+            Join the Club
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/2 h-0.5 bg-[#C4A484]"></span>
+          </h4>
+          <p class="text-sm mb-4 text-[#c4b3a0]">Get exclusive invites to author readings, first dibs on rare books, and secret menu items.</p>
+          <form class="relative group">
+            <input type="email" placeholder="Your email address" class="w-full pl-4 pr-12 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm outline-none focus:border-[#C4A484] focus:bg-white/10 transition-all font-sans" required>
+            <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-[#C4A484] hover:text-white transition-colors p-2">
+              <i class="fas fa-paper-plane text-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c7a6b]">
+        <p>© 2026 Folio & Froth. Brewed & Bound with passion.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-[#C4A484] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
