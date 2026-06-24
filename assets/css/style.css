@@ -968,6 +968,64 @@ footer input[type="email"]:focus {
 [dir="rtl"] .navbar-brand { margin-left: 2rem; margin-right: 0; }
 [dir="rtl"] footer a:hover { padding-left: 0; padding-right: 4px; }
 
+/* RTL Timeline Overrides */
+[dir="rtl"] .timeline-block-left {
+  right: 0;
+  left: auto;
+}
+[dir="rtl"] .timeline-block-right {
+  right: 50%;
+  left: auto;
+}
+[dir="rtl"] .timeline-block-left .timeline-dot {
+  left: -10px;
+  right: auto;
+}
+[dir="rtl"] .timeline-block-right .timeline-dot {
+  right: -10px;
+  left: auto;
+}
+
+/* Tablet & Mobile responsive overrides in RTL */
+@media (max-width: 1023px) {
+  [dir="rtl"] .timeline-pathway::after {
+    right: 35px !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .timeline-block {
+    padding-right: 70px !important;
+    padding-left: 20px !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .timeline-block-left,
+  [dir="rtl"] .timeline-block-right {
+    right: 0 !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .timeline-dot {
+    right: 25px !important;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [dir="rtl"] .timeline-pathway::after {
+    right: 28px !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .timeline-block {
+    padding-right: 60px !important;
+    padding-left: 16px !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .timeline-dot {
+    right: 18px !important;
+    left: auto !important;
+  }
+}
+
 /* ── 24. BOOTSTRAP COLLAPSE CONFLICT FIX ── */
 .collapse {
   visibility: visible !important;
