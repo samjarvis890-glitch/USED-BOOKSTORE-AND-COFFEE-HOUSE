@@ -91,6 +91,10 @@
   border-bottom: 1px solid rgba(234,219,200,0.14);
 }
 
+[data-theme="dark"] #mainNavbar.scrolled {
+  background-color: rgba(17, 10, 8, 0.99) !important;
+}
+
 [data-theme="dark"] .navbar-brand .brand-name {
   color: #E8C8A0 !important;
 }

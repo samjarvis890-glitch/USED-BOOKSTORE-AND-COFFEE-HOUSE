@@ -210,6 +210,14 @@
       text-align: center;
       margin-bottom: 0.5rem;
     }
+    .logo-link {
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .logo-link:hover {
+      transform: scale(1.02);
+    }
     .card-logo img {
       height: 46px;
       width: auto;
@@ -555,8 +563,10 @@
 
       <!-- Logo -->
       <div class="card-logo">
-        <img src="images/logo.svg" alt="Folio & Froth" class="logo-light">
-        <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.svg" alt="Folio & Froth" class="logo-light">
+          <img src="images/logo-dark.svg" alt="Folio & Froth" class="logo-dark">
+        </a>
         <span class="tagline">Books &amp; Coffee Haven</span>
       </div>
 
@@ -569,13 +579,31 @@
       <!-- Register Form -->
       <form id="registerForm" novalidate>
 
-        <!-- Name + Phone side by side -->
+        <!-- First Name + Last Name side by side -->
         <div class="field-row">
           <div class="field">
-            <label for="regName">Full Name</label>
+            <label for="regFirstName">First Name</label>
             <div class="input-wrap">
               <i class="fas fa-user fi"></i>
-              <input type="text" id="regName" placeholder="John Doe" required autocomplete="name">
+              <input type="text" id="regFirstName" placeholder="John" required autocomplete="given-name">
+            </div>
+          </div>
+          <div class="field">
+            <label for="regLastName">Last Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-user fi"></i>
+              <input type="text" id="regLastName" placeholder="Doe" required autocomplete="family-name">
+            </div>
+          </div>
+        </div>
+
+        <!-- Email + Phone side by side -->
+        <div class="field-row">
+          <div class="field">
+            <label for="regEmail">Email Address</label>
+            <div class="input-wrap">
+              <i class="fas fa-envelope fi"></i>
+              <input type="email" id="regEmail" placeholder="email@address.com" required autocomplete="email">
             </div>
           </div>
           <div class="field">
@@ -587,15 +615,8 @@
           </div>
         </div>
 
-        <!-- Email + Password side by side -->
+        <!-- Password + Confirm Password side by side -->
         <div class="field-row">
-          <div class="field">
-            <label for="regEmail">Email Address</label>
-            <div class="input-wrap">
-              <i class="fas fa-envelope fi"></i>
-              <input type="email" id="regEmail" placeholder="email@address.com" required autocomplete="email">
-            </div>
-          </div>
           <div class="field">
             <label for="regPassword">Password</label>
             <div class="input-wrap">
@@ -609,10 +630,6 @@
               <span></span><span></span><span></span><span></span>
             </div>
           </div>
-        </div>
-
-        <!-- Confirm Password + Terms side by side -->
-        <div class="field-row">
           <div class="field">
             <label for="regConfirmPassword">Confirm Password</label>
             <div class="input-wrap">
@@ -623,13 +640,13 @@
               </button>
             </div>
           </div>
-          <div class="field d-flex align-items-end justify-content-start pb-2">
-            <label class="terms-row m-0 w-100">
-              <input type="checkbox" id="agreeTerms" required>
-              I agree to the <a href="#">Terms &amp; Privacy Policy</a>
-            </label>
-          </div>
         </div>
+
+        <!-- Agree Terms below the fields box -->
+        <label class="terms-row">
+          <input type="checkbox" id="agreeTerms" required>
+          I agree to the <a href="#">Terms &amp; Privacy Policy</a>
+        </label>
 
         <button type="submit" class="btn-submit">
           <i class="fas fa-rocket" style="margin-right:0.4rem;"></i> Create My Account

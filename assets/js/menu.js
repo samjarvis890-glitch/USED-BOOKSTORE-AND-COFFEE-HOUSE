@@ -9,19 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('mainNavbar');
   if (navbar) {
     const handleNavbarScroll = () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       if (window.scrollY > 60) {
         navbar.classList.add('scrolled');
-        navbar.style.backgroundColor = isDark
-          ? 'rgba(17, 10, 8, 0.99)'
-          : 'rgba(250, 247, 242, 0.99)';
-        navbar.style.padding = '0.2rem 0';
       } else {
         navbar.classList.remove('scrolled');
-        navbar.style.backgroundColor = isDark
-          ? 'rgba(17, 10, 8, 0.97)'
-          : 'rgba(250, 247, 242, 0.97)';
-        navbar.style.padding = '0.6rem 0';
       }
     };
     window.addEventListener('scroll', handleNavbarScroll, { passive: true });

@@ -50,81 +50,6 @@
     img { display: block; max-width: 100%; }
     a { text-decoration: none; }
 
-    /* ---------- NAVBAR ---------- */
-    #mainNavbar {
-      background: rgba(250,247,242,0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(111,78,55,0.12);
-      padding: 0.6rem 0;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    #mainNavbar.scrolled {
-      background: rgba(250,247,242,0.99);
-      box-shadow: 0 4px 30px rgba(111,78,55,0.15);
-    }
-    .navbar-brand img { height: 58px; width: auto; object-fit: contain; }
-    .nav-link {
-      font-family: var(--font-sans);
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--charcoal) !important;
-      padding: 0.5rem 0.9rem !important;
-      position: relative;
-      letter-spacing: 0.02em;
-      transition: color 0.25s;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 50%;
-      width: 0; height: 2px;
-      background: var(--mocha);
-      transform: translateX(-50%);
-      transition: width 0.3s;
-    }
-    .nav-link:hover::after, .nav-link.active::after { width: 60%; }
-    .nav-link:hover { color: var(--mocha) !important; }
-    .dropdown-menu {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-      background: var(--white);
-      padding: 0.5rem;
-    }
-    .dropdown-item {
-      border-radius: 8px;
-      font-size: 0.87rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      padding: 0.5rem 1rem;
-      transition: background 0.2s, color 0.2s;
-    }
-    .dropdown-item:hover { background: var(--linen); color: var(--mocha); }
-    .btn-login {
-      background: var(--mocha);
-      color: var(--white) !important;
-      padding: 0.5rem 1.4rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.03em;
-      transition: background 0.3s, transform 0.2s;
-      display: inline-flex; align-items: center; gap: 0.4rem;
-    }
-    .btn-login:hover { background: var(--mocha-dk); transform: translateY(-1px); }
-    .icon-btn {
-      background: none; border: none; cursor: pointer;
-      color: var(--charcoal); font-size: 1.1rem;
-      width: 36px; height: 36px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 50%;
-      transition: background 0.2s, color 0.2s;
-    }
-    .icon-btn:hover { background: var(--linen); color: var(--mocha); }
-    .navbar-toggler { border: none; background: none; padding: 0.4rem; }
-    .navbar-toggler:focus { box-shadow: none; }
-
     /* ============================================================
        SECTION 1 — SPLIT-SCREEN CINEMATIC HERO
        Header Style: Large editorial split with diagonal slash
@@ -1115,41 +1040,7 @@
       color: var(--charcoal) !important;
     }
 
-    /* Navbar */
-    [data-theme="dark"] #mainNavbar {
-      background: rgba(17, 10, 8, 0.97) !important;
-      border-bottom: 1px solid rgba(234,219,200,0.14) !important;
-    }
-    [data-theme="dark"] #mainNavbar.scrolled {
-      background: rgba(17, 10, 8, 0.99) !important;
-    }
-    [data-theme="dark"] .nav-link {
-      color: #FAF7F2 !important;
-    }
-    [data-theme="dark"] .nav-link:hover {
-      color: #E8C8A0 !important;
-    }
-    [data-theme="dark"] .nav-link::after {
-      background: #E8C8A0 !important;
-    }
-    [data-theme="dark"] .btn-login {
-      background: #C4A484 !important;
-      color: #111008 !important;
-    }
-    [data-theme="dark"] .btn-login:hover {
-      background: #FAF7F2 !important;
-      color: #111008 !important;
-    }
-    [data-theme="dark"] .dropdown-menu {
-      background: #1E1610 !important;
-    }
-    [data-theme="dark"] .dropdown-item {
-      color: #FAF7F2 !important;
-    }
-    [data-theme="dark"] .dropdown-item:hover {
-      background: #2a1e14 !important;
-      color: #E8C8A0 !important;
-    }
+
 
     /* Section 2 — Experience */
     [data-theme="dark"] .s2-experience {
@@ -1384,7 +1275,7 @@
 
       <!-- Mobile Toggle -->
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars text-2xl" style="color: var(--mocha);"></i>
+        <i class="fas fa-bars text-2xl" style="color: var(--primary);"></i>
       </button>
 
       <!-- CENTER & RIGHT -->
