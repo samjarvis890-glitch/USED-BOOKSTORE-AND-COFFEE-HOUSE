@@ -161,7 +161,7 @@
       font-family: var(--font-dm);
       font-size: 2.2rem;
       color: var(--white);
-      display: block;
+      display: inline-block;
       line-height: 1;
     }
     .s1-stat-label {
@@ -1172,6 +1172,22 @@
     [data-theme="dark"] body #s1-hero .btn-primary-hero,
     [data-theme="dark"] body #s1-hero a.btn-primary-hero {
       color: #111008 !important;
+    }
+    [data-theme="dark"] body #s1-hero .btn-primary-hero:hover,
+    [data-theme="dark"] body #s1-hero a.btn-primary-hero:hover {
+      background-color: #FFFFFF !important;
+      color: #111008 !important;
+    }
+    [data-theme="dark"] body #s1-hero .btn-outline-hero,
+    [data-theme="dark"] body #s1-hero a.btn-outline-hero {
+      color: #FFFFFF !important;
+      border-color: rgba(255,255,255,0.4) !important;
+    }
+    [data-theme="dark"] body #s1-hero .btn-outline-hero:hover,
+    [data-theme="dark"] body #s1-hero a.btn-outline-hero:hover {
+      border-color: var(--gold) !important;
+      background: rgba(196,164,132,0.1) !important;
+      color: var(--gold) !important;
     }
     [data-theme="dark"] body #s1-hero .s1-badge {
       background-color: #1E1610 !important;
