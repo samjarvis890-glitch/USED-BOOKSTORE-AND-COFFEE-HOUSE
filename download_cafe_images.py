@@ -14,12 +14,12 @@ images = {
     'menu_pourover.jpg': 'https://images.unsplash.com/photo-1551887196-72e32bfc7bf3?q=80&w=400&auto=format&fit=crop',
     'menu_tea.jpg': 'https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=400&auto=format&fit=crop',
     'gallery_1.jpg': 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=800&auto=format&fit=crop',
-    'gallery_2.jpg': 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop',
+    'gallery_2.jpg': 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop',
     'gallery_3.jpg': 'https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80&w=800&auto=format&fit=crop',
     'gallery_4.jpg': 'https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?q=80&w=800&auto=format&fit=crop',
     'seating_cozy.jpg': 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop',
-    'seating_study.jpg': 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
-    'seating_lounge.jpg': 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=800&auto=format&fit=crop',
+    'seating_study.jpg': 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop',
+    'seating_lounge.jpg': 'https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop',
     'cafe_cta.jpg': 'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=1920&auto=format&fit=crop'
 }
 

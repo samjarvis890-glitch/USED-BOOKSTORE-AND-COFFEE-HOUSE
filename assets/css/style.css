@@ -221,6 +221,27 @@ strong, b {
   background-color: var(--accent);
 }
 
+/* Custom Dropdown Item Colors */
+.dropdown-item {
+  color: var(--dark) !important;
+  transition: var(--transition-smooth);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--accent) !important;
+  color: var(--primary) !important;
+}
+
+.dropdown-item.active,
+.dropdown-item.active:hover,
+.dropdown-item.active:focus,
+.dropdown-item:active {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+
 /* Restores Bootstrap dropdown caret overridden by Tailwind reset */
 .dropdown-toggle::after {
   display: inline-block !important;
@@ -967,6 +988,63 @@ footer input[type="email"]:focus {
 [dir="rtl"] .ms-auto { margin-right: auto !important; margin-left: 0 !important; }
 [dir="rtl"] .navbar-brand { margin-left: 2rem; margin-right: 0; }
 [dir="rtl"] footer a:hover { padding-left: 0; padding-right: 4px; }
+
+/* Custom Accordion RTL Overrides */
+[dir="rtl"] .accordion-button,
+[dir="rtl"] #tradein-faq button[data-bs-toggle="collapse"] {
+  direction: ltr;
+  flex-direction: row-reverse;
+  text-align: right !important;
+}
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+[dir="rtl"] .accordion-body,
+[dir="rtl"] #tradein-faq .collapse > div {
+  direction: ltr;
+  text-align: right !important;
+}
+
+/* Generic text-left RTL Overrides */
+[dir="rtl"] .text-left,
+[dir="rtl"] .sm\:text-left,
+[dir="rtl"] .md\:text-left,
+[dir="rtl"] .lg\:text-left,
+[dir="rtl"] .xl\:text-left,
+[dir="rtl"] .xxl\:text-left {
+  text-align: right !important;
+}
+
+/* RTL Footer Alignment Overrides */
+[dir="rtl"] footer p,
+[dir="rtl"] footer .space-y-4 span,
+[dir="rtl"] footer .space-y-4 div,
+[dir="rtl"] footer .space-y-4 a {
+  direction: ltr;
+  text-align: right !important;
+}
+
+[dir="rtl"] footer form input {
+  padding-left: 3rem !important;
+  padding-right: 1rem !important;
+}
+
+[dir="rtl"] footer form button {
+  right: auto !important;
+  left: 0.5rem !important;
+}
+
+@media (min-width: 768px) {
+  [dir="rtl"] footer h4 span {
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+}
+
+
+
 
 /* RTL Timeline Overrides */
 [dir="rtl"] .timeline-block-left {
